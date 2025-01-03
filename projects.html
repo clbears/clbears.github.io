@@ -45,6 +45,53 @@
     <a href="/projectTemplate.html">Project1</a> <br>
 </div>
 </body>
+<script>
+    let date = new Date();
+    let time = date.toLocaleTimeString("en-US", {
+        timeZone: "America/Los_Angeles",
+    });
+    document.getElementById("time").innerHTML = time;
+    let updateTimer = true
+    setInterval(function(){
+        if(!updateTimer){
+           return;
+        }
+        date = new Date();
+        let time = date.toLocaleTimeString("en-US", {
+            timeZone: "America/Los_Angeles",
+        });
+        document.getElementById("time").innerHTML = time.split(" ")[0] +"."+ date.getMilliseconds().toString().slice(0,2);
+    }, 1);
+
+    function pauseTimer() {
+        updateTimer = false;
+        setTimeout(function () {
+            updateTimer = true;
+        }, 1500);
+    }
+
+    setTimeout(function() {
+        pauseTimer()
+        setInterval(function () {
+            pauseTimer();
+        }, 60000);
+    }, 60000 - date.getSeconds() * 1000 - date.getMilliseconds() - 1500);
+
+    document.addEventListener("DOMContentLoaded", function() {
+        let images = document.getElementsByClassName("flip");
+        console.log(images);
+        for (let i = 0; i < images.length; i++) {
+
+            images[i].addEventListener("mousedown", function() {
+                let image_list = this.getAttribute("data-image_list").split(", ");
+                let current_image = this.getAttribute("src");
+                let next_image = image_list[(image_list.indexOf(current_image) + 1) % image_list.length];
+                this.setAttribute("src", next_image);
+            });
+        }
+    });
+
+</script>
 <style>
 *{
     font-family: 'IBM Plex Mono', sans-serif;
@@ -63,6 +110,12 @@ img::selection{
     right: 8vw;
     position: fixed;
     z-index: 11;
+}
+#time{
+    right: 8px;
+    transform: translateY(0.3vh);
+    position: fixed;
+    z-index: 1;
 }
 #projectList{
     grid-column: 2; /* Place in the center column */
