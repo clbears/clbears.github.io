@@ -10,11 +10,10 @@
 
 </head>
 <body>
-<div id="top_bar">
 
-</div>
-<div>
-    Christopher Lam
+<div> <!--letter_head-->
+    
+    Christopher Lam    <div id="bar"> <a href="/photos.html">photos</a> <a href="/projects.html">projects</a> <a href="/resume.html">resume</a> </div>
     <br>
     <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">San Francisco California</a>
     <br>
@@ -60,6 +59,15 @@
 
 </script>
 <style>
+#bar{
+    display: flex;  
+    margin-left: 8vw;
+    right: 8vw;
+    transform: translateY(-2.5vh);
+    position: fixed;
+
+}
+
 *{
     font-family: 'IBM Plex Mono', sans-serif;
     font-weight: 500;
@@ -75,6 +83,7 @@ p{
 a{
     color: black;
     font-weight: 500;
+    margin: inherit;
 }
 #top_bar{
     display: flex;
