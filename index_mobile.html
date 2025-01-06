@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Lam - Mobile</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'IBM Plex Mono', sans-serif; /* Ensure consistency */
+            margin: 0;
+            padding: 0;
+            font-size: 14px; /* Match the small, uniform text size */
+            line-height: 1.5;
+            background-color: #ffffff; /* Plain white background */
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100vh; /* Full viewport height */
+        }
+
+        /* Centered Content Block */
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+            text-align: center; /* Center text within each line */
+            max-width: 33.33%; /* Restrict content to the middle third of the screen horizontally */
+            margin: 0 auto; /* Center the block horizontally */
+        }
+
+        /* Headings and Links */
+        h1 {
+            font-size: 1em; /* Match the rest of the site */
+            margin: 0 0 10px 0; /* Uniform spacing */
+            font-weight: 600; /* Match bold font on the main site */
+        }
+
+        p {
+            margin: 5px 0; /* Uniform paragraph spacing */
+            color: #000; /* Black text */
+            font-weight: 400; /* Regular weight */
+        }
+
+        /* Description text spacing */
+        p.description {
+            flex: 1; /* Take up available space */
+            display: flex;
+            align-items: center; /* Center vertically within the allotted space */
+            text-align: justify
+        }
+
+        /* Links */
+        a {
+            color: #007acc; /* Match your link color */
+            text-decoration: none; /* No underline */
+            font-weight: 400; /* Regular link text weight */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Desktop View Note */
+        .desktop-note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #555;
+            font-weight: 400; /* Regular weight for the note */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Christopher Lam</h1>
+        <p>San Francisco, California</p>
+        <p><a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a></p>
+        <p class="description">Hi, I’m Christopher. I work on projects, explore design, and solve problems through engineering.</p>
+        <p class="desktop-note">For the full experience, view my site on desktop.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+* {
+    font-family: 'IBM Plex Mono', sans-serif;
+    font-weight: 500;
+    font-size: 0.7vw;
+}
+*::selection {
+    background-color: #f6bd60;
+}
+img::selection {
+    background-color: transparent;
+}
+
+#time {
+    right: 8px;
+    transform: translateY(0.3vh);
+    position: fixed;
+    z-index: 1;
+}
+#bar {
+    display: flex;
+    margin-left: 8vw;
+    right: 8vw;
+    position: fixed;
+    z-index: 11;
+}
+#image_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+    grid-auto-rows: auto; /* Adjust row height dynamically */
+    grid-gap: 8px; /* Consistent spacing between items */
+    width: 100%; /* Full container width */
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column; /* Stack content vertically (image and caption) */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center-align text */
+    gap: 8px; /* Add spacing between the image and caption */
+}
+.grid-item img {
+    width: 100%; /* Fit the grid cell horizontally */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image fills its grid space */
+    max-height: calc(1.5 * 1fr); /* Limit vertical size if needed */
+}
+.grid-item p {
+    margin: 0; /* Remove default margin */
+    font-size: 0.9rem; /* Adjust text size as needed */
+    color: #000; /* Set a consistent text color */
+    text-align: left;
+}
+
+a:hover {
+    color: #727272;
+    font-size: 0.9vw;
+}
+img {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    object-position: center;
+}
+img:hover {
+    z-index: 11;
+}
+.flip {
+    cursor: e-resize;
+}
+#airFrance:hover {
+    z-index: 11;
+}
+#timeline {
+    z-index: 2;
+    position: fixed;
+    width: 33vw;
+    margin-left: 16px;
+    margin-top: 8px;
+}
+p {
+    margin: 0;
+}
+a {
+    color: black;
+    font-weight: 500;
+    margin: inherit;
+}
