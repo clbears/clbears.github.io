@@ -26,30 +26,38 @@ img::selection {
 #image_grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
-    grid-auto-rows: auto; /* Adjust row height dynamically */
-    grid-gap: 8px; /* Consistent spacing between items */
+    gap: 8px; /* Spacing between grid items */
     width: 100%; /* Full container width */
 }
-
-.grid-item {
+.text-container {
     display: flex;
-    flex-direction: column; /* Stack content vertically (image and caption) */
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center-align text */
-    gap: 8px; /* Add spacing between the image and caption */
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center; /* Ensure multi-line text is centered */
+}
+.heading{
+    font-size: 13px;
+    font-weight: 900;
+    margin: 0;
 }
 .grid-item img {
-    width: 100%; /* Fit the grid cell horizontally */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Ensure the image fills its grid space */
-    max-height: calc(1.5 * 1fr); /* Limit vertical size if needed */
+    width: 100%; /* Stretch to fill the width of the column */
+    height: auto; /* Maintain the image's aspect ratio */
+    max-height: calc((100vw / 3) * 1.5); /* Height limited to 1.5 times the column width */
+    object-fit: cover; /* Crop the image to fit the grid cell */
 }
+
 .grid-item p {
     margin: 0; /* Remove default margin */
     font-size: 0.9rem; /* Adjust text size as needed */
     color: #000; /* Set a consistent text color */
     text-align: left;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
 }
 
 a:hover {
@@ -57,7 +65,6 @@ a:hover {
     font-size: 0.9vw;
 }
 img {
-    object-fit: contain;
     width: 100%;
     height: auto;
     object-position: center;
