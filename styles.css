@@ -1,7 +1,7 @@
 * {
     font-family: 'IBM Plex Mono', sans-serif;
     font-weight: 500;
-    font-size: 0.7vw;
+    font-size: 1vw;
 }
 *::selection {
     background-color: #f6bd60;
@@ -37,7 +37,7 @@ img::selection {
     text-align: center; /* Ensure multi-line text is centered */
 }
 .heading{
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 900;
     margin: 0;
 }
