@@ -11,7 +11,7 @@ img::selection {
 }
 
 #time {
-    right: 8px;
+    right: 1vw;
     transform: translateY(0.3vh);
     position: fixed;
     z-index: 1;
@@ -26,8 +26,10 @@ img::selection {
 #image_grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
-    gap: 8px; /* Spacing between grid items */
+    gap: 1vw; /* Spacing between grid items */
+    row-gap: 2vw;
     width: 100%; /* Full container width */
+    margin-top: 1vw;
 }
 .text-container {
     display: flex;
@@ -37,7 +39,7 @@ img::selection {
     text-align: center; /* Ensure multi-line text is centered */
 }
 .heading{
-    font-size: 15px;
+    font-size: 2vw;
     font-weight: 900;
     margin: 0;
 }
@@ -82,8 +84,8 @@ img:hover {
     z-index: 2;
     position: fixed;
     width: 33vw;
-    margin-left: 16px;
-    margin-top: 8px;
+    margin-left: 2vw;
+    margin-top: 1vw;
 }
 p {
     margin: 0;
