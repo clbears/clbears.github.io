@@ -2,6 +2,7 @@
     font-family: 'IBM Plex Mono', sans-serif;
     font-weight: 500;
     font-size: 1vw;
+    z-index: 0;
 }
 *::selection {
     background-color: #f6bd60;
@@ -70,12 +71,17 @@ img {
     width: 100%;
     height: auto;
     object-position: center;
+    z-index: 0;
 }
 img:hover {
-    z-index: 11;
+    z-index: 15;
+}
+.flip:hover{
+    z-index: 15;
 }
 .flip {
     cursor: e-resize;
+    z-index: 0;
 }
 #airFrance:hover {
     z-index: 11;
