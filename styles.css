@@ -26,7 +26,7 @@ img::selection {
 }
 #image_grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+    grid-template-columns: repeat(6, 1fr); /* Three equal-width columns */
     gap: 1vw; /* Spacing between grid items */
     row-gap: 2vw;
     width: 100%; /* Full container width */
@@ -47,7 +47,7 @@ img::selection {
 .grid-item img {
     width: 100%; /* Stretch to fill the width of the column */
     height: auto; /* Maintain the image's aspect ratio */
-    max-height: calc((100vw / 3) * 1.5); /* Height limited to 1.5 times the column width */
+    max-height: calc((100vw / 6) * 3); /* Height limited to 1.5 times the column width */
     object-fit: cover; /* Crop the image to fit the grid cell */
 }
 
@@ -86,13 +86,7 @@ img:hover {
 #airFrance:hover {
     z-index: 11;
 }
-#timeline {
-    z-index: 2;
-    position: fixed;
-    width: 33vw;
-    margin-left: 2vw;
-    margin-top: 1vw;
-}
+
 p {
     margin: 0;
 }

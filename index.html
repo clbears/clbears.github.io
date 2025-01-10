@@ -22,15 +22,28 @@
         </script>
         <style>
         #wowCL {
-            grid-column: 3 / 3;
-            grid-row: 1 / 2;
+            grid-column: 1 / 3;
+            grid-row: 2;
         }
         #wowCL:hover {
             z-index: 11;
         }
-        #airFrance {
-            grid-column: 1 / span 3;
+        #spl{
+            grid-column:  3/ span 4;
             grid-row: 2;
+        }
+        #airFrance {
+            grid-column: 4 / span 3;
+            grid-row: 1;
+        }
+        #timeline {
+            grid-column: 1 / 2; /* Place in the first column */
+            grid-row: 1 / span 3; /* Span multiple rows if needed */
+            position: sticky; /* Makes it stick while scrolling */
+            top: 0; /* Keeps it at the top of the viewport */
+            align-self: start; /* Aligns the content to the top of its grid cell */
+            z-index: 2; /* Ensure it stays above other elements if overlapping */
+            color: #727272;
         }
         </style>
     </head>
@@ -55,33 +68,37 @@
     <a href="mailto:cjlbears@gmail.com" >cjlbears@gmail.com</a>
     
 </div>
-<div id="timeline">
-    <div style="font-weight: 800;" >Timeline:</div>
-    2006: Born<br>
-    2007:<br>
-    2008: Avoided a recession by being two<br>
-    2009:<br>
-    2010:<br>
-    2011: Ignored the age requirement on snap circuits<br>
-    2012:<br>
-    2013:<br>
-    2014:<br>
-    2015:<br>
-    2016:<br>
-    2018:<br>
-    2019: Took Middle School Engineering Class and obtained a cheap 3D printer<br>
-    2020: Started printing PPE for NorCal ambulances<br>
-    2021: Got into making things, putting together a big boy printer, churning out models, creating and finishing projects, and taking High School Intro to Engineering Design<br>
-    2022: Continued projects along with getting into graphic design.<br>
-</div>
 
 <div id="image_grid">
+    <div class="grid-item" id="timeline">
+        <div style="font-weight: 800; color: black;" >Timeline:</div>
+        2006: Born<br>
+        2007:<br>
+        2008: Avoided a recession by being two<br>
+        2009:<br>
+        2010:<br>
+        2011: Ignored the age requirement on snap circuits<br>
+        2012:<br>
+        2013:<br>
+        2014:<br>
+        2015:<br>
+        2016:<br>
+        2018:<br>
+        2019: Took Middle School Engineering Class and obtained a cheap 3D printer<br>
+        2020: Started printing PPE for NorCal ambulances<br>
+        2021: Got into making things, putting together a big boy printer, churning out models, creating and finishing projects, and taking High School Intro to Engineering Design<br>
+        2022: Continued projects along with getting into graphic design.<br>
+        2023: <br>
+        2024:<br>
+    </div>
     <div class="grid-item" id="wowCL">
-        <img class="flip" src="/wowCL.jpeg" alt="wowCL" data-image_list="wowCL.jpeg, nightWrite.jpeg">
+        <img class="flip" src="nightWrite.jpeg" alt="wowCL" data-image_list="wowCL.jpeg, nightWrite.jpeg">
     </div>
     <div class="grid-item" id="airFrance">
         <img src="/airFrance.jpeg" alt="Concorde">
-        <p>Concorde</p>
+    </div>
+    <div class="grid-item" id="spl">
+        <img src="/spl.jpeg" alt="spl">
     </div>
 </div>
 
