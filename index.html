@@ -38,12 +38,32 @@
         }
         #timeline {
             grid-column: 1 / 2; /* Place in the first column */
-            grid-row: 1 / span 3; /* Span multiple rows if needed */
+            grid-row: 1 / span 3; /* Span multiple rows */
             position: sticky; /* Makes it stick while scrolling */
             top: 0; /* Keeps it at the top of the viewport */
             align-self: start; /* Aligns the content to the top of its grid cell */
             z-index: 2; /* Ensure it stays above other elements if overlapping */
             color: #727272;
+            padding: 8px; /* Add padding for better spacing */
+            display: flex;
+            flex-direction: column; /* Stack rows vertically */
+            gap: 8px; /* Space between timeline rows */
+        }
+        .timeline-row {
+            display: flex; /* Create a row for year and details */
+            gap: 8px; /* Space between year and details */
+        }
+
+        .timeline-year {
+            font-weight: bold; /* Emphasize the year */
+            flex-shrink: 0; /* Prevent the year from shrinking */
+            width: 1uw; /* Fixed width for year */
+            text-align: left; /* Align year text to the left */
+        }
+
+        .timeline-details {
+            text-align: left; /* Align details to the left */
+            flex-grow: 1; /* Let the details span the remaining space */
         }
         </style>
     </head>
@@ -71,25 +91,55 @@
 
 <div id="image_grid">
     <div class="grid-item" id="timeline">
-        <div style="font-weight: 800; color: black;" >Timeline:</div>
-        2006: Born<br>
-        2007:<br>
-        2008: Avoided a recession by being two<br>
-        2009:<br>
-        2010:<br>
-        2011: Ignored the age requirement on snap circuits<br>
-        2012:<br>
-        2013:<br>
-        2014:<br>
-        2015:<br>
-        2016:<br>
-        2018:<br>
-        2019: Took Middle School Engineering Class and obtained a cheap 3D printer<br>
-        2020: Started printing PPE for NorCal ambulances<br>
-        2021: Got into making things, putting together a big boy printer, churning out models, creating and finishing projects, and taking High School Intro to Engineering Design<br>
-        2022: Continued projects along with getting into graphic design.<br>
-        2023: <br>
-        2024:<br>
+        <div style="font-weight: 800; color: black;">Timeline:</div>
+        <div class="timeline-row">
+            <span class="timeline-year">2006:</span>
+            <span class="timeline-details">Born</span>
+        </div>
+        <div class="timeline-row">
+            <span class="timeline-year">2008:</span>
+            <span class="timeline-details">AVOIDED A RECESSION (2YRS OLD)</span>
+        </div>
+        <div class="timeline-row">
+            <span class="timeline-year">2011:</span>
+            <span class="timeline-details">IGNORED AGE REQUIREMENT ON SNAP CIRCUITS</span>
+        </div>
+        <div class="timeline-row">
+            <span class="timeline-year">2019:</span>
+            <span class="timeline-details">FIRST ENGINEERING CLASS (7TH GRADE)</span>
+        </div>
+        <div class="timeline-row">
+            <span class="timeline-year">2020:</span>
+            <span class="timeline-details">3D PRINTED PPE FOR NORCAL AMBULANCE</span>
+        </div>
+        <div class="timeline-row">
+            <span class="timeline-year">2021:</span>
+            <span class="timeline-details">
+                INTRO TO ENG. DESIGN CLASS<br>
+                STARTED PERSONAL PROJECTS
+            </span>
+        </div>
+        <div class="timeline-row">
+            <span class="timeline-year">2022:</span>
+            <span class="timeline-details">
+                STARTED GRAPHIC DESIGN<br>
+                GOT DL<br>
+                STARTED AT IN-N-OUT
+            </span>
+        </div>
+        <div class="timeline-row">
+            <span class="timeline-year">2023:</span>
+            <span class="timeline-details">
+                SFA PRESIDENT<br>
+                SENIOR PATROL LEADER<br>
+                PHOTOGRAPHY FEATURED IN NEWSPAPER<br>
+                SUMMITED WHITNEY
+            </span>
+        </div>
+        <div class="timeline-row">
+            <span class="timeline-year">2025:</span>
+            <span class="timeline-details">EAGLE SCOUT</span>
+        </div>
     </div>
     <div class="grid-item" id="wowCL">
         <img class="flip" src="nightWrite.jpeg" alt="wowCL" data-image_list="wowCL.jpeg, nightWrite.jpeg">
