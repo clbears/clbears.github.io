@@ -10,9 +10,26 @@
     <link rel="stylesheet" href="styles.css">
     <style>
     #projectTitle{
-        font-size: 35;
+        font-size: 1.2vw;
+        font-weight: 700;
         text-align: center;
-    }</style>
+    }
+    #body{
+        grid-column: 3/ span 2; /* Place in the second column */
+        grid-row: 3 / span 3; /* Span multiple rows */
+        flex-direction: column; /* Stack rows vertically */
+    }    
+    #date{
+        grid-column: 3/ span 2; /* Place in the second column */
+        grid-row: 2 / span 1; /* Span multiple rows */
+        flex-direction: column; /* Stack rows vertically */
+        font-weight: 800;
+    }
+    #escapement{
+        grid-column: 3/ span 2; /* Place in the second column */
+        grid-row: 1 / span 1; /* Span multiple rows */
+    }
+    </style>
 </head>
 <body>
     <div id="bar"> 
@@ -34,7 +51,14 @@
     
 </div>
 <div id="projectTitle">
-    Project Title
+    Reverse Engineering of a Toy
+</div>
+<div id="image_grid">
+    <div class="grid-item" id="escapement">
+        <img class="flip" src="toy.jpeg" alt="escapement"> <!--data-image_list="wowCL.jpeg, nightWrite.jpeg">-->
+    </div>
+    <div id="date"> Date: March 2022</div>
+    <p id="body"> I reverse-engineered a wind-up monkey toy to understand its internal mechanisms and recreate its parts using CAD software. This project involved disassembling the toy, analyzing its design, and modeling components such as gears and ratchets. It enhanced my knowledge of mechanical design and prototyping​</p>
 </div>
 </body>
 <script>

@@ -7,19 +7,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!--    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <style> #projectList{
-        grid-column: 2; /* Place in the center column */
-        grid-row: 1; /* Place in the first row */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    #projectTitle{
+        font-size: 1.2vw;
+        font-weight: 700;
         text-align: center;
-        padding: 16px; /* Optional padding */
-        border-radius: 8px; 
+    }
+    #body{
+        grid-column: 3/ span 2; /* Place in the second column */
+        grid-row: 3 / span 3; /* Span multiple rows */
+        flex-direction: column; /* Stack rows vertically */
+    }    
+    #date{
+        grid-column: 3/ span 2; /* Place in the second column */
+        grid-row: 2 / span 1; /* Span multiple rows */
+        flex-direction: column; /* Stack rows vertically */
+        font-weight: 800;
+    }
+    #escapement{
+        grid-column: 3/ span 2; /* Place in the second column */
+        grid-row: 1 / span 1; /* Span multiple rows */
     }
     </style>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="bar"> 
@@ -40,21 +50,15 @@
     <a href="mailto:cjlbears@gmail.com" >cjlbears@gmail.com</a>
     
 </div>
-<div id="projectList">
-    <div style="font-weight: 800;" >Projects:</div> <br>
-    <a href="/compoundMachinesProject.html">Compound Machines Project</a> <br>
-    <a href="/majorityVotesCircuit.html">Majority Votes Circuit</a> <br>
-    <a href="multiToolDesign.html">Multi-Tool Design</a> <br>
-    <a href="/dobCircuit.html">DOB Circuit</a> <br>
-    <a href="/stealaCarCircuit.html">Steal a Car Circuit</a> <br>
-    <a href="/cableWindingMachine.html">Cable Winding Machine</a> <br>
-    <a href="/automatedGuidedVehicleAGV.html">Automated Guided Vehicle (AGV)</a> <br>
-    <a href="/reverseEngineeringofaToy.html">Reverse Engineering of a Toy</a> <br>
-    <a href="/interactiveLockStoryboard.html">Interactive Lock Storyboard</a> <br>
-    <a href="/physicsCar.html">Physics Car</a> <br>
-    <a href="/projectTemplate.html">Project1</a> <br>
-    <a href="/projectTemplate.html">Project1</a> <br>
-    <a href="/projectTemplate.html">Project1</a> <br>
+<div id="projectTitle">
+    Compound Machines Project
+</div>
+<div id="image_grid">
+    <div class="grid-item" id="escapement">
+        <img class="flip" src="escapement.jpeg" alt="escapement"> <!--data-image_list="wowCL.jpeg, nightWrite.jpeg">-->
+    </div>
+    <div id="date"> Date: May 2024</div>
+    <p id="body"> In this project, I collaborated with my team to design and build a creative machine utilizing compound mechanisms. We drew inspiration from traditional timekeeping devices and engineered a Graham escapement mechanism to create a functional timer. While the project faced challenges, such as precision limitations with materials, I designed the escapement system and contributed to troubleshooting issues with energy transfer. This experience deepened my understanding of mechanical advantage and problem-solving under resource constraints​</p>
 </div>
 </body>
 <script>
