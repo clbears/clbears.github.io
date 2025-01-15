@@ -7,25 +7,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!--    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
-    <style> 
-#projectList {
-    grid-column: 2 / span 2;
-    grid-row: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
-    justify-content: flex-start; /* Start from the top */
-    text-align: left;
-    padding: 0; /* Ensure no padding inside the container */
-    margin: 0; /* Remove default margin */
-}
-#preview{
-    grid-column: 4 / span 2;
-    grid-row: 3;
-}
-    </style>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
+    <style>
+    #projectTitle{
+        font-size: 1.2vw;
+        font-weight: 700;
+        text-align: center;
+    }
+    #body{
+        grid-column: 3/ span 2; /* Place in the second column */
+        grid-row: 4 / span 3; /* Span multiple rows */
+        flex-direction: column; /* Stack rows vertically */
+    }    
+    #date{
+        grid-column: 3/ span 2; /* Place in the second column */
+        grid-row: 3 / span 1; /* Span multiple rows */
+        flex-direction: column; /* Stack rows vertically */
+        font-weight: 800;
+    }
+    #escapement{
+        grid-column: 2/ span 4; /* Place in the second column */
+        grid-row: 1 / span 2; /* Span multiple rows */
+    }
+    </style>
 </head>
 <body>
     <div id="bar"> 
@@ -46,31 +51,26 @@
     <a href="mailto:cjlbears@gmail.com" >cjlbears@gmail.com</a>
     
 </div>
-<div id="image_grid">
-    <div class="grid-item" id="preview">
-        <img class="flip" src="physicsCar.jpeg" alt="project preview" data-image_list="physicsCar.jpeg, agv.jpeg, projectPreview/multiTool.jpeg ">
-    </div>
-<div id="projectList">
-    <div style="font-weight: 800;">Projects:</div> 
-    <br>
-    <br>
-    <br>
-    <a href="/compoundMachinesProject.html" data-date="2022-03-1">Compound Machines Project</a> 
-    <a href="/majorityVotesCircuit.html" data-date="2023-10-15">Majority Votes Circuit</a> 
-    <a href="multiToolDesign.html" data-date="2022-04-13">Multi-Tool Design</a> 
-    <a href="/dobCircuit.html" data-date="2024-2-10">DOB Circuit</a> 
-    <a href="/stealaCarCircuit.html" data-date="2021-09-05">Steal a Car Circuit</a> 
-    <a href="/cableWindingMachine.html" data-date="2022-07-15">Cable Winding Machine</a> 
-    <a href="/automatedGuidedVehicleAGV.html" data-date="2024-11-25">Automated Guided Vehicle (AGV)</a> 
-    <a href="/reverseEngineeringofaToy.html" data-date="2021-03-30">Reverse Engineering of a Toy</a> 
-    <a href="/interactiveLockStoryboard.html" data-date="2021-12-3">Interactive Lock Storyboard</a> 
-    <a href="/physicsCar.html" data-date="2024-04-20">Physics Car</a> 
-    <a href="https://live.standards.site/foothill_sfa" data-date="2023-08-15">Student Filmmakers Assocation Graphic Standards</a>
-    <a href="/6yeartorch.html" data-date="2024-12-20">Six Year Torch</a>
-    <a href="/notasi2.html" data-date="2024-11-2">NOTA v. United States </a> 
-    <a href="/notai12.html" data-date="2024-5-22">Foothill's DeMockracy</a> 
-    
+<div id="projectTitle">
+    NOTA v. United States (2024)
 </div>
+<div id="image_grid">
+    <div class="grid-item" id="escapement">
+        <img class="flip" src="/assets/images/projects/NOTA SI2/notasi2-1.jpg" alt="escapement" data-image_list="/assets/images/projects/NOTA SI2/notasi2-1.jpg, /assets/images/projects/NOTA SI2/notasi2-2.jpg, /assets/images/projects/NOTA SI2/notasi2-3.jpg, /assets/images/projects/NOTA SI2/notasi2-4.jpg, /assets/images/projects/NOTA SI2/notasi2-5.jpg, /assets/images/projects/NOTA SI2/notasi2-7.jpg, /assets/images/projects/NOTA SI2/notasi2-8.jpg, /assets/images/projects/NOTA SI2/notasi2-10.jpg">
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="date"> Date: November 2024</div>
+    <p id="body">Wrote an article and created graphics for NOTA Magazine</p>
+    <br>
+    <br>
+    <a id="body" href="https://online.fliphtml5.com/ozhpv/csjn/#p=1">you can view the whole issue here</a>
 </div>
 </body>
 <script>
@@ -118,32 +118,6 @@
             });
         }
     });
-    document.addEventListener("DOMContentLoaded", function () {
-    const projectList = document.getElementById("projectList");
-    const projects = Array.from(projectList.querySelectorAll("a"));
 
-    // Sort projects by `data-date` attribute
-    projects.sort((a, b) => {
-        const dateA = new Date(a.getAttribute("data-date"));
-        const dateB = new Date(b.getAttribute("data-date"));
-        return dateB - dateA; // Ascending order
-    });
-
-    // Clear the current list and append sorted projects
-    projects.forEach(project => {
-        // Extract the date from the `data-date` attribute
-        const projectDate = new Date(project.getAttribute("data-date"));
-        const formattedDate = projectDate.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-        });
-
-        // Add the date next to the project name
-        project.innerHTML += ` <span style="color: gray; font-size: 0.9em;">(${formattedDate})</span>`;
-
-        projectList.appendChild(project);
-    });
-});
 </script>
 </html>
