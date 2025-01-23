@@ -29,12 +29,12 @@
         #wowCL:hover {
             z-index: 11;
         }
-        #spl{
+        #discovery{
             grid-column:  3/ span 4;
             grid-row: 2;
         }
         #airFrance {
-            grid-column: 4 / span 3;
+            grid-column: 3 / span 4;
             grid-row: 1;
         }
         #timeline {
@@ -44,7 +44,7 @@
             top: 0; /* Keeps it at the top of the viewport */
             align-self: start; /* Aligns the content to the top of its grid cell */
             z-index: 2; /* Ensure it stays above other elements if overlapping */
-            color: #727272;
+            color: darkgray;
             padding: 8px; /* Add padding for better spacing */
             display: flex;
             flex-direction: column; /* Stack rows vertically */
@@ -63,6 +63,10 @@
         .timeline-details {
             text-align: left; /* Align details to the left */
             flex-grow: 1; /* Let the details span the remaining space */
+        }
+        .match-timeline {
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Match the text color of the timeline */
         }
         </style>
     </head>
@@ -172,7 +176,7 @@
             <span class="timeline-details">
                 STARTED GRAPHIC DESIGN<br>
                 GOT DL<br>
-                STARTED AT IN-N-OUT
+                <a class="timeline-details match-timeline" href="/assets/images/innout.jpg">STARTED AT IN-N-OUT</a>
             </span>
         </div>
         <div class="timeline-row">
@@ -200,11 +204,13 @@
     <div class="grid-item" id="airFrance">
         <img src="/airFrance.jpeg" alt="Concorde">
     </div>
-    <div class="grid-item" id="spl">
-        <img src="/spl.jpeg" alt="spl">
+    <div class="grid-item" id="discovery">
+        <img src="/assets/images/discovery.jpeg" alt="discovery">
     </div>
 </div>
-
+<footer style="text-align: center; margin-top: 20px;">
+    &copy; 2025 Christopher Lam. Ad Astra per Aspera
+</footer>
 </body>
 <script>
     let date = new Date();
