@@ -20,6 +20,17 @@
     padding: 0; /* Ensure no padding inside the container */
     margin: 0; /* Remove default margin */
 }
+#writings {
+    grid-column: 4 / span 2;
+    grid-row: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align items to the left */
+    justify-content: flex-start; /* Start from the top */
+    text-align: right;
+    padding: 0; /* Ensure no padding inside the container */
+    margin: 0; /* Remove default margin */
+}
 #preview{
     grid-column: 4 / span 2;
     grid-row: 3;
@@ -73,6 +84,14 @@
     <a href="/playfulClock.html" data-date="2023-12-5">Playful Clock</a> 
     <a href="/macroPad.html" data-date="2022-3-3">Macropad</a> 
     
+</div>
+<div id="writings">
+    <div style="font-weight: 800;">Misc. Writings:</div> 
+    <br>
+    <br>
+    <br>
+    <a href="/index.html" data-date="2022-9-1">Test</a> 
+
 </div>
 </div>
 </body>
@@ -144,7 +163,32 @@
 
         // Add the date next to the project name
         project.innerHTML += ` <span style="color: gray; font-size: 0.9em;">(${formattedDate})</span>`;
+        projectList.appendChild(project);
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const projectList = document.getElementById("writings");
+    const projects = Array.from(projectList.querySelectorAll("a"));
 
+    // Sort projects by `data-date` attribute
+    projects.sort((a, b) => {
+        const dateA = new Date(a.getAttribute("data-date"));
+        const dateB = new Date(b.getAttribute("data-date"));
+        return dateB - dateA; // Ascending order
+    });
+
+    // Clear the current list and append sorted projects
+    projects.forEach(project => {
+        // Extract the date from the `data-date` attribute
+        const projectDate = new Date(project.getAttribute("data-date"));
+        const formattedDate = projectDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+        });
+
+        // Add the date next to the project name
+        project.innerHTML += ` <span style="color: gray; font-size: 0.9em;">(${formattedDate})</span>`;
         projectList.appendChild(project);
     });
 });
