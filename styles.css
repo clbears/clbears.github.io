@@ -31,7 +31,8 @@ img::selection {
     row-gap: 2vw;
     max-width: 100%;
     margin: 1vw;
-    margin-right: 1vw;
+    margin-right: 2vw + 9.9px;
+    margin-left: 2vw;
 }
 #letterhead {
     margin-left:1vw;

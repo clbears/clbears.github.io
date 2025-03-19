@@ -11,24 +11,41 @@
     <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
     <style>
     #projectTitle{
-        font-size: 1.2vw;
+        font-size: 40px;
         font-weight: 700;
-        text-align: center;
+        text-align: left;
+        grid-column: 1/ span 2; 
+        grid-row: 1 / span 1;
+        letter-spacing: -1px;
     }
     #body{
-        grid-column: 3/ span 2; /* Place in the second column */
-        grid-row: 4 / span 3; /* Span multiple rows */
+        grid-column: 4/ span 3; /* Place in the second column */
+        grid-row: 1 / span 2; /* Span multiple rows */
         flex-direction: column; /* Stack rows vertically */
     }    
     #date{
-        grid-column: 3/ span 2; /* Place in the second column */
-        grid-row: 3 / span 1; /* Span multiple rows */
+        grid-column: 3/ span 1; /* Place in th  e second column */
+        grid-row: 1 / span 1; /* Span multiple rows */
         flex-direction: column; /* Stack rows vertically */
-        font-weight: 800;
+        font-weight: 600;
+        font-size: 20px;
     }
-    #escapement{
-        grid-column: 2/ span 4; /* Place in the second column */
-        grid-row: 1 / span 2; /* Span multiple rows */
+    #notasi2-1{
+        grid-column: 4/ span 3; /* Place in the second column */
+        grid-row: 2 / span 2; /* Span multiple rows */
+    }
+    #notasi2-2{
+        grid-column: 1/ span 4; /* Place in the second column */
+        grid-row: 4 / span 2; /* Span multiple rows */
+    }
+
+    #notasi2-7{
+        grid-column: 3/ span 4; /* Place in the second column */
+        grid-row: 10 / span 2; /* Span multiple rows */
+    }
+    #notasi2-10{
+        grid-column: 1/ span 3; /* Place in the second column */
+        grid-row: 15 / span 2; /* Span multiple rows */
     }
     </style>
 </head>
@@ -51,26 +68,29 @@
     <a href="mailto:cjlbears@gmail.com" >cjlbears@gmail.com</a>
     
 </div>
-<div id="projectTitle">
-    NOTA v. United States (2024)
-</div>
+<br>
+<br>
+<br>
+<br>
 <div id="image_grid">
-    <div class="grid-item" id="escapement">
-        <img class="flip" src="/assets/images/projects/NOTA SI2/notasi2-1.jpg" alt="escapement" data-image_list="/assets/images/projects/NOTA SI2/notasi2-1.jpg, /assets/images/projects/NOTA SI2/notasi2-2.jpg, /assets/images/projects/NOTA SI2/notasi2-3.jpg, /assets/images/projects/NOTA SI2/notasi2-4.jpg, /assets/images/projects/NOTA SI2/notasi2-5.jpg, /assets/images/projects/NOTA SI2/notasi2-7.jpg, /assets/images/projects/NOTA SI2/notasi2-8.jpg, /assets/images/projects/NOTA SI2/notasi2-10.jpg">
+    <div id="projectTitle">
+        NOTA v. United States (2024)
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <img id="notasi2-1" src="/assets/images/projects/NOTA SI2/notasi2-1.jpg">
+    <div id="notasi2-2" class="grid-item">
+        <img class="flip" src="/assets/images/projects/NOTA SI2/notasi2-2.jpg" data-image_list="/assets/images/projects/NOTA SI2/notasi2-2.jpg, /assets/images/projects/NOTA SI2/notasi2-3.jpg, /assets/images/projects/NOTA SI2/notasi2-4.jpg, /assets/images/projects/NOTA SI2/notasi2-5.jpg">
+    </div>
+    <div id="notasi2-7" class="grid-item">
+        <img class="flip" src="/assets/images/projects/NOTA SI2/notasi2-7.jpg" data-image_list="/assets/images/projects/NOTA SI2/notasi2-7.jpg, /assets/images/projects/NOTA SI2/notasi2-8.jpg">
+    </div>
+    <img id="notasi2-10" src="/assets/images/projects/NOTA SI2/notasi2-10.jpg">
+
     <div id="date"> Date: November 2024</div>
-    <p id="body">Wrote an article and produced graphics for NOTA Magazine</p>
-    <br>
-    <br>
-    <a id="body" href="https://online.fliphtml5.com/ozhpv/csjn/#p=1">you can view the whole issue here</a>
+    <p id="body">Wrote "The spirit of Telegraph Ave." and produced graphics for NOTA Magazine
+        <br>
+        <a id="body" href="https://online.fliphtml5.com/ozhpv/csjn/#p=1">you can view the whole issue here</a>
+    </p>
+   
 </div>
 </body>
 <script>
