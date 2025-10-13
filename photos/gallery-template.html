@@ -1,0 +1,234 @@
+<!--
+    Photo Gallery Template
+    ----------------------
+    1. Copy this file into a new folder inside /photos (e.g. /photos/iceland/index.html).
+    2. Update the gallery object at the bottom with your title, description, basePath, and filenames.
+    3. Add the new gallery to photos.html by duplicating a gallery-card block and editing the link/cover image.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><!-- Updated by script --></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        :root {
+            --gallery-border: 1px solid black;
+            --gallery-gap: clamp(18px, 3vw, 32px);
+        }
+
+        .gallery-shell {
+            padding: clamp(40px, 7vw, 80px) clamp(28px, 6vw, 96px) clamp(72px, 8vw, 120px);
+            display: grid;
+            gap: clamp(24px, 4vw, 48px);
+        }
+
+        .gallery-header {
+            max-width: 38ch;
+            display: grid;
+            gap: clamp(8px, 1.5vw, 18px);
+            text-transform: uppercase;
+            letter-spacing: 0.2vw;
+        }
+
+        .gallery-header h1 {
+            font-size: clamp(22px, 3vw, 36px);
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .gallery-header p {
+            margin: 0;
+            line-height: 1.6;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        .gallery-grid {
+            columns: 1;
+            column-gap: var(--gallery-gap);
+        }
+
+        @media (min-width: 640px) {
+            .gallery-grid {
+                columns: 2;
+            }
+        }
+
+        @media (min-width: 1080px) {
+            .gallery-grid {
+                columns: 3;
+            }
+        }
+
+        .photo-card {
+            display: block;
+            break-inside: avoid;
+            margin: 0 0 var(--gallery-gap);
+            cursor: zoom-in;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 28px 48px rgba(0, 0, 0, 0.14);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border: var(--gallery-border);
+            background: #fff;
+        }
+
+        .photo-caption {
+            margin: clamp(6px, 1vw, 12px) 0 0;
+            font-size: 0.85rem;
+            letter-spacing: 0.12vw;
+            text-transform: uppercase;
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.86);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(24px, 6vw, 80px);
+            z-index: 1000;
+            cursor: zoom-out;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: min(88vw, 1400px);
+            max-height: 82vh;
+            width: auto;
+            height: auto;
+            border: var(--gallery-border);
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="bar">
+        <a href="/photos.html">photos</a>
+        <a href="/projects.html">projects</a>
+        <a href="/resume.html">resume</a>
+    </div>
+    <div id="letterhead">
+        <a style="font-weight: 800" href="/index.html"> Christopher Lam </a>
+        <br>
+        <a href="https://www.google.com/maps/place/San+Francisco,+CA/">San Francisco California</a>
+        <br>
+        <a href="https://www.instagram.com/topher_lam/">@topher_lam</a>
+        <a href="https://youtu.be/tH63sBOTIeQ" id="time"></a>
+        <br>
+        <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
+    </div>
+
+    <main class="gallery-shell">
+        <header class="gallery-header">
+            <h1 id="galleryTitle"></h1>
+            <p id="galleryDescription"></p>
+        </header>
+        <section id="galleryGrid" class="gallery-grid"></section>
+    </main>
+
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="">
+    </div>
+</body>
+<script>
+    // -------------------------------------------------------------------------
+    // Update these values when creating a new gallery.
+    // -------------------------------------------------------------------------
+    const gallery = {
+        title: "Gallery Title",
+        description: "Short description or location note.",
+        basePath: "/photos/example/", // trailing slash required
+        images: [
+            "example1.jpeg",
+            "example2.jpeg"
+            // Add more filenames here
+        ]
+    };
+    // -------------------------------------------------------------------------
+
+    const titleNode = document.getElementById("galleryTitle");
+    const descriptionNode = document.getElementById("galleryDescription");
+    const grid = document.getElementById("galleryGrid");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = lightbox.querySelector("img");
+
+    document.title = `${gallery.title} — Photos`;
+    titleNode.textContent = gallery.title;
+    descriptionNode.textContent = gallery.description;
+
+    const createPhotoCard = (file) => {
+        const figure = document.createElement("figure");
+        figure.className = "photo-card";
+
+        const img = document.createElement("img");
+        img.loading = "lazy";
+        img.src = gallery.basePath + file;
+        img.alt = `${gallery.title} photo`;
+
+        figure.addEventListener("click", () => {
+            lightbox.classList.add("active");
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+        });
+
+        figure.appendChild(img);
+        return figure;
+    };
+
+    gallery.images.forEach((file) => {
+        grid.appendChild(createPhotoCard(file));
+    });
+
+    lightbox.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+        lightboxImg.src = "";
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && lightbox.classList.contains("active")) {
+            lightbox.click();
+        }
+    });
+
+    const timeNode = document.getElementById("time");
+    let updateTimer = true;
+    const updateTime = () => {
+        const date = new Date();
+        const time = date.toLocaleTimeString("en-US", { timeZone: "America/Los_Angeles" });
+        timeNode.textContent = time.split(" ")[0] + "." + date.getMilliseconds().toString().slice(0, 2);
+    };
+    updateTime();
+    setInterval(() => {
+        if (updateTimer) updateTime();
+    }, 1);
+
+    const pauseTimer = () => {
+        updateTimer = false;
+        setTimeout(() => (updateTimer = true), 1500);
+    };
+
+    setTimeout(() => {
+        pauseTimer();
+        setInterval(pauseTimer, 60000);
+    }, 60000);
+</script>
+</html>

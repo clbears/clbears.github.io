@@ -1,0 +1,167 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majority Votes Circuit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
+    <style>
+        #projectTitle{
+            font-size: 1.2vw;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.4vw;
+            margin-top: 3vw;
+        }
+        #projectGrid{
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5vw;
+            row-gap: 2vw;
+            margin: 2vw;
+            margin-top: 0;
+        }
+        #projectLabel{
+            grid-column: 1 / span 2;
+            grid-row: 1;
+            border: 1px solid black;
+            padding: 1.2vw;
+            text-transform: uppercase;
+            letter-spacing: 0.18vw;
+        }
+        #projectLabel span{
+            display: block;
+            margin-top: 0.6vw;
+            font-weight: 600;
+            letter-spacing: 0.05vw;
+        }
+        #projectSummary{
+            grid-column: 1 / span 2;
+            grid-row: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 1vw;
+            max-width: 32ch;
+        }
+        #projectSummary p{
+            text-align: left;
+        }
+        #projectHero{
+            grid-column: 3 / span 4;
+            grid-row: 1 / span 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #projectHero img{
+            width: 100%;
+            height: auto;
+            border: 1.5px solid black;
+        }
+        @media (max-width: 900px){
+            #projectTitle{
+                font-size: 3vw;
+                letter-spacing: 1vw;
+            }
+            #projectGrid{
+                grid-template-columns: 1fr;
+                margin: 2vw 6vw 6vw;
+            }
+            #projectLabel{
+                grid-column: 1;
+            }
+            #projectSummary{
+                grid-column: 1;
+                max-width: none;
+            }
+            #projectHero{
+                grid-column: 1;
+                grid-row: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="bar"> 
+        <a href="/photos.html">photos</a> 
+        <a href="/projects.html">projects</a> 
+        <a href="/resume.html">resume</a> 
+    </div>
+    <!--letter_head-->
+    <div id="letterhead"> 
+        <a style="font-weight: 800" href="/index.html"> Christopher Lam </a>
+        <br>
+        <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">San Francisco California</a>
+        <br>
+        <a href="https://www.instagram.com/topher_lam/">@topher_lam</a>
+        <a href="https://youtu.be/tH63sBOTIeQ" id="time"></a>
+        <br>
+        <a href="mailto:cjlbears@gmail.com" >cjlbears@gmail.com</a>
+    </div>
+    <div id="projectTitle">
+        Majority Votes Circuit
+    </div>
+    <div id="projectGrid">
+        <div id="projectLabel">
+            <div>Majority Votes Circuit</div>
+            <span>Date: October 2023</span>
+        </div>
+        <div id="projectSummary">
+            <p>For this project, I helped design and build a logical circuit that determined majority votes using a truth table and digital gates. Collaborating with my partner, we simplified the circuit through K-mapping and implemented the final design using physical components like AND/OR gates and an LED indicator.</p>
+            <p>This project enhanced my skills in digital electronics and teamwork.</p>
+        </div>
+        <div id="projectHero">
+            <img src="/majorityVote.jpeg" alt="Majority vote circuit assembled on breadboard">
+        </div>
+    </div>
+</body>
+<script>
+    let date = new Date();
+    let time = date.toLocaleTimeString("en-US", {
+        timeZone: "America/Los_Angeles",
+    });
+    document.getElementById("time").innerHTML = time;
+    let updateTimer = true
+    setInterval(function(){
+        if(!updateTimer){
+           return;
+        }
+        date = new Date();
+        let time = date.toLocaleTimeString("en-US", {
+            timeZone: "America/Los_Angeles",
+        });
+        document.getElementById("time").innerHTML = time.split(" ")[0] +"."+ date.getMilliseconds().toString().slice(0,2);
+    }, 1);
+
+    function pauseTimer() {
+        updateTimer = false;
+        setTimeout(function () {
+            updateTimer = true;
+        }, 1500);
+    }
+
+    setTimeout(function() {
+        pauseTimer()
+        setInterval(function () {
+            pauseTimer();
+        }, 60000);
+    }, 60000 - date.getSeconds() * 1000 - date.getMilliseconds() - 1500);
+
+    document.addEventListener("DOMContentLoaded", function() {
+        let images = document.getElementsByClassName("flip");
+        for (let i = 0; i < images.length; i++) {
+            images[i].addEventListener("mousedown", function() {
+                let image_list = this.getAttribute("data-image_list").split(", ");
+                let current_image = this.getAttribute("src");
+                let next_image = image_list[(image_list.indexOf(current_image) + 1) % image_list.length];
+                this.setAttribute("src", next_image);
+            });
+        }
+    });
+</script>
+</html>

@@ -9,52 +9,62 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
    <style>
-        #japan{
-            grid-column: 3 / 5;
-            grid-row: 1 / 2;
+        :root {
+            --gallery-gap: 2vw;
+            --gallery-border: 1px solid black;
         }
-        #japan1p {
-            grid-column: 5 / 6;
-            grid-row: 1 / 2;
+        #galleryGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: var(--gallery-gap);
+            margin: 2vw;
+            margin-top: 0;
         }
-        #japan1p:hover {
-            z-index: 11;
+        .gallery-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75vw;
+            border: var(--gallery-border);
+            padding: 1.25vw;
+            background: #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        #japan2p {
-            grid-column: 2 / 3;
-            grid-row: 1 / 2;
+        .gallery-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
         }
-        #japan2p:hover {
-            z-index: 11;
+        .gallery-cover {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border: var(--gallery-border);
         }
-        #newYork{
-            grid-column: 2 / 3;
-            grid-row: 2 / 3;
+        .gallery-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25vw;
         }
-        #newYork1p{
-            grid-column: 3 / 6;
-            grid-row: 2 / 3;
+        .gallery-title {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2vw;
         }
-        #newYork1p:hover {
-            z-index: 11;
+        .gallery-description {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
-        #dC{
-            grid-column: 3 / 5;
-            grid-row: 3 / 4;
-        }
-        #dC7{
-            grid-column: 2 / 3;
-            grid-row: 3 / 4;
-        }
-        #dC13{
-            grid-column: 5 / 6;
-            grid-row: 3 / 4;
-        }
-        #dC7:hover {
-            z-index: 11;
-        }
-        #dC13:hover {
-            z-index: 11;
+        @media (max-width: 720px) {
+            #galleryGrid {
+                gap: 4vw;
+                margin: 4vw;
+            }
+            .gallery-card {
+                padding: 3vw;
+            }
+            .gallery-title {
+                letter-spacing: 0.4vw;
+            }
         }
     </style>
     <link rel="stylesheet" href="styles.css">
@@ -81,42 +91,37 @@
 <br>
 <br>
 <br>
-<div id="image_grid">
-    <!--Japan-->
-    <div id="japan" class="text-container">
-        <a href="/photos/japan/japan.html" style="font-weight: 800;">Japan</a>
-        <br>
-        <p>Photos from my trip to Japan</p>
-    </div>
-    <div class="grid-item" id="japan1p">
-        <img src="/photos/japan/japan1p.jpeg" alt="japan1p">
-    </div>
-    <div class="grid-item" id="japan2p">
-        <img src="/photos/japan/japan2p.jpeg" alt="japan2p">
-    </div>
-    <!--New York-->
-    <div id="newYork" class="text-container">
-        <a href="/photos/japan/newYork.html" style="font-weight: 800;">New York</a>
-        <br>
-        <p>Photos from my trip to New York</p>
-    </div>
-    <div class="grid-item" id="newYork1p">
-        <img src="photos/newYork/newYork1p.jpeg" alt="newYork1p">
+<div id="galleryGrid">
+    <!-- Duplicate a gallery-card block to add a new gallery -->
+    <div class="gallery-card">
+        <a href="/photos/japan/">
+            <img class="gallery-cover" src="/photos/japan/japan1p.jpeg" alt="Japan street scene at dusk">
+        </a>
+        <div class="gallery-meta">
+            <a class="gallery-title" href="/photos/japan/">Japan</a>
+            <p class="gallery-description">Photos from my trip to Japan.</p>
+        </div>
     </div>
 
-     <!--Washington D.C.-->
-     <div id="dC" class="text-container">
-        <a href="/photos/dC/dC.html" style="font-weight: 800;">Washington D.C.</a>
-        <br>
-        <p>Photos from my trip to Washington D.C.</p>
+    <div class="gallery-card">
+        <a href="/photos/newYork/">
+            <img class="gallery-cover" src="/photos/newYork/newYork1p.jpeg" alt="New York skyline at sunset">
+        </a>
+        <div class="gallery-meta">
+            <a class="gallery-title" href="/photos/newYork/">New York</a>
+            <p class="gallery-description">Photos from my trip to New York.</p>
+        </div>
     </div>
-    <div class="grid-item" id="dC13">
-        <img src="photos/dC/dC13.jpeg" alt="dC13">
+
+    <div class="gallery-card">
+        <a href="/photos/dC/">
+            <img class="gallery-cover" src="/photos/dC/dC13.jpeg" alt="Washington D.C. monument at night">
+        </a>
+        <div class="gallery-meta">
+            <a class="gallery-title" href="/photos/dC/">Washington D.C.</a>
+            <p class="gallery-description">Photos from my trip to Washington D.C.</p>
+        </div>
     </div>
-    <div class="grid-item" id="dC7">
-        <img src="/photos/dC/dC7.jpeg" alt="dC7">
-    </div>
-    <!-- Other grid items -->
 </div>
 </body>
 <script>
@@ -150,20 +155,6 @@
             pauseTimer();
         }, 60000);
     }, 60000 - date.getSeconds() * 1000 - date.getMilliseconds() - 1500);
-
-    document.addEventListener("DOMContentLoaded", function() {
-        let images = document.getElementsByClassName("flip");
-        console.log(images);
-        for (let i = 0; i < images.length; i++) {
-
-            images[i].addEventListener("mousedown", function() {
-                let image_list = this.getAttribute("data-image_list").split(", ");
-                let current_image = this.getAttribute("src");
-                let next_image = image_list[(image_list.indexOf(current_image) + 1) % image_list.length];
-                this.setAttribute("src", next_image);
-            });
-        }
-    });
 
 </script>
 </html>
