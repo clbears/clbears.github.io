@@ -361,122 +361,60 @@ footer {
    =================================== */
 @media (max-width: 768px) {
     :root {
-        --font-size-base: 3vw;
+        --font-size-base: 14px;
         --spacing-xl: 4vw;
     }
 
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        padding: 12vh 0;
-    }
-
-    /* Hide navigation bar on mobile */
     #bar {
-        display: none;
+        margin-left: var(--spacing-lg);
+        right: var(--spacing-lg);
     }
 
-    /* Simplify letterhead for mobile */
-    #letterhead {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        max-width: 66.66%;
-        margin: 0 auto;
+    #image_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    #timeline {
+        grid-column: 1 / -1;
+        grid-row: 1;
         position: static;
+        margin-left: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
     }
 
-    #letterhead a {
-        line-height: 1.8;
+    #wowCL {
+        grid-column: 1 / -1;
+        grid-row: auto;
     }
 
-    #letterhead br {
-        display: none;
+    #airFrance {
+        grid-column: 1 / -1;
+        grid-row: auto;
     }
 
-    #time {
-        display: none;
-    }
-
-    /* Hide all images on mobile index page */
-    body #image_grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        max-width: 66.66%;
-        margin: 2em auto;
-        gap: 1em;
-    }
-
-    /* Hide images and timeline on mobile home page */
-    #timeline,
-    #wowCL,
-    #airFrance,
     #discovery {
-        display: none !important;
+        grid-column: 1 / -1;
+        grid-row: auto;
     }
 
-    /* Show mobile navigation */
-    #mobile-nav {
-        display: block !important;
-        text-align: center;
-        margin: 2em 0;
-    }
-
-    #mobile-nav a {
-        font-size: 1em;
-        line-height: 2;
-    }
-
-    /* Show simple content on mobile */
-    #image_grid::before {
-        content: "Hi, I'm Christopher. I am an Eagle Scout, Maker, and I know a lot about random things.\A\AI am currently a student at the University of British Columbia in the Faculty of Applied Science.";
-        white-space: pre-wrap;
-        text-align: justify;
-        margin: 2em 0;
-        line-height: 1.6;
-        display: block;
-    }
-
-    #image_grid::after {
-        content: "For the full experience, view my site on desktop.";
-        margin-top: 2em;
-        color: #555;
-        font-size: 0.9em;
-        display: block;
-    }
-
-    /* Simplify projects page on mobile */
     #projectList {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-    }
-
-    #projectList a {
-        display: block;
-        margin: 0.5em 0;
+        grid-column: 1 / -1;
+        grid-row: auto;
     }
 
     #writings {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        grid-column: 1 / -1;
+        grid-row: auto;
+        align-items: flex-start;
+        text-align: left;
     }
 
     #preview {
-        display: none;
+        grid-column: 1 / -1;
+        grid-row: auto;
     }
 
-    /* Gallery on mobile */
     #galleryGrid {
         gap: var(--spacing-lg);
         margin: var(--spacing-lg);
@@ -488,13 +426,6 @@ footer {
 
     .gallery-title {
         letter-spacing: 0.4vw;
-    }
-
-    /* Footer */
-    footer {
-        text-align: center;
-        font-size: 0.8em;
-        margin-top: 2em;
     }
 }
 
