@@ -19,12 +19,12 @@
     row-gap: 2vw;
     margin: 2vw;
     margin-top: 0;
-    grid-auto-flow: dense;
 }
 
-/* Simple Project Layout (backward compatible) */
+/* Desktop Layout - Left column stacks, right column spans */
 #projectLabel {
     grid-column: 1 / span 2;
+    grid-row: 1;
     border: 1px solid black;
     padding: 1.2vw;
     text-transform: uppercase;
@@ -40,6 +40,7 @@
 
 #projectSummary {
     grid-column: 1 / span 2;
+    grid-row: 2;
     display: flex;
     flex-direction: column;
     gap: 1vw;
@@ -50,8 +51,17 @@
     line-height: 1.6;
 }
 
+#projectNotes {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
 #projectHero {
     grid-column: 3 / span 4;
+    grid-row: 1 / span 3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,14 +71,6 @@
     width: 100%;
     height: auto;
     border: 1.5px solid black;
-}
-
-/* Detailed Project Layout - Additional Sections */
-#projectNotes {
-    grid-column: 1 / span 2;
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
 }
 
 .note-block {
