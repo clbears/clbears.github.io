@@ -274,7 +274,6 @@ a:focus {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--grid-gap);
     margin: var(--spacing-md);
-    margin-top: 0;
 }
 
 .gallery-card {
