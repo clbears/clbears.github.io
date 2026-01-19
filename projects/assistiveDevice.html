@@ -3,204 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assistive Toothpaste Device</title>
+    <meta name="description" content="Assistive Toothpaste Device project by Christopher Lam">
+    <title>Assistive Toothpaste Device - Christopher Lam</title>
+
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
     <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
-    <style>
-        body {
-            font-family: "IBM Plex Mono", monospace;
-        }
 
-        #projectTitle {
-            font-size: 1.2vw;
-            font-weight: 700;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 0.4vw;
-            margin-top: 3vw;
-        }
-
-        #image_grid {
-            margin: 2vw;
-            margin-top: 0;
-            row-gap: 2vw;
-        }
-
-        #projectLabel {
-            grid-column: 1 / span 3;
-            grid-row: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8vw;
-            border: 1px solid black;
-            padding: 1.2vw;
-            text-transform: uppercase;
-            letter-spacing: 0.18vw;
-        }
-
-        #projectLabel span {
-            font-weight: 600;
-        }
-
-        #projectSummary {
-            grid-column: 1 / span 3;
-            grid-row: 2 / span 2;
-            border-right: 1px solid black;
-            padding-right: 1.5vw;
-            display: flex;
-            flex-direction: column;
-            gap: 1vw;
-        }
-
-        #projectNotes {
-            grid-column: 1 / span 3;
-            grid-row: 4 / span 2;
-            border-right: 1px solid black;
-            padding-right: 1.5vw;
-            display: flex;
-            flex-direction: column;
-            gap: 1vw;
-        }
-
-        #projectHero {
-            grid-column: 4 / span 3;
-            grid-row: 1 / span 5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 30vw;
-            border: 1.5px solid black;
-        }
-
-        #projectHero img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .note-block {
-            border-top: 1px solid black;
-            padding-top: 0.8vw;
-            text-transform: uppercase;
-            letter-spacing: 0.2vw;
-        }
-
-        #projectGallery {
-            grid-column: 1 / span 6;
-            grid-row: 6;
-            display: grid;
-            gap: 1.5vw;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            border-top: 1px solid black;
-            padding-top: 1.5vw;
-        }
-
-        .gallery-card {
-            border: 1px solid black;
-            padding: 1vw;
-            display: flex;
-            flex-direction: column;
-            gap: 0.8vw;
-            text-transform: uppercase;
-            letter-spacing: 0.15vw;
-        }
-
-        .gallery-card img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border: 1px dashed black;
-        }
-
-        .gallery-card span {
-            font-weight: 500;
-        }
-
-        @media (max-width: 900px){
-            #projectTitle {
-                font-size: 3.5vw;
-                letter-spacing: 1vw;
-            }
-
-            #projectLabel {
-                grid-column: 1 / span 6;
-                grid-row: 1;
-            }
-
-            #projectSummary {
-                grid-column: 1 / span 6;
-                grid-row: 2;
-                border-right: none;
-                border-top: 1px solid black;
-                padding-right: 0;
-                padding-top: 1.2vw;
-            }
-
-            #projectNotes {
-                grid-column: 1 / span 6;
-                grid-row: 3;
-                border-right: none;
-                border-top: 1px solid black;
-                padding-right: 0;
-                padding-top: 1.2vw;
-            }
-
-            #projectHero {
-                grid-column: 1 / span 6;
-                grid-row: 4 / span 3;
-            }
-
-            #projectGallery {
-                grid-row: 7;
-            }
-        }
-    </style>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/project-details.css">
 </head>
 <body>
-    <!-- Duplicate this file, rename it, and keep the structure below.
-         Replace placeholder text between the markers and uncomment optional sections when needed. -->
-    <div id="bar">
+    <!-- Navigation Bar -->
+    <nav id="bar" role="navigation" aria-label="Main navigation">
         <a href="/photos.html">photos</a>
         <a href="/projects.html">projects</a>
         <a href="/resume.html">resume</a>
-    </div>
+    </nav>
 
-    <div id="letterhead">
-        <a style="font-weight: 800" href="/index.html">Christopher Lam</a>
+    <!-- Header/Letterhead -->
+    <header id="letterhead">
+        <a style="font-weight: 800" href="/index.html" aria-label="Home"> Christopher Lam </a>
         <br>
-        <a href="https://www.google.com/maps/place/San+Francisco,+CA/">San Francisco California</a>
+        <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+           target="_blank"
+           rel="noopener noreferrer">San Francisco California</a>
         <br>
-        <a href="https://www.instagram.com/topher_lam/">@topher_lam</a>
-        <a href="https://youtu.be/tH63sBOTIeQ" id="time"></a>
+        <a href="https://www.instagram.com/topher_lam/"
+           target="_blank"
+           rel="noopener noreferrer">@topher_lam</a>
+        <a href="https://youtu.be/tH63sBOTIeQ"
+           id="time"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Current time"></a>
         <br>
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
+    </header>
+
+    <!-- Project Title -->
+    <div id="projectTitle">
+        Assistive Toothpaste Device
     </div>
 
-    <div id="projectTitle">Assistive Toothpaste Device</div>
-
-    <div id="image_grid">
+    <!-- Main Content -->
+    <main id="projectGrid">
         <div class="grid-item" id="projectHero">
-            <!-- Replace src/alt with hero asset -->
             <img src="/assets/images/projects/assistiveDevice/hero.jpeg" alt="Assistive device for toothpaste">
-            <!--
-            Alternative layout example:
-            <video controls poster="/path/to/poster.jpg">
-                <source src="/path/to/video.mp4" type="video/mp4">
-            </video>
-            -->
         </div>
-
         <div class="grid-item" id="projectLabel">
             <div>Assistive Device</div>
             <span>Year: 2025</span>
             <span>Medium: CAD renders</span>
             <span>Role: Product Designer</span>
-            <!-- <span>Team: Collaborators </span> -->
         </div>
-
         <div class="grid-item" id="projectSummary">
             <p>
                 I developed this concept in APSC 100 for a client with limited range of motion. Brushing teeth is a daily ritual, yet fine motor control is required to uncap and squeeze toothpaste. The device had to let someone with reduced grip strength independently prepare their toothbrush.
@@ -208,14 +71,7 @@
             <p>
                 A top aperture nests around the toothpaste cap for leverage, while the sliding wedge and lever channel pressure evenly through the tube so paste dispenses cleanly onto the bristles. The form factor stays stable on a countertop, restoring a routine that supports dignity and autonomy.
             </p>
-            <!--
-            <ul>
-                <li>Key Insight One</li>
-                <li>Key Insight Two</li>
-            </ul>
-            -->
         </div>
-
         <div class="grid-item" id="projectNotes">
             <div class="note-block">
                 What are all of the ways to remove toothpaste from a tube?
@@ -223,13 +79,7 @@
             <div class="note-block">
                 How can I adjust the form to fit a compact vanity footprint?
             </div>
-            <!--
-            <div class="note-block">
-                Add more note blocks as needed by duplicating the div above.
-            </div>
-            -->
         </div>
-
         <div class="grid-item" id="projectGallery">
             <div class="gallery-card">
                 <img src="/assets/images/projects/assistiveDevice/sideMotion.jpeg" alt="Render showing motion from the side">
@@ -243,58 +93,10 @@
                 <img src="/assets/images/projects/assistiveDevice/fullMotion.jpeg" alt="Full motion from an angle">
                 <span>Full view of operation</span>
             </div>
-            <!--
-            <div class="gallery-card">
-                <img class="flip" src="/path/to/image1.jpg" alt="Cycle through variants" data-image_list="/path/to/image1.jpg, /path/to/image2.jpg">
-                <span>Caption for flip gallery card.</span>
-            </div>
-            -->
         </div>
-    </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
 </body>
-<script>
-    let date = new Date();
-    let time = date.toLocaleTimeString("en-US", {
-        timeZone: "America/Los_Angeles",
-    });
-    document.getElementById("time").innerHTML = time;
-    let updateTimer = true;
-
-    setInterval(function() {
-        if (!updateTimer) {
-            return;
-        }
-        date = new Date();
-        let time = date.toLocaleTimeString("en-US", {
-            timeZone: "America/Los_Angeles",
-        });
-        document.getElementById("time").innerHTML = time.split(" ")[0] + "." + date.getMilliseconds().toString().slice(0, 2);
-    }, 1);
-
-    function pauseTimer() {
-        updateTimer = false;
-        setTimeout(function () {
-            updateTimer = true;
-        }, 1500);
-    }
-
-    setTimeout(function() {
-        pauseTimer();
-        setInterval(function () {
-            pauseTimer();
-        }, 60000);
-    }, 60000 - date.getSeconds() * 1000 - date.getMilliseconds() - 1500);
-
-    document.addEventListener("DOMContentLoaded", function() {
-        let images = document.getElementsByClassName("flip");
-        for (let i = 0; i < images.length; i++) {
-            images[i].addEventListener("mousedown", function() {
-                let image_list = this.getAttribute("data-image_list").split(", ");
-                let current_image = this.getAttribute("src");
-                let next_image = image_list[(image_list.indexOf(current_image) + 1) % image_list.length];
-                this.setAttribute("src", next_image);
-            });
-        }
-    });
-</script>
 </html>

@@ -1,0 +1,91 @@
+/* ===================================
+   Project Detail Pages Shared Styles
+   =================================== */
+
+#projectTitle {
+    font-size: 1.2vw;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.4vw;
+    margin-top: 3vw;
+}
+
+#projectGrid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5vw;
+    row-gap: 2vw;
+    margin: 2vw;
+    margin-top: 0;
+}
+
+#projectLabel {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    border: 1px solid black;
+    padding: 1.2vw;
+    text-transform: uppercase;
+    letter-spacing: 0.18vw;
+}
+
+#projectLabel span {
+    display: block;
+    margin-top: 0.6vw;
+    font-weight: 600;
+    letter-spacing: 0.05vw;
+}
+
+#projectSummary {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    max-width: 32ch;
+}
+
+#projectSummary p {
+    text-align: left;
+}
+
+#projectHero {
+    grid-column: 3 / span 4;
+    grid-row: 1 / span 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#projectHero img {
+    width: 100%;
+    height: auto;
+    border: 1.5px solid black;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    #projectTitle {
+        font-size: 3vw;
+        letter-spacing: 1vw;
+    }
+
+    #projectGrid {
+        grid-template-columns: 1fr;
+        margin: 2vw 6vw 6vw;
+    }
+
+    #projectLabel {
+        grid-column: 1;
+    }
+
+    #projectSummary {
+        grid-column: 1;
+        max-width: none;
+    }
+
+    #projectHero {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}

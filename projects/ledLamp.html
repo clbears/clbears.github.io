@@ -1,261 +1,109 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lamp Project</title>
+    <meta name="description" content="LED Lamp project by Christopher Lam">
+    <title>Lamp Project - Christopher Lam</title>
+
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!--    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">-->
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
     <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
-    <style>
-    #projectTitle{
-        font-size: 1.2vw;
-        font-weight: 700;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 0.4vw;
-        margin-top: 3vw;
-    }
-    #projectLabel{
-        grid-column: 1 / span 3;
-        grid-row: 1;
-        border: 1px solid black;
-        padding: 1.2vw;
-        display: flex;
-        flex-direction: column;
-        gap: 0.8vw;
-        text-transform: uppercase;
-        letter-spacing: 0.18vw;
-    }
-    #projectLabel span{
-        font-weight: 800;
-        letter-spacing: 0.1vw;
-    }
-    #projectSummary{
-        grid-column: 1 / span 3;
-        grid-row: 2 / span 2;
-        display: flex;
-        flex-direction: column;
-        gap: 1.2vw;
-        border-right: 1px solid black;
-        padding-right: 1.5vw;
-    }
-    #projectSummary p{
-        text-align: left;
-    }
-    #projectNotes{
-        grid-column: 1 / span 3;
-        grid-row: 4 / span 2;
-        border-right: 1px solid black;
-        padding-right: 1.5vw;
-        display: flex;
-        flex-direction: column;
-        gap: 1vw;
-    }
-    #projectHero{
-        grid-column: 4 / span 3;
-        grid-row: 1 / span 5;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    #projectHero .photo-placeholder{
-        width: 100%;
-        aspect-ratio: 4 / 5;
-        border: 1.5px solid black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-transform: uppercase;
-        letter-spacing: 0.3vw;
-    }
-    .note-block{
-        border-top: 1px solid black;
-        padding-top: 0.8vw;
-        text-transform: uppercase;
-        letter-spacing: 0.2vw;
-    }
-    #projectGallery{
-        grid-column: 1 / span 6;
-        grid-row: 6;
-        display: grid;
-        gap: 1.5vw;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        margin-top: 1vw;
-    }
-    .gallery-card{
-        border: 1px solid black;
-        padding: 1.2vw;
-        display: flex;
-        flex-direction: column;
-        gap: 0.8vw;
-        text-transform: uppercase;
-        letter-spacing: 0.2vw;
-    }
-    .gallery-card .photo-placeholder{
-        width: 100%;
-        aspect-ratio: 3 / 4;
-        border: 1px dashed black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        letter-spacing: 0.25vw;
-    }
-    .gallery-card span{
-        font-weight: 600;
-    }
-    @media (max-width: 900px){
-        #projectTitle{
-            font-size: 3vw;
-            letter-spacing: 1vw;
-        }
-        #projectLabel{
-            grid-column: 1 / span 6;
-            grid-row: 1;
-        }
-        #projectSummary{
-            grid-column: 1 / span 6;
-            grid-row: 2;
-            border-right: none;
-            border-top: 1px solid black;
-            padding-right: 0;
-            padding-top: 1.2vw;
-        }
-        #projectNotes{
-            grid-column: 1 / span 6;
-            grid-row: 3;
-            border-right: none;
-            border-top: 1px solid black;
-            padding-right: 0;
-            padding-top: 1.2vw;
-        }
-        #projectHero{
-            grid-column: 1 / span 6;
-            grid-row: 4 / span 3;
-        }
-        #projectGallery{
-            grid-row: 7;
-        }
-    }
-    </style>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/project-details.css">
 </head>
 <body>
-    <div id="bar"> 
-        <a href="/photos.html">photos</a> 
-        <a href="/projects.html">projects</a> 
-        <a href="/resume.html">resume</a> 
+    <!-- Navigation Bar -->
+    <nav id="bar" role="navigation" aria-label="Main navigation">
+        <a href="/photos.html">photos</a>
+        <a href="/projects.html">projects</a>
+        <a href="/resume.html">resume</a>
+    </nav>
+
+    <!-- Header/Letterhead -->
+    <header id="letterhead">
+        <a style="font-weight: 800" href="/index.html" aria-label="Home"> Christopher Lam </a>
+        <br>
+        <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+           target="_blank"
+           rel="noopener noreferrer">San Francisco California</a>
+        <br>
+        <a href="https://www.instagram.com/topher_lam/"
+           target="_blank"
+           rel="noopener noreferrer">@topher_lam</a>
+        <a href="https://youtu.be/tH63sBOTIeQ"
+           id="time"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Current time"></a>
+        <br>
+        <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
+    </header>
+
+    <!-- Project Title -->
+    <div id="projectTitle">
+        Lamp Project
     </div>
-    <!--letter_head-->
-<div id="letterhead"> 
-    
-    <a style="font-weight: 800" href="/index.html"> Christopher Lam </a>
-    <br>
-    <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">San Francisco California</a>
-    <br>
-    <a href="https://www.instagram.com/topher_lam/">@topher_lam</a>
-    <a href="https://youtu.be/tH63sBOTIeQ" id="time"></a>
-    <br>
-    <a href="mailto:cjlbears@gmail.com" >cjlbears@gmail.com</a>
-    
-</div>
-<div id="projectTitle">
-    Lamp Project
-</div>
-<div id="image_grid">
-    <div class="grid-item" id="projectHero">
+
+    <!-- Main Content -->
+    <main id="projectGrid">
+        <div class="grid-item" id="projectHero">
             <img src="/assets/images/projects/lamp/lampHero.jpeg" alt="Warm light spilling across a desk">
-    </div>
-    <div class="grid-item" id="projectLabel">
-        <div>Lamp Project</div>
-        <span>Year: 2025</span>
-        <span>Medium: Aluminim rods, PETG, Parachord, warm LED assembly</span>
-        <span>Role: Designer / Fabricator</span>
-    </div>
-    <div class="grid-item" id="projectSummary">
-        <p>
-            This lamp explores mechanical clarity and movement. Constructed from aluminum rods, PETG joints, and paracord, it takes formal and structural cues from Artemide’s Tolomeo and Tizio designs. While the overall form aligns with the Tizio, the tension and pivot system reference the Tolomeo. The design offers a wider range of motion through simplified joints and reduced weight. All components remain exposed to emphasize legibility, repairability, and function.
-        </p>
-        <p>
-            The project began as a replacement for a broken desk lamp. Early research focused on LED dies and driver configurations capable of producing soft, continuous light. The initial plan for a reactive brightness system was abandoned due to cost and control limitations. The final version employs an acceleration-based rotary control that enables smooth, analog light adjustment without PWM flicker. The use of an analog LED driver allows gradual fades that resemble natural light. The structure, inspired by Tolomeo but unintentionally approaching the flexibility of Tizio, results in a lighter and more adaptable mechanism than either reference.
-        </p>
-    </div>
-    <div class="grid-item" id="projectNotes">
-        <div class="note-block">
-            How can I make the most human Lamp?
         </div>
-        <div class="note-block">
-            How does time affect how we experiance objects?
+        <div class="grid-item" id="projectLabel">
+            <div>Lamp Project</div>
+            <span>Year: 2025</span>
+            <span>Medium: Aluminim rods, PETG, Parachord, warm LED assembly</span>
+            <span>Role: Designer / Fabricator</span>
         </div>
-        <div class="note-block">
-            Got to learn more about how to design for humans. How to make a functional product that just works
+        <div class="grid-item" id="projectSummary">
+            <p>
+                This lamp explores mechanical clarity and movement. Constructed from aluminum rods, PETG joints, and paracord, it takes formal and structural cues from Artemide's Tolomeo and Tizio designs. While the overall form aligns with the Tizio, the tension and pivot system reference the Tolomeo. The design offers a wider range of motion through simplified joints and reduced weight. All components remain exposed to emphasize legibility, repairability, and function.
+            </p>
+            <p>
+                The project began as a replacement for a broken desk lamp. Early research focused on LED dies and driver configurations capable of producing soft, continuous light. The initial plan for a reactive brightness system was abandoned due to cost and control limitations. The final version employs an acceleration-based rotary control that enables smooth, analog light adjustment without PWM flicker. The use of an analog LED driver allows gradual fades that resemble natural light. The structure, inspired by Tolomeo but unintentionally approaching the flexibility of Tizio, results in a lighter and more adaptable mechanism than either reference.
+            </p>
         </div>
-    </div>
-    <div class="grid-item" id="projectGallery">
-        <div class="gallery-card">
-            <img src="/assets/images/projects/lamp/lampDark.jpg" alt="close up">
-            <span>Lamp in Context.</span>
+        <div class="grid-item" id="projectNotes">
+            <div class="note-block">
+                How can I make the most human Lamp?
+            </div>
+            <div class="note-block">
+                How does time affect how we experiance objects?
+            </div>
+            <div class="note-block">
+                Got to learn more about how to design for humans. How to make a functional product that just works
+            </div>
         </div>
-        <div class="gallery-card">
-            <img class="flip" src="/assets/images/projects/lamp/lampNorth.jpg" alt="sketches" data-image_list="/assets/images/projects/lamp/lampNorth.jpg, /assets/images/projects/lamp/lampSouth.jpg, /assets/images/projects/lamp/lampEast.jpg">
-            <span>Detail Study — hardware, joinery, or lighting texture.</span>
+        <div class="grid-item" id="projectGallery">
+            <div class="gallery-card">
+                <img src="/assets/images/projects/lamp/lampDark.jpg" alt="close up">
+                <span>Lamp in Context.</span>
+            </div>
+            <div class="gallery-card">
+                <img class="flip" src="/assets/images/projects/lamp/lampNorth.jpg" alt="sketches" data-image_list="/assets/images/projects/lamp/lampNorth.jpg, /assets/images/projects/lamp/lampSouth.jpg, /assets/images/projects/lamp/lampEast.jpg">
+                <span>Detail Study — hardware, joinery, or lighting texture.</span>
+            </div>
+            <div class="gallery-card">
+                <img class="flip" src="/assets/images/projects/lamp/lampSketch1.jpeg" alt="sketches" data-image_list="/assets/images/projects/lamp/lampSketch1.jpeg, /assets/images/projects/lamp/lampSketch2.jpeg, /assets/images/projects/lamp/lampSketch3.jpeg">
+                <span>Brainstorming Arm — Sketches.</span>
+            </div>
+            <div class="gallery-card">
+                <img src="/assets/images/projects/lamp/aurea.jpeg" alt="Aurea on Display">
+                <span>Physical Prototype — Reactive LED assembly</span>
+            </div>
         </div>
-        <div class="gallery-card">
-            <img class="flip" src="/assets/images/projects/lamp/lampSketch1.jpeg" alt="sketches" data-image_list="/assets/images/projects/lamp/lampSketch1.jpeg, /assets/images/projects/lamp/lampSketch2.jpeg, /assets/images/projects/lamp/lampSketch3.jpeg">
-            <span>Brainstorming Arm — Sketches.</span>
-        </div>
-        <div class="gallery-card">
-            <img src="/assets/images/projects/lamp/aurea.jpeg" alt="Aurea on Display">
-            <span>Physical Prototype — Reactive LED assembly</span>
-        </div>
-    </div>
-</div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
 </body>
-<script>
-    let date = new Date();
-    let time = date.toLocaleTimeString("en-US", {
-        timeZone: "America/Los_Angeles",
-    });
-    document.getElementById("time").innerHTML = time;
-    let updateTimer = true
-    setInterval(function(){
-        if(!updateTimer){
-           return;
-        }
-        date = new Date();
-        let time = date.toLocaleTimeString("en-US", {
-            timeZone: "America/Los_Angeles",
-        });
-        document.getElementById("time").innerHTML = time.split(" ")[0] +"."+ date.getMilliseconds().toString().slice(0,2);
-    }, 1);
-
-    function pauseTimer() {
-        updateTimer = false;
-        setTimeout(function () {
-            updateTimer = true;
-        }, 1500);
-    }
-
-    setTimeout(function() {
-        pauseTimer()
-        setInterval(function () {
-            pauseTimer();
-        }, 60000);
-    }, 60000 - date.getSeconds() * 1000 - date.getMilliseconds() - 1500);
-
-    document.addEventListener("DOMContentLoaded", function() {
-        let images = document.getElementsByClassName("flip");
-        for (let i = 0; i < images.length; i++) {
-
-            images[i].addEventListener("mousedown", function() {
-                let image_list = this.getAttribute("data-image_list").split(", ");
-                let current_image = this.getAttribute("src");
-                let next_image = image_list[(image_list.indexOf(current_image) + 1) % image_list.length];
-                this.setAttribute("src", next_image);
-            });
-        }
-    });
-
-</script>
 </html>
