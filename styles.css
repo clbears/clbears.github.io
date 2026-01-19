@@ -84,12 +84,11 @@ a {
     font-weight: var(--font-weight-medium);
     margin: inherit;
     text-decoration: none;
-    transition: all var(--transition-fast);
+    transition: color var(--transition-fast);
 }
 
 a:hover {
     color: var(--color-secondary);
-    font-size: var(--font-size-large);
 }
 
 a:focus {
@@ -271,11 +270,12 @@ a:focus {
    Photos/Gallery Page Styles
    =================================== */
 #galleryGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: var(--gallery-gap);
     margin: var(--spacing-md);
     margin-top: 0;
+    max-width: 800px;
 }
 
 .gallery-card {
@@ -285,12 +285,6 @@ a:focus {
     border: var(--gallery-border);
     padding: 1.25vw;
     background: var(--color-background);
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.gallery-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .gallery-cover {
@@ -432,10 +426,6 @@ footer {
 
     .gallery-title {
         letter-spacing: 0.4vw;
-    }
-
-    a:hover {
-        font-size: var(--font-size-base);
     }
 }
 
