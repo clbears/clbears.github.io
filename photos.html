@@ -1,160 +1,108 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photos</title>
+    <meta name="description" content="Christopher Lam's Photography Portfolio">
+    <meta name="author" content="Christopher Lam">
+    <meta name="theme-color" content="#000000">
+
+    <title>Photos - Christopher Lam</title>
+
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!--    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">-->
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Font with optimized loading -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
     <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
-   <style>
-        :root {
-            --gallery-gap: 2vw;
-            --gallery-border: 1px solid black;
-        }
-        #galleryGrid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: var(--gallery-gap);
-            margin: 2vw;
-            margin-top: 0;
-        }
-        .gallery-card {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75vw;
-            border: var(--gallery-border);
-            padding: 1.25vw;
-            background: #fff;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .gallery-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-        }
-        .gallery-cover {
-            width: 100%;
-            aspect-ratio: 4 / 5;
-            object-fit: cover;
-            border: var(--gallery-border);
-        }
-        .gallery-meta {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25vw;
-        }
-        .gallery-title {
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.2vw;
-        }
-        .gallery-description {
-            margin: 0;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        @media (max-width: 720px) {
-            #galleryGrid {
-                gap: 4vw;
-                margin: 4vw;
-            }
-            .gallery-card {
-                padding: 3vw;
-            }
-            .gallery-title {
-                letter-spacing: 0.4vw;
-            }
-        }
-    </style>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="bar"> 
-        <a href="/photos.html">photos</a> 
-        <a href="/projects.html">projects</a> 
-        <a href="/resume.html">resume</a> 
-    </div>
-    <!--letter_head-->
-<div id="letterhead"> 
-    
-    <a style="font-weight: 800" href="/index.html"> Christopher Lam </a>
-    <br>
-    <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">San Francisco California</a>
-    <br>
-    <a href="https://www.instagram.com/topher_lam/">@topher_lam</a>
-    <a href="https://youtu.be/tH63sBOTIeQ" id="time"></a>
-    <br>
-    <a href="mailto:cjlbears@gmail.com" >cjlbears@gmail.com</a>
-</div>
-<br>
-<br>
-<br>
-<br>
-<div id="galleryGrid">
-    <!-- Duplicate a gallery-card block to add a new gallery -->
-    <div class="gallery-card">
-        <a href="/photos/japan/">
-            <img class="gallery-cover" src="/photos/japan/japan1p.jpeg" alt="Japan street scene at dusk">
-        </a>
-        <div class="gallery-meta">
-            <a class="gallery-title" href="/photos/japan/">Japan</a>
-            <p class="gallery-description">Photos from my trip to Japan.</p>
-        </div>
-    </div>
+    <!-- Navigation Bar -->
+    <nav id="bar" role="navigation" aria-label="Main navigation">
+        <a href="/photos.html" aria-current="page">photos</a>
+        <a href="/projects.html">projects</a>
+        <a href="/resume.html">resume</a>
+    </nav>
 
-    <div class="gallery-card">
-        <a href="/photos/newYork/">
-            <img class="gallery-cover" src="/photos/newYork/newYork1p.jpeg" alt="New York skyline at sunset">
-        </a>
-        <div class="gallery-meta">
-            <a class="gallery-title" href="/photos/newYork/">New York</a>
-            <p class="gallery-description">Photos from my trip to New York.</p>
-        </div>
-    </div>
+    <!-- Header/Letterhead -->
+    <header id="letterhead">
+        <a style="font-weight: 800" href="/index.html" aria-label="Home"> Christopher Lam </a>
+        <br>
+        <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+           target="_blank"
+           rel="noopener noreferrer">San Francisco California</a>
+        <br>
+        <a href="https://www.instagram.com/topher_lam/"
+           target="_blank"
+           rel="noopener noreferrer">@topher_lam</a>
+        <a href="https://youtu.be/tH63sBOTIeQ"
+           id="time"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Current time"></a>
+        <br>
+        <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
+    </header>
 
-    <div class="gallery-card">
-        <a href="/photos/dC/">
-            <img class="gallery-cover" src="/photos/dC/dC13.jpeg" alt="Washington D.C. monument at night">
-        </a>
-        <div class="gallery-meta">
-            <a class="gallery-title" href="/photos/dC/">Washington D.C.</a>
-            <p class="gallery-description">Photos from my trip to Washington D.C.</p>
+    <!-- Main Content -->
+    <main>
+        <div id="galleryGrid">
+            <!-- Japan Gallery -->
+            <article class="gallery-card">
+                <a href="/photos/japan/" aria-label="View Japan photo gallery">
+                    <img class="gallery-cover"
+                         src="/photos/japan/japan1p.jpeg"
+                         alt="Japan street scene at dusk"
+                         loading="lazy">
+                </a>
+                <div class="gallery-meta">
+                    <a class="gallery-title" href="/photos/japan/">Japan</a>
+                    <p class="gallery-description">Photos from my trip to Japan.</p>
+                </div>
+            </article>
+
+            <!-- New York Gallery -->
+            <article class="gallery-card">
+                <a href="/photos/newYork/" aria-label="View New York photo gallery">
+                    <img class="gallery-cover"
+                         src="/photos/newYork/newYork1p.jpeg"
+                         alt="New York skyline at sunset"
+                         loading="lazy">
+                </a>
+                <div class="gallery-meta">
+                    <a class="gallery-title" href="/photos/newYork/">New York</a>
+                    <p class="gallery-description">Photos from my trip to New York.</p>
+                </div>
+            </article>
+
+            <!-- Washington D.C. Gallery -->
+            <article class="gallery-card">
+                <a href="/photos/dC/" aria-label="View Washington D.C. photo gallery">
+                    <img class="gallery-cover"
+                         src="/photos/dC/dC13.jpeg"
+                         alt="Washington D.C. monument at night"
+                         loading="lazy">
+                </a>
+                <div class="gallery-meta">
+                    <a class="gallery-title" href="/photos/dC/">Washington D.C.</a>
+                    <p class="gallery-description">Photos from my trip to Washington D.C.</p>
+                </div>
+            </article>
         </div>
-    </div>
-</div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Christopher Lam. Ad Astra per Aspera
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
 </body>
-<script>
-    let date = new Date();
-    let time = date.toLocaleTimeString("en-US", {
-        timeZone: "America/Los_Angeles",
-    });
-    document.getElementById("time").innerHTML = time;
-    let updateTimer = true
-    setInterval(function(){
-        if(!updateTimer){
-           return;
-        }
-        date = new Date();
-        let time = date.toLocaleTimeString("en-US", {
-            timeZone: "America/Los_Angeles",
-        });
-        document.getElementById("time").innerHTML = time.split(" ")[0] +"."+ date.getMilliseconds().toString().slice(0,2);
-    }, 1);
-
-    function pauseTimer() {
-        updateTimer = false;
-        setTimeout(function () {
-            updateTimer = true;
-        }, 1500);
-    }
-
-    setTimeout(function() {
-        pauseTimer()
-        setInterval(function () {
-            pauseTimer();
-        }, 60000);
-    }, 60000 - date.getSeconds() * 1000 - date.getMilliseconds() - 1500);
-
-</script>
 </html>
