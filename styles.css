@@ -270,20 +270,19 @@ a:focus {
    Photos/Gallery Page Styles
    =================================== */
 #galleryGrid {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gallery-gap);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--grid-gap);
     margin: var(--spacing-md);
     margin-top: 0;
-    max-width: 800px;
 }
 
 .gallery-card {
     display: flex;
     flex-direction: column;
-    gap: 0.75vw;
+    gap: 0.5vw;
     border: var(--gallery-border);
-    padding: 1.25vw;
+    padding: 1vw;
     background: var(--color-background);
 }
 
@@ -416,6 +415,7 @@ footer {
     }
 
     #galleryGrid {
+        grid-template-columns: 1fr;
         gap: var(--spacing-lg);
         margin: var(--spacing-lg);
     }
@@ -456,6 +456,10 @@ footer {
     #discovery {
         grid-column: 1 / -1;
         grid-row: auto;
+    }
+
+    #galleryGrid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
