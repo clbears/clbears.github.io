@@ -1,101 +1,86 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <meta name="description" content="Christopher Lam's Resume and Professional Information">
+    <meta name="author" content="Christopher Lam">
+    <meta name="theme-color" content="#000000">
+
+    <title>Resume - Christopher Lam</title>
+
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!--    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">-->
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font with optimized loading -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
     <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
-    <style>
-        #projectList{
-            grid-column: 2 / span 2;
-            grid-row: 3;
-        }
-    </style>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="bar"> 
-        <a href="/photos.html">photos</a> 
-        <a href="/projects.html">projects</a> 
-        <a href="/resume.html">resume</a> 
-    </div>
-    <!--letter_head-->
-<div id="letterhead"> 
-    
-    <a style="font-weight: 800" href="/index.html"> Christopher Lam </a>
-    <br>
-    <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">San Francisco California</a>
-    <br>
-    <a href="https://www.instagram.com/topher_lam/">@topher_lam</a>
-    <a href="https://youtu.be/tH63sBOTIeQ" id="time"></a>
-    <br>
-    <a href="mailto:cjlbears@gmail.com" >cjlbears@gmail.com</a>
-    
-</div>
-<div id="image_grid">
-<div id="projectList">
-    <div style="font-weight: 800;">Resume:</div>    
-    <br>
-    <br>
-    <a href="/assets/pdf/Resume2025.pdf" target="_blank">View Resume</a>
-    <br>
-    <a href="/assets/pdf/Resume2025.pdf" download="Christopher_Lam_Resume.pdf">Download Resume</a>
-    <br>
-    <br>
-    <div style="font-weight: 800;"> <a href="/aboutMe.html">About Me</a> </div>
-    <br>
-    <p><a href="https://www.linkedin.com/in/clbears">Linkedin</a></p>
-</div>
-</div>
+    <!-- Navigation Bar -->
+    <nav id="bar" role="navigation" aria-label="Main navigation">
+        <a href="/photos.html">photos</a>
+        <a href="/projects.html">projects</a>
+        <a href="/resume.html" aria-current="page">resume</a>
+    </nav>
+
+    <!-- Header/Letterhead -->
+    <header id="letterhead">
+        <a style="font-weight: 800" href="/index.html" aria-label="Home"> Christopher Lam </a>
+        <br>
+        <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+           target="_blank"
+           rel="noopener noreferrer">San Francisco California</a>
+        <br>
+        <a href="https://www.instagram.com/topher_lam/"
+           target="_blank"
+           rel="noopener noreferrer">@topher_lam</a>
+        <a href="https://youtu.be/tH63sBOTIeQ"
+           id="time"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Current time"></a>
+        <br>
+        <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
+    </header>
+
+    <!-- Main Content -->
+    <main id="image_grid">
+        <section id="projectList" aria-label="Resume and professional information">
+            <div style="font-weight: 800;">Resume:</div>
+            <br>
+            <br>
+            <a href="/assets/pdf/Resume2025.pdf"
+               target="_blank"
+               rel="noopener noreferrer">View Resume</a>
+            <br>
+            <a href="/assets/pdf/Resume2025.pdf" download="Christopher_Lam_Resume.pdf">Download Resume</a>
+            <br>
+            <br>
+            <div style="font-weight: 800;">
+                <a href="/aboutMe.html">About Me</a>
+            </div>
+            <br>
+            <p>
+                <a href="https://www.linkedin.com/in/clbears"
+                   target="_blank"
+                   rel="noopener noreferrer">LinkedIn</a>
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Christopher Lam. Ad Astra per Aspera
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
 </body>
-<script>
-    let date = new Date();
-    let time = date.toLocaleTimeString("en-US", {
-        timeZone: "America/Los_Angeles",
-    });
-    document.getElementById("time").innerHTML = time;
-    let updateTimer = true
-    setInterval(function(){
-        if(!updateTimer){
-           return;
-        }
-        date = new Date();
-        let time = date.toLocaleTimeString("en-US", {
-            timeZone: "America/Los_Angeles",
-        });
-        document.getElementById("time").innerHTML = time.split(" ")[0] +"."+ date.getMilliseconds().toString().slice(0,2);
-    }, 1);
-
-    function pauseTimer() {
-        updateTimer = false;
-        setTimeout(function () {
-            updateTimer = true;
-        }, 1500);
-    }
-
-    setTimeout(function() {
-        pauseTimer()
-        setInterval(function () {
-            pauseTimer();
-        }, 60000);
-    }, 60000 - date.getSeconds() * 1000 - date.getMilliseconds() - 1500);
-
-    document.addEventListener("DOMContentLoaded", function() {
-        let images = document.getElementsByClassName("flip");
-        console.log(images);
-        for (let i = 0; i < images.length; i++) {
-
-            images[i].addEventListener("mousedown", function() {
-                let image_list = this.getAttribute("data-image_list").split(", ");
-                let current_image = this.getAttribute("src");
-                let next_image = image_list[(image_list.indexOf(current_image) + 1) % image_list.length];
-                this.setAttribute("src", next_image);
-            });
-        }
-    });
-
-</script>
 </html>

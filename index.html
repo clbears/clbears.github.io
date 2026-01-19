@@ -1,267 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Christopher Lam</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <!-- Link to Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-        <!-- Link to External CSS -->
-        <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
-        <link rel="stylesheet" href="styles.css">
-        <script>
-            // Device detection function
-            function isMobile() {
-                return /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone/i.test(navigator.userAgent);
-            }
-        
-            // Redirect to mobile page if on a mobile device
-            if (isMobile()) {
-                window.location.href = "index_mobile.html";
-            }
-        </script>
-        <style>
-        #wowCL {
-            grid-column: 1 / 3;
-            grid-row: 2;
-        }
-        #wowCL:hover {
-            z-index: 11;
-        }
-        #discovery{
-            grid-column:  3/ span 4;
-            grid-row: 2;
-        }
-        #airFrance {
-            grid-column: 3 / span 4;
-            grid-row: 1;
-        }
-        #timeline {
-            grid-column: 1 / 2; /* Place in the first column */
-            grid-row: 1 / span 3; /* Span multiple rows */
-            position: sticky; /* Makes it stick while scrolling */
-            top: 0; /* Keeps it at the top of the viewport */
-            align-self: start; /* Aligns the content to the top of its grid cell */
-            z-index: 2; /* Ensure it stays above other elements if overlapping */
-            color: darkgray;
-            padding: 8px; /* Add padding for better spacing */
-            padding-top: 0;
-            display: flex;
-            flex-direction: column; /* Stack rows vertically */
-            gap: 8px; /* Space between timeline rows */
-            margin-left: 2vw;
-        }
-        .timeline-row {
-            display: flex; /* Create a row for year and details */
-            gap: 8px; /* Space between year and details */
-        }
-        .timeline-year {
-            font-weight: bold; /* Emphasize the year */
-            flex-shrink: 0; /* Prevent the year from shrinking */
-            width: 1uw; /* Fixed width for year */
-            text-align: left; /* Align year text to the left */
-        }
-        .timeline-details {
-            text-align: left; /* Align details to the left */
-            flex-grow: 1; /* Let the details span the remaining space */
-        }
-        .match-timeline {
-            text-decoration: none; /* Remove underline */
-            color: inherit; /* Match the text color of the timeline */
-        }
-        </style>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Christopher Lam - Engineering and Design Portfolio">
+    <meta name="author" content="Christopher Lam">
+    <meta name="theme-color" content="#000000">
+
+    <title>Christopher Lam - Engineering & Design Portfolio</title>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font with optimized loading -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-<!--Top Bar-->
-<div id="bar"> 
-    <a href="/photos.html">photos</a> 
-    <a href="/projects.html">projects</a> 
-    <a href="/resume.html">resume</a> 
-</div>
-<!--letter_head-->
-<div id="letterhead"> 
-    
-    <a style="font-weight: 800" href="/index.html"> Christopher Lam </a>
-    <br>
-    <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">San Francisco California</a>
-    <br>
-    <a href="https://www.instagram.com/topher_lam/">@topher_lam</a>
-    <a href="https://youtu.be/tH63sBOTIeQ" id="time"></a>
-    <br>
-    <a href="mailto:cjlbears@gmail.com" >cjlbears@gmail.com</a>
-    
-</div>
-<br>
-<br>
-<br>
-<br>
-<div id="image_grid">
-    <div class="grid-item" id="timeline">
-        <div style="font-weight: 800; color: black;">Timeline:</div>
-        <div class="timeline-row">
-            <span class="timeline-year">2006:</span>
-            <span class="timeline-details">Born</span>
+    <!-- Navigation Bar -->
+    <nav id="bar" role="navigation" aria-label="Main navigation">
+        <a href="/photos.html">photos</a>
+        <a href="/projects.html">projects</a>
+        <a href="/resume.html">resume</a>
+    </nav>
+
+    <!-- Header/Letterhead -->
+    <header id="letterhead">
+        <a style="font-weight: 800" href="/index.html" aria-label="Home"> Christopher Lam </a>
+        <br>
+        <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+           target="_blank"
+           rel="noopener noreferrer">San Francisco California</a>
+        <br>
+        <a href="https://www.instagram.com/topher_lam/"
+           target="_blank"
+           rel="noopener noreferrer">@topher_lam</a>
+        <a href="https://youtu.be/tH63sBOTIeQ"
+           id="time"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Current time"></a>
+        <br>
+        <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
+    </header>
+
+    <!-- Main Content -->
+    <main id="image_grid">
+        <!-- Timeline Section -->
+        <section id="timeline" aria-label="Christopher's Timeline">
+            <div style="font-weight: 800; color: black;">Timeline:</div>
+            <div class="timeline-row">
+                <span class="timeline-year">2006:</span>
+                <span class="timeline-details">Born</span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2007:</span>
+                <span class="timeline-details"><br></span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2008:</span>
+                <span class="timeline-details">AVOIDED A RECESSION (2YRS OLD)</span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2009:</span>
+                <span class="timeline-details"><br></span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2010:</span>
+                <span class="timeline-details"><br></span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2011:</span>
+                <span class="timeline-details">IGNORED AGE REQUIREMENT ON SNAP CIRCUITS</span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2012:</span>
+                <span class="timeline-details"><br></span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2013:</span>
+                <span class="timeline-details"><br></span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2014:</span>
+                <span class="timeline-details"><br></span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2015:</span>
+                <span class="timeline-details"><br></span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2016:</span>
+                <span class="timeline-details"><br></span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2017:</span>
+                <span class="timeline-details"><br></span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2018:</span>
+                <span class="timeline-details"><br></span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2019:</span>
+                <span class="timeline-details">FIRST ENGINEERING CLASS (7TH GRADE)</span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2020:</span>
+                <span class="timeline-details">3D PRINTED PPE FOR NORCAL AMBULANCE</span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2021:</span>
+                <span class="timeline-details">
+                    INTRO TO ENG. DESIGN CLASS<br>
+                    STARTED PERSONAL PROJECTS
+                </span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2022:</span>
+                <span class="timeline-details">
+                    STARTED GRAPHIC DESIGN<br>
+                    GOT DL<br>
+                    <a class="timeline-details match-timeline" href="/assets/images/innout.jpg">STARTED AT IN-N-OUT</a>
+                </span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2023:</span>
+                <span class="timeline-details">
+                    SFA PRESIDENT<br>
+                    SENIOR PATROL LEADER<br>
+                    PHOTOGRAPHY FEATURED<br>
+                    SUMMITED WHITNEY
+                </span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2024:</span>
+                <span class="timeline-details"><br></span>
+            </div>
+            <div class="timeline-row">
+                <span class="timeline-year">2025:</span>
+                <span class="timeline-details">EAGLE SCOUT</span>
+            </div>
+        </section>
+
+        <!-- Portfolio Images -->
+        <div class="grid-item" id="wowCL">
+            <img class="flip"
+                 src="/assets/images/home/nightWrite.jpeg"
+                 alt="Christopher Lam portrait and night writing project"
+                 data-image_list="/assets/images/home/wowCL.jpeg, /assets/images/home/nightWrite.jpeg"
+                 loading="lazy">
         </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2007:</span>
-            <span class="timeline-details"> <br>
-            </span>
+
+        <div class="grid-item" id="airFrance">
+            <img src="/assets/images/home/airFrance.jpeg"
+                 alt="Air France Concorde supersonic aircraft"
+                 loading="lazy">
         </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2008:</span>
-            <span class="timeline-details">AVOIDED A RECESSION (2YRS OLD)</span>
+
+        <div class="grid-item" id="discovery">
+            <img src="/assets/images/discovery.jpeg"
+                 alt="Space Shuttle Discovery"
+                 loading="lazy">
         </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2009:</span>
-            <span class="timeline-details"> <br>
-            </span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2010:</span>
-            <span class="timeline-details"> <br>
-            </span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2011:</span>
-            <span class="timeline-details">IGNORED AGE REQUIREMENT ON SNAP CIRCUITS</span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2012:</span>
-            <span class="timeline-details"> <br>
-            </span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2013:</span>
-            <span class="timeline-details"> <br>
-            </span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2014:</span>
-            <span class="timeline-details"> <br>
-            </span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2015:</span>
-            <span class="timeline-details"> <br>
-            </span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2016:</span>
-            <span class="timeline-details"> <br>
-            </span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2017:</span>
-            <span class="timeline-details"> <br>
-            </span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2018:</span>
-            <span class="timeline-details"> <br>
-            </span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2019:</span>
-            <span class="timeline-details">FIRST ENGINEERING CLASS (7TH GRADE)</span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2020:</span>
-            <span class="timeline-details">3D PRINTED PPE FOR NORCAL AMBULANCE</span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2021:</span>
-            <span class="timeline-details">
-                INTRO TO ENG. DESIGN CLASS<br>
-                STARTED PERSONAL PROJECTS
-            </span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2022:</span>
-            <span class="timeline-details">
-                STARTED GRAPHIC DESIGN<br>
-                GOT DL<br>
-                <a class="timeline-details match-timeline" href="/assets/images/innout.jpg">STARTED AT IN-N-OUT</a>
-            </span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2023:</span>
-            <span class="timeline-details">
-                SFA PRESIDENT<br>
-                SENIOR PATROL LEADER<br>
-                PHOTOGRAPHY FEATURED<br>
-                SUMMITED WHITNEY
-            </span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2024:</span>
-            <span class="timeline-details"> <br>
-            </span>
-        </div>
-        <div class="timeline-row">
-            <span class="timeline-year">2025:</span>
-            <span class="timeline-details">EAGLE SCOUT</span>
-        </div>
-    </div>
-    <div class="grid-item" id="wowCL">
-        <img class="flip" src="nightWrite.jpeg" alt="wowCL" data-image_list="wowCL.jpeg, nightWrite.jpeg">
-    </div>
-    <div class="grid-item" id="airFrance">
-        <img src="/airFrance.jpeg" alt="Concorde">
-    </div>
-    <div class="grid-item" id="discovery">
-        <img src="/assets/images/discovery.jpeg" alt="discovery">
-    </div>
-</div>
-<footer style="text-align: center; margin-top: 20px;">
-    &copy; 2025 Christopher Lam. Ad Astra per Aspera
-</footer>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Christopher Lam. Ad Astra per Aspera
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
 </body>
-<script>
-    let date = new Date();
-    let time = date.toLocaleTimeString("en-US", {
-        timeZone: "America/Los_Angeles",
-    });
-    document.getElementById("time").innerHTML = time;
-    let updateTimer = true
-    setInterval(function(){
-        if(!updateTimer){
-           return;
-        }
-        date = new Date();
-        let time = date.toLocaleTimeString("en-US", {
-            timeZone: "America/Los_Angeles",
-        });
-        document.getElementById("time").innerHTML = time.split(" ")[0] +"."+ date.getMilliseconds().toString().slice(0,2);
-    }, 1);
-
-    function pauseTimer() {
-        updateTimer = false;
-        setTimeout(function () {
-            updateTimer = true;
-        }, 1500);
-    }
-
-    setTimeout(function() {
-        pauseTimer()
-        setInterval(function () {
-            pauseTimer();
-        }, 60000);
-    }, 60000 - date.getSeconds() * 1000 - date.getMilliseconds() - 1500);
-
-    document.addEventListener("DOMContentLoaded", function() {
-        let images = document.getElementsByClassName("flip");
-        console.log(images);
-        for (let i = 0; i < images.length; i++) {
-
-            images[i].addEventListener("mousedown", function() {
-                let image_list = this.getAttribute("data-image_list").split(", ");
-                let current_image = this.getAttribute("src");
-                let next_image = image_list[(image_list.indexOf(current_image) + 1) % image_list.length];
-                this.setAttribute("src", next_image);
-            });
-        }
-    });
-
-</script>
 </html>

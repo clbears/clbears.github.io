@@ -1,205 +1,116 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <meta name="description" content="Christopher Lam's Engineering Projects Portfolio">
+    <meta name="author" content="Christopher Lam">
+    <meta name="theme-color" content="#000000">
+
+    <title>Projects - Christopher Lam</title>
+
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!--    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">-->
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Font with optimized loading -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
     <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
-    <style> 
-#projectList {
-    grid-column: 2 / span 2;
-    grid-row: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
-    justify-content: flex-start; /* Start from the top */
-    text-align: left;
-    padding: 0; /* Ensure no padding inside the container */
-    margin: 0; /* Remove default margin */
-}
-#writings {
-    grid-column: 4 / span 2;
-    grid-row: 6;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Align items to the left */
-    justify-content: flex-start; /* Start from the top */
-    text-align: right;
-    padding: 0; /* Ensure no padding inside the container */
-    margin: 0; /* Remove default margin */
-}
-#preview{
-    grid-column: 4 / span 2;
-    grid-row: 3;
-}
-    </style>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="bar"> 
-        <a href="/photos.html">photos</a> 
-        <a href="/projects.html">projects</a> 
-        <a href="/resume.html">resume</a> 
-    </div>
-    <!--letter_head-->
-<div id="letterhead"> 
-    
-    <a style="font-weight: 800" href="/index.html"> Christopher Lam </a>
-    <br>
-    <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">San Francisco California</a>
-    <br>
-    <a href="https://www.instagram.com/topher_lam/">@topher_lam</a>
-    <a href="https://youtu.be/tH63sBOTIeQ" id="time"></a>
-    <br>
-    <a href="mailto:cjlbears@gmail.com" >cjlbears@gmail.com</a>
-    
-</div>
-<div id="image_grid">
-    <div class="grid-item" id="preview">
-        <img class="flip" src="physicsCar.jpeg" alt="project preview" data-image_list="physicsCar.jpeg, agv.jpeg, projectPreview/multiTool.jpeg ">
-    </div>
-<div id="projectList">
-    <div style="font-weight: 800;">Projects:</div> 
-    <br>
-    <br>
-    <br>
-    <a href="/projects/compoundMachinesProject.html" data-date="2022-9-1">Compound Machines Project</a> 
-    <a href="/projects/majorityVotesCircuit.html" data-date="2023-10-15">Majority Votes Circuit</a> 
-    <a href="/projects/multiToolDesign.html" data-date="2022-04-13">Multi-Tool Design</a> 
-    <a href="/projects/dobCircuit.html" data-date="2024-2-10">DOB Circuit</a> 
-    <a href="/projects/stealaCarCircuit.html" data-date="2023-09-05">Steal a Car Circuit</a> 
-    <a href="/projects/cableWindingMachine.html" data-date="2022-07-15">Cable Winding Machine</a> 
-    <a href="/projects/automatedGuidedVehicleAGV.html" data-date="2024-11-25">Automated Guided Vehicle (AGV)</a> 
-    <a href="/projects/reverseEngineeringofaToy.html" data-date="2021-03-30">Reverse Engineering of a Toy</a> 
-    <a href="/projects/interactiveLockStoryboard.html" data-date="2021-12-3">Interactive Lock Storyboard</a> 
-    <a href="/projects/physicsCar.html" data-date="2024-04-20">Physics Car</a> 
-    <a href="https://live.standards.site/foothill_sfa" data-date="2023-08-15">Student Filmmakers Assocation Graphic Standards</a>
-    <a href="/projects/6yeartorch.html" data-date="2024-12-20">Six Year Torch</a>
-    <a href="/projects/notasi2.html" data-date="2024-11-2">NOTA v. United States </a> 
-    <a href="/projects/notai12.html" data-date="2024-5-22">Foothill's DeMockracy</a> 
-    <a href="/projects/studentFilmmakersAssocatonPosters.html" data-date="2024-8-5">Student Filmmakers Assocation Poster Campaign</a> 
-    <a href="/projects/playfulClock.html" data-date="2023-12-5">Playful Clock</a> 
-    <a href="/projects/macroPad.html" data-date="2022-3-3">Macropad</a> 
-    <a href="/projects/ledLamp.html" data-date="2025-8-3">LED Lamp</a> 
-    <!-- <a href="/projects/cardboardChair.html" data-date="2025-11-19">Cardboard Chair Project</a> -->
-    <a href="/projects/assistiveDevice.html" data-date="2025-11-19">IN PROGRESS: Assistive Device</a> 
-</div>
-<div id="writings">
-    <div style="font-weight: 800;">Misc. Writings:</div> 
-    <br>
-    <br>
-    <br>
-    <a href="/index.html" data-date="2022-9-1">Test</a> 
-    <a href="/projects/notasi2.html" data-date="2024-11-2">NOTA v. United States </a> 
-    <a href="/projects/notai12.html" data-date="2024-5-22">Foothill's DeMockracy</a> 
+    <!-- Navigation Bar -->
+    <nav id="bar" role="navigation" aria-label="Main navigation">
+        <a href="/photos.html">photos</a>
+        <a href="/projects.html" aria-current="page">projects</a>
+        <a href="/resume.html">resume</a>
+    </nav>
 
-</div>
-</div>
-<footer style="text-align: center; margin-top: 20px;">
-    The project list is incomplete, and the projects listed are not fully detailed.
-    <br>
-    &copy; 2025 Christopher Lam. Ad Astra per Aspera
-</footer>
+    <!-- Header/Letterhead -->
+    <header id="letterhead">
+        <a style="font-weight: 800" href="/index.html" aria-label="Home"> Christopher Lam </a>
+        <br>
+        <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+           target="_blank"
+           rel="noopener noreferrer">San Francisco California</a>
+        <br>
+        <a href="https://www.instagram.com/topher_lam/"
+           target="_blank"
+           rel="noopener noreferrer">@topher_lam</a>
+        <a href="https://youtu.be/tH63sBOTIeQ"
+           id="time"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Current time"></a>
+        <br>
+        <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
+    </header>
+
+    <!-- Main Content -->
+    <main id="image_grid">
+        <!-- Project Preview -->
+        <div class="grid-item" id="preview">
+            <img class="flip"
+                 src="/assets/images/projects/physicsCar.jpeg"
+                 alt="Project preview showing physics car and AGV"
+                 data-image_list="/assets/images/projects/physicsCar.jpeg, /assets/images/projects/agv.jpeg, /projectPreview/multiTool.jpeg"
+                 loading="lazy">
+        </div>
+
+        <!-- Project List -->
+        <section id="projectList" aria-label="Engineering projects">
+            <div style="font-weight: 800;">Projects:</div>
+            <br>
+            <br>
+            <br>
+            <a href="/projects/compoundMachinesProject.html" data-date="2022-9-1">Compound Machines Project</a>
+            <a href="/projects/majorityVotesCircuit.html" data-date="2023-10-15">Majority Votes Circuit</a>
+            <a href="/projects/multiToolDesign.html" data-date="2022-04-13">Multi-Tool Design</a>
+            <a href="/projects/dobCircuit.html" data-date="2024-2-10">DOB Circuit</a>
+            <a href="/projects/stealaCarCircuit.html" data-date="2023-09-05">Steal a Car Circuit</a>
+            <a href="/projects/cableWindingMachine.html" data-date="2022-07-15">Cable Winding Machine</a>
+            <a href="/projects/automatedGuidedVehicleAGV.html" data-date="2024-11-25">Automated Guided Vehicle (AGV)</a>
+            <a href="/projects/reverseEngineeringofaToy.html" data-date="2021-03-30">Reverse Engineering of a Toy</a>
+            <a href="/projects/interactiveLockStoryboard.html" data-date="2021-12-3">Interactive Lock Storyboard</a>
+            <a href="/projects/physicsCar.html" data-date="2024-04-20">Physics Car</a>
+            <a href="https://live.standards.site/foothill_sfa"
+               data-date="2023-08-15"
+               target="_blank"
+               rel="noopener noreferrer">Student Filmmakers Association Graphic Standards</a>
+            <a href="/projects/6yeartorch.html" data-date="2024-12-20">Six Year Torch</a>
+            <a href="/projects/notasi2.html" data-date="2024-11-2">NOTA v. United States</a>
+            <a href="/projects/notai12.html" data-date="2024-5-22">Foothill's DeMockracy</a>
+            <a href="/projects/studentFilmmakersAssocatonPosters.html" data-date="2024-8-5">Student Filmmakers Association Poster Campaign</a>
+            <a href="/projects/playfulClock.html" data-date="2023-12-5">Playful Clock</a>
+            <a href="/projects/macroPad.html" data-date="2022-3-3">Macropad</a>
+            <a href="/projects/ledLamp.html" data-date="2025-8-3">LED Lamp</a>
+            <a href="/projects/assistiveDevice.html" data-date="2025-11-19">IN PROGRESS: Assistive Device</a>
+        </section>
+
+        <!-- Writings Section -->
+        <section id="writings" aria-label="Writings and essays">
+            <div style="font-weight: 800;">Misc. Writings:</div>
+            <br>
+            <br>
+            <br>
+            <a href="/index.html" data-date="2022-9-1">Test</a>
+            <a href="/projects/notasi2.html" data-date="2024-11-2">NOTA v. United States</a>
+            <a href="/projects/notai12.html" data-date="2024-5-22">Foothill's DeMockracy</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        The project list is incomplete, and the projects listed are not fully detailed.
+        <br>
+        &copy; 2025 Christopher Lam. Ad Astra per Aspera
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
 </body>
-<script>
-    let date = new Date();
-    let time = date.toLocaleTimeString("en-US", {
-        timeZone: "America/Los_Angeles",
-    });
-    document.getElementById("time").innerHTML = time;
-    let updateTimer = true
-    setInterval(function(){
-        if(!updateTimer){
-           return;
-        }
-        date = new Date();
-        let time = date.toLocaleTimeString("en-US", {
-            timeZone: "America/Los_Angeles",
-        });
-        document.getElementById("time").innerHTML = time.split(" ")[0] +"."+ date.getMilliseconds().toString().slice(0,2);
-    }, 1);
-
-    function pauseTimer() {
-        updateTimer = false;
-        setTimeout(function () {
-            updateTimer = true;
-        }, 1500);
-    }
-
-    setTimeout(function() {
-        pauseTimer()
-        setInterval(function () {
-            pauseTimer();
-        }, 60000);
-    }, 60000 - date.getSeconds() * 1000 - date.getMilliseconds() - 1500);
-
-    document.addEventListener("DOMContentLoaded", function() {
-        let images = document.getElementsByClassName("flip");
-        console.log(images);
-        for (let i = 0; i < images.length; i++) {
-
-            images[i].addEventListener("mousedown", function() {
-                let image_list = this.getAttribute("data-image_list").split(", ");
-                let current_image = this.getAttribute("src");
-                let next_image = image_list[(image_list.indexOf(current_image) + 1) % image_list.length];
-                this.setAttribute("src", next_image);
-            });
-        }
-    });
-    document.addEventListener("DOMContentLoaded", function () {
-    const projectList = document.getElementById("projectList");
-    const projects = Array.from(projectList.querySelectorAll("a"));
-
-    // Sort projects by `data-date` attribute
-    projects.sort((a, b) => {
-        const dateA = new Date(a.getAttribute("data-date"));
-        const dateB = new Date(b.getAttribute("data-date"));
-        return dateB - dateA; // Ascending order
-    });
-
-    // Clear the current list and append sorted projects
-    projects.forEach(project => {
-        // Extract the date from the `data-date` attribute
-        const projectDate = new Date(project.getAttribute("data-date"));
-        const formattedDate = projectDate.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-        });
-
-        // Add the date next to the project name
-        project.innerHTML += ` <span style="color: gray; font-size: 0.9em;">(${formattedDate})</span>`;
-        projectList.appendChild(project);
-    });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    const projectList = document.getElementById("writings");
-    const projects = Array.from(projectList.querySelectorAll("a"));
-
-    // Sort projects by `data-date` attribute
-    projects.sort((a, b) => {
-        const dateA = new Date(a.getAttribute("data-date"));
-        const dateB = new Date(b.getAttribute("data-date"));
-        return dateB - dateA; // Ascending order
-    });
-
-    // Clear the current list and append sorted projects
-    projects.forEach(project => {
-        // Extract the date from the `data-date` attribute
-        const projectDate = new Date(project.getAttribute("data-date"));
-        const formattedDate = projectDate.toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-        });
-
-        // Add the date next to the project name
-        project.innerHTML += ` <span style="color: gray; font-size: 0.9em;">(${formattedDate})</span>`;
-        projectList.appendChild(project);
-    });
-});
-</script>
 </html>
