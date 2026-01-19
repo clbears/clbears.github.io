@@ -23,6 +23,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Mobile Redirect Script -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = '/index_mobile.html';
+        }
+    </script>
+
     <!-- Navigation Bar -->
     <nav id="bar" role="navigation" aria-label="Main navigation">
         <a href="/photos.html">photos</a>
