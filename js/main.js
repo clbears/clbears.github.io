@@ -111,10 +111,75 @@ function initializeWritingsSorting() {
     });
 }
 
+// Project filtering functionality
+function initializeProjectFilters() {
+    const projectList = document.getElementById("projectList");
+    if (!projectList) return;
+
+    const categoryButtons = document.querySelectorAll("#categoryFilters .filter-btn");
+    const yearButtons = document.querySelectorAll("#yearFilters .year-btn");
+    const filterCount = document.getElementById("filterCount");
+
+    let activeCategory = "all";
+    let activeYear = "all";
+
+    function updateFilters() {
+        const projects = projectList.querySelectorAll("a[data-date]");
+        let visibleCount = 0;
+        let totalCount = projects.length;
+
+        projects.forEach(project => {
+            const categories = (project.getAttribute("data-categories") || "").split(",");
+            const year = project.getAttribute("data-year");
+
+            let categoryMatch = activeCategory === "all" || categories.includes(activeCategory);
+            let yearMatch = activeYear === "all" || year === activeYear;
+
+            if (categoryMatch && yearMatch) {
+                project.classList.remove("filtered-out");
+                visibleCount++;
+            } else {
+                project.classList.add("filtered-out");
+            }
+        });
+
+        // Update count display
+        if (activeCategory === "all" && activeYear === "all") {
+            filterCount.textContent = `showing all ${totalCount} projects`;
+        } else {
+            filterCount.textContent = `showing ${visibleCount} of ${totalCount} projects`;
+        }
+    }
+
+    // Category filter handlers
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            categoryButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+            activeCategory = this.getAttribute("data-filter");
+            updateFilters();
+        });
+    });
+
+    // Year filter handlers
+    yearButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            yearButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+            activeYear = this.getAttribute("data-year");
+            updateFilters();
+        });
+    });
+
+    // Initialize count
+    updateFilters();
+}
+
 // Initialize all functionality when DOM is ready
 document.addEventListener("DOMContentLoaded", function() {
     initializeTimer();
     initializeFlipImages();
     initializeProjectSorting();
     initializeWritingsSorting();
+    initializeProjectFilters();
 });

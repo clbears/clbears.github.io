@@ -237,6 +237,64 @@ a:focus {
 /* ===================================
    Projects Page Styles
    =================================== */
+#projectFilters {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5vw;
+}
+
+.filter-btn,
+.year-btn {
+    background-color: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    padding: 0.5vw 1vw;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    transition: all var(--transition-medium);
+    text-transform: lowercase;
+}
+
+.filter-btn:hover,
+.year-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.filter-btn.active,
+.year-btn.active {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+.filter-btn:focus,
+.year-btn:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+#filterCount {
+    font-size: var(--font-size-base);
+    color: var(--color-secondary);
+    margin-top: 0.5vw;
+}
+
 #projectList {
     grid-column: 2 / span 2;
     grid-row: 3;
@@ -247,6 +305,19 @@ a:focus {
     text-align: left;
     padding: 0;
     margin: 0;
+}
+
+#projectList a {
+    transition: opacity var(--transition-medium), transform var(--transition-medium);
+}
+
+#projectList a.filtered-out {
+    opacity: 0;
+    transform: translateX(-10px);
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    pointer-events: none;
 }
 
 #writings {
@@ -392,6 +463,11 @@ footer {
     }
 
     #discovery {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    #projectFilters {
         grid-column: 1 / -1;
         grid-row: auto;
     }

@@ -68,34 +68,125 @@
                  loading="lazy">
         </div>
 
+        <!-- Project Filters -->
+        <section id="projectFilters" aria-label="Filter projects">
+            <div style="font-weight: 800;">Filter:</div>
+            <br>
+            <div id="categoryFilters" class="filter-group">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="engineering">Engineering</button>
+                <button class="filter-btn" data-filter="electronics">Electronics</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="writing">Writing</button>
+                <button class="filter-btn" data-filter="important" title="Engineering class projects">★ Classes</button>
+            </div>
+            <br>
+            <div id="yearFilters" class="filter-group">
+                <button class="year-btn active" data-year="all">All Years</button>
+                <button class="year-btn" data-year="2025">2025</button>
+                <button class="year-btn" data-year="2024">2024</button>
+                <button class="year-btn" data-year="2023">2023</button>
+                <button class="year-btn" data-year="2022">2022</button>
+                <button class="year-btn" data-year="2021">2021</button>
+            </div>
+            <br>
+            <div id="filterCount"></div>
+        </section>
+
         <!-- Project List -->
         <section id="projectList" aria-label="Engineering projects">
             <div style="font-weight: 800;">Projects:</div>
             <br>
             <br>
             <br>
-            <a href="/projects/compoundMachinesProject.html" data-date="2022-9-1">Compound Machines Project</a>
-            <a href="/projects/majorityVotesCircuit.html" data-date="2023-10-15">Majority Votes Circuit</a>
-            <a href="/projects/multiToolDesign.html" data-date="2022-04-13">Multi-Tool Design</a>
-            <a href="/projects/dobCircuit.html" data-date="2024-2-10">DOB Circuit</a>
-            <a href="/projects/stealaCarCircuit.html" data-date="2023-09-05">Steal a Car Circuit</a>
-            <a href="/projects/cableWindingMachine.html" data-date="2022-07-15">Cable Winding Machine</a>
-            <a href="/projects/automatedGuidedVehicleAGV.html" data-date="2024-11-25">Automated Guided Vehicle (AGV)</a>
-            <a href="/projects/reverseEngineeringofaToy.html" data-date="2021-03-30">Reverse Engineering of a Toy</a>
-            <a href="/projects/interactiveLockStoryboard.html" data-date="2021-12-3">Interactive Lock Storyboard</a>
-            <a href="/projects/physicsCar.html" data-date="2024-04-20">Physics Car</a>
+            <a href="/projects/compoundMachinesProject.html"
+               data-date="2022-9-1"
+               data-categories="engineering,important"
+               data-year="2022"
+               data-class="Principles of Engineering Design">Compound Machines Project</a>
+            <a href="/projects/majorityVotesCircuit.html"
+               data-date="2023-10-15"
+               data-categories="electronics,important"
+               data-year="2023"
+               data-class="Digital Electronics">Majority Votes Circuit</a>
+            <a href="/projects/multiToolDesign.html"
+               data-date="2022-04-13"
+               data-categories="engineering,important"
+               data-year="2022"
+               data-class="Intro to Engineering Design">Multi-Tool Design</a>
+            <a href="/projects/dobCircuit.html"
+               data-date="2024-2-10"
+               data-categories="electronics,important"
+               data-year="2024"
+               data-class="Digital Electronics">DOB Circuit</a>
+            <a href="/projects/stealaCarCircuit.html"
+               data-date="2023-09-05"
+               data-categories="electronics,important"
+               data-year="2023"
+               data-class="Digital Electronics">Steal a Car Circuit</a>
+            <a href="/projects/cableWindingMachine.html"
+               data-date="2022-07-15"
+               data-categories="engineering,important"
+               data-year="2022"
+               data-class="Principles of Engineering Design">Cable Winding Machine</a>
+            <a href="/projects/automatedGuidedVehicleAGV.html"
+               data-date="2024-11-25"
+               data-categories="engineering,important"
+               data-year="2024"
+               data-class="Computer Integrated Manufacturing">Automated Guided Vehicle (AGV)</a>
+            <a href="/projects/reverseEngineeringofaToy.html"
+               data-date="2021-03-30"
+               data-categories="engineering,important"
+               data-year="2021"
+               data-class="Intro to Engineering Design">Reverse Engineering of a Toy</a>
+            <a href="/projects/interactiveLockStoryboard.html"
+               data-date="2021-12-3"
+               data-categories="engineering,important"
+               data-year="2021"
+               data-class="Intro to Engineering Design">Interactive Lock Storyboard</a>
+            <a href="/projects/physicsCar.html"
+               data-date="2024-04-20"
+               data-categories="engineering"
+               data-year="2024">Physics Car</a>
             <a href="https://live.standards.site/foothill_sfa"
                data-date="2023-08-15"
+               data-categories="design"
+               data-year="2023"
                target="_blank"
                rel="noopener noreferrer">Student Filmmakers Association Graphic Standards</a>
-            <a href="/projects/6yeartorch.html" data-date="2024-12-20">Six Year Torch</a>
-            <a href="/projects/notasi2.html" data-date="2024-11-2">NOTA v. United States</a>
-            <a href="/projects/notai12.html" data-date="2024-5-22">Foothill's DeMockracy</a>
-            <a href="/projects/studentFilmmakersAssocatonPosters.html" data-date="2024-8-5">Student Filmmakers Association Poster Campaign</a>
-            <a href="/projects/playfulClock.html" data-date="2023-12-5">Playful Clock</a>
-            <a href="/projects/macroPad.html" data-date="2022-3-3">Macropad</a>
-            <a href="/projects/ledLamp.html" data-date="2025-8-3">LED Lamp</a>
-            <a href="/projects/assistiveDevice.html" data-date="2025-11-19">IN PROGRESS: Assistive Device</a>
+            <a href="/projects/6yeartorch.html"
+               data-date="2024-12-20"
+               data-categories="design"
+               data-year="2024">Six Year Torch</a>
+            <a href="/projects/notasi2.html"
+               data-date="2024-11-2"
+               data-categories="writing"
+               data-year="2024">NOTA v. United States</a>
+            <a href="/projects/notai12.html"
+               data-date="2024-5-22"
+               data-categories="writing"
+               data-year="2024">Foothill's DeMockracy</a>
+            <a href="/projects/studentFilmmakersAssocatonPosters.html"
+               data-date="2024-8-5"
+               data-categories="design"
+               data-year="2024">Student Filmmakers Association Poster Campaign</a>
+            <a href="/projects/playfulClock.html"
+               data-date="2023-12-5"
+               data-categories="design,engineering"
+               data-year="2023">Playful Clock</a>
+            <a href="/projects/macroPad.html"
+               data-date="2022-3-3"
+               data-categories="electronics"
+               data-year="2022">Macropad</a>
+            <a href="/projects/ledLamp.html"
+               data-date="2025-8-3"
+               data-categories="design,engineering"
+               data-year="2025">LED Lamp</a>
+            <a href="/projects/assistiveDevice.html"
+               data-date="2025-11-19"
+               data-categories="engineering,important"
+               data-year="2025"
+               data-class="APSC 100">IN PROGRESS: Assistive Device</a>
         </section>
 
         <!-- Writings Section -->
