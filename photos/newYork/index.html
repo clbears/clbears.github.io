@@ -173,9 +173,12 @@
     descriptionNode.textContent = gallery.description;
 
     function resizeMasonryItem(card) {
-        const h = card.getBoundingClientRect().height;
-        if (!h) return;
-        card.style.gridRowEnd = "span " + Math.ceil(h);
+        const img = card.querySelector("img");
+        if (!img) return;
+        const imgH = img.getBoundingClientRect().height;
+        if (!imgH) return;
+        const padBottom = parseFloat(getComputedStyle(card).paddingBottom) || 0;
+        card.style.gridRowEnd = "span " + Math.ceil(imgH + padBottom);
     }
 
     function resizeAllItems() {
