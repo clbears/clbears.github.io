@@ -42,35 +42,31 @@
         }
 
         .gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-auto-rows: 1px;
+            columns: 1;
             column-gap: var(--gallery-gap);
-            align-items: start;
         }
 
         @media (min-width: 640px) {
             .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
+                columns: 2;
             }
         }
 
         @media (min-width: 1080px) {
             .gallery-grid {
-                grid-template-columns: repeat(3, 1fr);
+                columns: 3;
             }
         }
 
         .photo-card {
             display: block;
-            padding-bottom: var(--gallery-gap);
+            break-inside: avoid;
+            margin: 0 0 var(--gallery-gap);
             cursor: zoom-in;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .photo-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 28px 48px rgba(0, 0, 0, 0.14);
+        .photo-card:hover img {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
         .photo-card img {
@@ -181,21 +177,6 @@
     titleNode.textContent = gallery.title;
     descriptionNode.textContent = gallery.description;
 
-    function resizeMasonryItem(card) {
-        const img = card.querySelector("img");
-        if (!img) return;
-        const imgH = img.getBoundingClientRect().height;
-        if (!imgH) return;
-        const padBottom = parseFloat(getComputedStyle(card).paddingBottom) || 0;
-        card.style.gridRowEnd = "span " + Math.ceil(imgH + padBottom);
-    }
-
-    function resizeAllItems() {
-        document.querySelectorAll(".photo-card").forEach(resizeMasonryItem);
-    }
-
-    window.addEventListener("resize", resizeAllItems);
-
     const createPhotoCard = (file) => {
         const figure = document.createElement("figure");
         figure.className = "photo-card";
@@ -204,9 +185,6 @@
         img.loading = "eager";
         img.src = gallery.basePath + file;
         img.alt = `${gallery.title} photo`;
-
-        img.addEventListener("load", () => resizeMasonryItem(figure));
-        if (img.complete) resizeMasonryItem(figure);
 
         figure.addEventListener("click", () => {
             lightbox.classList.add("active");
