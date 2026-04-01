@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Website project by Christopher Lam">
+    <title>Personal Website - Christopher Lam</title>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/project-details.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="bar" role="navigation" aria-label="Main navigation">
+        <a href="/photos.html">photos</a>
+        <a href="/projects.html">projects</a>
+        <a href="/resume.html">resume</a>
+    </nav>
+
+    <!-- Header/Letterhead -->
+    <header id="letterhead">
+        <a style="font-weight: 800" href="/index.html" aria-label="Home"> Christopher Lam </a>
+        <br>
+        <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+           target="_blank"
+           rel="noopener noreferrer">San Francisco California</a>
+        <br>
+        <a href="https://www.instagram.com/topher_lam/"
+           target="_blank"
+           rel="noopener noreferrer">@topher_lam</a>
+        <a href="https://youtu.be/tH63sBOTIeQ"
+           id="time"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Current time"></a>
+        <br>
+        <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
+    </header>
+
+    <!-- Project Title -->
+    <div id="projectTitle">
+        PERSONAL WEBSITE
+    </div>
+
+    <main id="projectGrid">
+        <!-- Left Column: Metadata Box -->
+        <div class="grid-item" id="projectLabel">
+            <div>Personal Website</div>
+            <span>Year: 2024–ongoing</span>
+            <span>Medium: HTML, CSS, JavaScript</span>
+            <span>Role: Designer, Developer</span>
+        </div>
+
+        <!-- Left Column: Summary Text -->
+        <div class="grid-item" id="projectSummary">
+            <p>
+                This site. I built clbears.com as a portfolio and personal archive—a place to document projects, photos, and work in a format I fully control.
+            </p>
+            <p>
+                The design language is intentional: IBM Plex Mono, dark and utilitarian, sharp corners, uppercase labels. The projects page includes a custom filtering system by category and year. Everything is hand-coded—no frameworks, no CMS, no templates.
+            </p>
+        </div>
+
+        <!-- Left Column: Design Questions/Notes -->
+        <div class="grid-item" id="projectNotes">
+            <div class="note-block">
+                What's the minimum viable portfolio site?
+            </div>
+            <div class="note-block">
+                How does the visual language of a portfolio shape how the work is read?
+            </div>
+        </div>
+
+        <!-- Right Column: Hero Image -->
+        <div class="grid-item" id="projectHero">
+            <img src="/assets/images/projects/personalWebsite/hero.jpeg" alt="Personal website screenshot">
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
