@@ -1,42 +1,35 @@
 // Shared JavaScript functionality for Christopher Lam's website
 
-// Timer functionality
+// Timer functionality — mimics Swiss railway clock: freeze display for last 2s of each minute
 function initializeTimer() {
     const timeElement = document.getElementById("time");
     if (!timeElement) return;
 
-    let date = new Date();
-    let time = date.toLocaleTimeString("en-US", {
+    const formatter = new Intl.DateTimeFormat("en-US", {
         timeZone: "America/Los_Angeles",
+        hour: "numeric",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true,
     });
-    timeElement.innerHTML = time;
 
-    let updateTimer = true;
+    function tick() {
+        const now = new Date();
+        const elapsed = now.getSeconds() + now.getMilliseconds() / 1000;
 
-    setInterval(function() {
-        if (!updateTimer) {
-            return;
+        if (elapsed < 58) {
+            const parts = formatter.formatToParts(now);
+            const h = parts.find(p => p.type === "hour").value;
+            const m = parts.find(p => p.type === "minute").value;
+            const s = parts.find(p => p.type === "second").value;
+            const cs = Math.floor(now.getMilliseconds() / 10).toString().padStart(2, "0");
+            timeElement.innerHTML = `${h}:${m}:${s}.${cs}`;
         }
-        date = new Date();
-        let time = date.toLocaleTimeString("en-US", {
-            timeZone: "America/Los_Angeles",
-        });
-        timeElement.innerHTML = time.split(" ")[0] + "." + date.getMilliseconds().toString().slice(0, 2);
-    }, 1);
 
-    function pauseTimer() {
-        updateTimer = false;
-        setTimeout(function() {
-            updateTimer = true;
-        }, 1500);
+        requestAnimationFrame(tick);
     }
 
-    setTimeout(function() {
-        pauseTimer();
-        setInterval(function() {
-            pauseTimer();
-        }, 60000);
-    }, 60000 - date.getSeconds() * 1000 - date.getMilliseconds() - 1500);
+    requestAnimationFrame(tick);
 }
 
 // Image flip functionality
