@@ -17,22 +17,23 @@
     <link rel="stylesheet" href="/styles.css">
     <style>
         :root {
-            --gallery-border: 1px solid black;
-            --gallery-gap: clamp(18px, 3vw, 32px);
+            --gallery-gap: clamp(24px, 3.5vw, 48px);
         }
 
         .gallery-shell {
-            padding: clamp(40px, 7vw, 80px) clamp(28px, 6vw, 96px) clamp(72px, 8vw, 120px);
+            padding: clamp(40px, 7vw, 96px) clamp(40px, 7vw, 120px) clamp(72px, 8vw, 120px);
             display: grid;
-            gap: clamp(24px, 4vw, 48px);
+            gap: clamp(32px, 5vw, 64px);
         }
 
         .gallery-header {
-            max-width: 38ch;
+            max-width: 46ch;
             display: grid;
             gap: clamp(8px, 1.5vw, 18px);
             text-transform: uppercase;
             letter-spacing: 0.2vw;
+            padding-bottom: clamp(16px, 2vw, 28px);
+            border-bottom: 1.5px solid #000;
         }
 
         .gallery-header h1 {
@@ -49,20 +50,17 @@
         }
 
         .gallery-grid {
-            columns: 1;
-            column-gap: var(--gallery-gap);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--gallery-gap);
         }
 
-        @media (min-width: 640px) {
-            .gallery-grid {
-                columns: 2;
-            }
-        }
-
-        @media (min-width: 1080px) {
-            .gallery-grid {
-                columns: 3;
-            }
+        .masonry-col {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--gallery-gap);
         }
 
         .photo-card {
@@ -70,12 +68,20 @@
             break-inside: avoid;
             margin: 0 0 var(--gallery-gap);
             cursor: zoom-in;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            background: #fff;
+            padding: clamp(10px, 1.5vw, 18px);
+            padding-bottom: clamp(18px, 2.5vw, 32px);
+            box-shadow:
+                0 1px 3px rgba(0, 0, 0, 0.08),
+                0 4px 18px rgba(0, 0, 0, 0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .photo-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 28px 48px rgba(0, 0, 0, 0.14);
+            transform: translateY(-6px);
+            box-shadow:
+                0 2px 6px rgba(0, 0, 0, 0.09),
+                0 14px 36px rgba(0, 0, 0, 0.13);
         }
 
         .photo-card img {
@@ -83,21 +89,13 @@
             height: auto;
             display: block;
             object-fit: cover;
-            border: var(--gallery-border);
-            background: #fff;
-        }
-
-        .photo-caption {
-            margin: clamp(6px, 1vw, 12px) 0 0;
-            font-size: 0.85rem;
-            letter-spacing: 0.12vw;
-            text-transform: uppercase;
+            background: #f8f8f8;
         }
 
         .lightbox {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.86);
+            background: rgba(0, 0, 0, 0.88);
             display: none;
             align-items: center;
             justify-content: center;
@@ -112,11 +110,11 @@
 
         .lightbox img {
             max-width: min(88vw, 1400px);
-            max-height: 82vh;
+            max-height: 86vh;
             width: auto;
             height: auto;
-            border: var(--gallery-border);
             background: #fff;
+            box-shadow: 0 8px 64px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -194,8 +192,47 @@
         return figure;
     };
 
-    gallery.images.forEach((file) => {
-        grid.appendChild(createPhotoCard(file));
+    let cachedRatios = null;
+
+    const getRatios = () => {
+        if (cachedRatios) return Promise.resolve(cachedRatios);
+        return Promise.all(
+            gallery.images.map(file => new Promise(resolve => {
+                const img = new Image();
+                img.onload = () => resolve(img.naturalHeight / img.naturalWidth);
+                img.onerror = () => resolve(1.25);
+                img.src = gallery.basePath + file;
+            }))
+        ).then(ratios => { cachedRatios = ratios; return ratios; });
+    };
+
+    const colCount = () => window.innerWidth >= 1080 ? 3 : window.innerWidth >= 640 ? 2 : 1;
+    let currentCols = 0;
+
+    const buildGrid = (ratios) => {
+        const n = colCount();
+        if (n === currentCols) return;
+        currentCols = n;
+        grid.innerHTML = '';
+        const cols = Array.from({ length: n }, () => {
+            const col = document.createElement('div');
+            col.className = 'masonry-col';
+            grid.appendChild(col);
+            return { el: col, h: 0 };
+        });
+        gallery.images.forEach((file, i) => {
+            const shortest = cols.reduce((a, b) => a.h <= b.h ? a : b);
+            shortest.el.appendChild(createPhotoCard(file));
+            shortest.h += ratios[i];
+        });
+    };
+
+    getRatios().then(buildGrid);
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => getRatios().then(buildGrid), 150);
     });
 
     lightbox.addEventListener("click", () => {
