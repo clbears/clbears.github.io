@@ -62,3 +62,17 @@ p.description {
     color: #555;
     font-weight: 400;
 }
+
+/* Quiet motto / blog easter-egg link — blends in as a signature line */
+.motto {
+    margin-top: 24px;
+    font-size: 3vw;
+    color: #888;
+    font-weight: 400;
+}
+
+.motto a,
+.motto a:hover {
+    color: inherit;
+    font-weight: inherit;
+}

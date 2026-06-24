@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Things - Christopher Lam">
+    <meta name="description" content="Christopher Lam's log">
     <meta name="author" content="Christopher Lam">
     <meta name="theme-color" content="#000000">
+    <meta name="robots" content="noindex">
 
-    <title>Things - Christopher Lam</title>
+    <title>Log - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +22,21 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        #log {
+            margin: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.4vw;
+            max-width: 70ch;
+        }
+
+        #log a[data-date] {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -51,25 +67,17 @@
     </header>
 
     <!-- Main Content -->
-    <main id="image_grid">
-        <article id="projectList">
-            <h2 style="font-weight: 800;">Things:</h2>
-            <p>
-                - <a href="https://naotofukasawa.com/projects/#/">Naoto Fukasawa's Work:</a>
-                I really resonate with some of these pieces. I never throught I would cry at the form of a chair.
-            </p>
-            <br>
-            <p> - This AD
-                <img src="/assets/images/hiscoxAd.jpg"
-                 alt="Hiscox Ad"
-                 loading="lazy">
-            </p>
-        </article>
+    <a class="page-back" href="/index.html">&larr; home</a>
+    <main>
+        <!-- Log entries. Add a line per post; it is sorted newest-first automatically. -->
+        <section id="log" aria-label="Log entries">
+            <a href="/log/post.html?p=hello" data-date="2026-06-23">A quiet place to think out loud</a>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        &copy; 2026 Christopher Lam. Ad Astra per Aspera
+        &copy; 2026 Christopher Lam. <a class="motto-link" href="/log.html">Ad Astra per Aspera</a>
     </footer>
 
     <!-- JavaScript -->

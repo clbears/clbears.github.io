@@ -46,6 +46,39 @@ function initializeFlipImages() {
     }
 }
 
+// On phones, point "home" links at the mobile homepage so the blog
+// (the only desktop-chrome pages reachable on mobile) navigates natively.
+function initializeMobileHome() {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (!isMobile) return;
+
+    document.querySelectorAll('a[href="/index.html"]').forEach(link => {
+        link.setAttribute("href", "/index_mobile.html");
+    });
+}
+
+// Project preview-on-hover functionality
+function initializeProjectPreview() {
+    const previewImg = document.querySelector("#preview img");
+    const grid = document.getElementById("image_grid");
+    if (!previewImg || !grid) return;
+
+    // Remember the default image so we can restore it on mouse-out
+    const defaultSrc = previewImg.getAttribute("src");
+
+    // Delegated on the whole grid so both the archive list and the
+    // "Currently" block drive the preview image on hover.
+    grid.addEventListener("mouseover", function(event) {
+        const link = event.target.closest("a[data-preview]");
+        if (!link) return;
+        previewImg.setAttribute("src", link.getAttribute("data-preview"));
+    });
+
+    grid.addEventListener("mouseleave", function() {
+        previewImg.setAttribute("src", defaultSrc);
+    });
+}
+
 // Project list sorting functionality
 function initializeProjectSorting() {
     const projectList = document.getElementById("projectList");
@@ -104,6 +137,34 @@ function initializeWritingsSorting() {
     });
 }
 
+// Log list sorting functionality
+function initializeLogSorting() {
+    const logList = document.getElementById("log");
+    if (!logList) return;
+
+    const entries = Array.from(logList.querySelectorAll("a[data-date]"));
+
+    // Sort entries by data-date attribute (newest first)
+    entries.sort((a, b) => {
+        const dateA = new Date(a.getAttribute("data-date"));
+        const dateB = new Date(b.getAttribute("data-date"));
+        return dateB - dateA;
+    });
+
+    // Append sorted entries with formatted dates
+    entries.forEach(entry => {
+        const entryDate = new Date(entry.getAttribute("data-date"));
+        const formattedDate = entryDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+        });
+
+        entry.innerHTML += ` <span style="color: gray; font-size: 0.9em;">(${formattedDate})</span>`;
+        logList.appendChild(entry);
+    });
+}
+
 // Project filtering functionality
 function initializeProjectFilters() {
     const projectList = document.getElementById("projectList");
@@ -113,8 +174,11 @@ function initializeProjectFilters() {
     const yearButtons = document.querySelectorAll("#yearFilters .year-btn");
     const filterCount = document.getElementById("filterCount");
 
-    let activeCategory = "all";
-    let activeYear = "all";
+    // Default to whichever buttons are marked active in the HTML
+    const activeCategoryBtn = document.querySelector("#categoryFilters .filter-btn.active");
+    const activeYearBtn = document.querySelector("#yearFilters .year-btn.active");
+    let activeCategory = activeCategoryBtn ? activeCategoryBtn.getAttribute("data-filter") : "all";
+    let activeYear = activeYearBtn ? activeYearBtn.getAttribute("data-year") : "all";
 
     function updateFilters() {
         const projects = projectList.querySelectorAll("a[data-date]");
@@ -170,9 +234,12 @@ function initializeProjectFilters() {
 
 // Initialize all functionality when DOM is ready
 document.addEventListener("DOMContentLoaded", function() {
+    initializeMobileHome();
     initializeTimer();
     initializeFlipImages();
+    initializeProjectPreview();
     initializeProjectSorting();
     initializeWritingsSorting();
+    initializeLogSorting();
     initializeProjectFilters();
 });
