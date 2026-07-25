@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="NOTA v. United States article for NOTA Magazine by Christopher Lam">
+    <meta name="author" content="Christopher Lam">
     <title>NOTA v. United States - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
@@ -20,11 +21,18 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../css/project-details.css">
 </head>
-<body>
+<body class="project-page">
+    <!-- Mobile Redirect Script -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = '/index_mobile.html';
+        }
+    </script>
+
     <!-- Navigation Bar -->
     <nav id="bar" role="navigation" aria-label="Main navigation">
         <a href="/photos.html">photos</a>
-        <a href="/projects.html">projects</a>
+        <a href="/projects.html" aria-current="page">projects</a>
         <a href="/resume.html">resume</a>
     </nav>
 
@@ -48,37 +56,44 @@
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
     </header>
 
-    <!-- Project Title -->
-    <div id="projectTitle">
-        NOTA v. United States
-    </div>
-
     <!-- Main Content -->
-    <main id="projectGrid">
-        <div id="projectLabel">
-            <div>NOTA v. United States</div>
-            <span>Date: November 2024</span>
+    <main id="projectGrid" class="project--full">
+        <h1 id="projectTitle">NOTA v. United States</h1>
+
+        <div id="projectInfo">
+            <dl id="projectLabel">
+                <div class="spec-name">NOTA v. United States</div>
+                <dt>Date</dt>
+                <dd>November 2024</dd>
+                <dt>Medium</dt>
+                <dd>Editorial writing, graphic design</dd>
+                <dt>Role</dt>
+                <dd>Writer, Designer</dd>
+            </dl>
+
+            <div id="projectSummary">
+                <p>Wrote "The spirit of Telegraph Ave." and produced graphics for NOTA Magazine.</p>
+                <p><a href="https://online.fliphtml5.com/ozhpv/csjn/#p=1" target="_blank" rel="noopener noreferrer">View the full issue</a></p>
+            </div>
         </div>
-        <div id="projectSummary">
-            <p>Wrote "The spirit of Telegraph Ave." and produced graphics for NOTA Magazine.</p>
-            <p><a href="https://online.fliphtml5.com/ozhpv/csjn/#p=1" target="_blank" rel="noopener noreferrer">View the full issue</a></p>
-        </div>
-        <div id="projectHero">
+
+        <figure id="projectHero">
             <img src="/assets/images/projects/NOTA SI2/notasi2-1.jpg" alt="Magazine spread from NOTA v. United States">
-        </div>
+        </figure>
+
         <div id="projectGallery">
-            <div>
+            <figure class="gallery-card">
                 <img class="flip" src="/assets/images/projects/NOTA SI2/notasi2-2.jpg" alt="Additional magazine spread" data-image_list="/assets/images/projects/NOTA SI2/notasi2-2.jpg, /assets/images/projects/NOTA SI2/notasi2-3.jpg, /assets/images/projects/NOTA SI2/notasi2-4.jpg, /assets/images/projects/NOTA SI2/notasi2-5.jpg">
-                <span>Selected spreads</span>
-            </div>
-            <div>
+                <figcaption>Selected spreads</figcaption>
+            </figure>
+            <figure class="gallery-card">
                 <img class="flip" src="/assets/images/projects/NOTA SI2/notasi2-7.jpg" alt="Supporting photography layout" data-image_list="/assets/images/projects/NOTA SI2/notasi2-7.jpg, /assets/images/projects/NOTA SI2/notasi2-8.jpg">
-                <span>Supporting photography</span>
-            </div>
-            <div>
+                <figcaption>Supporting photography</figcaption>
+            </figure>
+            <figure class="gallery-card">
                 <img src="/assets/images/projects/NOTA SI2/notasi2-10.jpg" alt="Closing page of the feature">
-                <span>Closing page</span>
-            </div>
+                <figcaption>Closing page</figcaption>
+            </figure>
         </div>
     </main>
 

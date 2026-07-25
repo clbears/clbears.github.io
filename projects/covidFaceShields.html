@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="COVID-19 Face Shield Production project by Christopher Lam">
+    <meta name="author" content="Christopher Lam">
     <title>COVID-19 Face Shield Production - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
@@ -20,11 +21,18 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../css/project-details.css">
 </head>
-<body>
+<body class="project-page">
+    <!-- Mobile Redirect Script -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = '/index_mobile.html';
+        }
+    </script>
+
     <!-- Navigation Bar -->
     <nav id="bar" role="navigation" aria-label="Main navigation">
         <a href="/photos.html">photos</a>
-        <a href="/projects.html">projects</a>
+        <a href="/projects.html" aria-current="page">projects</a>
         <a href="/resume.html">resume</a>
     </nav>
 
@@ -48,44 +56,44 @@
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
     </header>
 
-    <!-- Project Title -->
-    <div id="projectTitle">
-        COVID-19 FACE SHIELD PRODUCTION
-    </div>
+    <!-- Main Content -->
+    <main id="projectGrid" class="project--full">
+        <h1 id="projectTitle">COVID-19 FACE SHIELD PRODUCTION</h1>
 
-    <main id="projectGrid">
-        <!-- Left Column: Metadata Box -->
-        <div class="grid-item" id="projectLabel">
-            <div>COVID-19 Face Shield Production</div>
-            <span>Year: 2020</span>
-            <span>Medium: FDM 3D printing, laser-cut acrylic</span>
-            <span>Role: Designer, Fabricator, Organizer</span>
-        </div>
+        <div id="projectInfo">
+            <dl id="projectLabel">
+                <div class="spec-name">COVID-19 Face Shield Production</div>
+                <dt>Date</dt>
+                <dd>2020</dd>
+                <dt>Medium</dt>
+                <dd>FDM 3D printing, laser-cut acrylic</dd>
+                <dt>Role</dt>
+                <dd>Designer, Fabricator, Organizer</dd>
+            </dl>
 
-        <!-- Left Column: Summary Text -->
-        <div class="grid-item" id="projectSummary">
-            <p>
-                During the COVID-19 pandemic, I 3D-printed over 3,500 face shields and distributed them to first-responder organizations across the Bay Area. The project started with a single printer and a publicly available shield design, then scaled into a production operation—optimizing print settings, batch workflows, and material sourcing to maximize output.
-            </p>
-            <p>
-                The project earned a Certificate of Honor from NorCal Ambulance. It taught me how to think about manufacturing at scale.
-            </p>
-        </div>
-
-        <!-- Left Column: Design Questions/Notes -->
-        <div class="grid-item" id="projectNotes">
-            <div class="note-block">
-                Where can I improve the design to be more comfortable?
+            <div id="projectSummary">
+                <p>
+                    During the COVID-19 pandemic, I 3D-printed over 3,500 face shields and distributed them to first-responder organizations across the Bay Area. The project started with a single printer and a publicly available shield design, then scaled into a production operation—optimizing print settings, batch workflows, and material sourcing to maximize output.
+                </p>
+                <p>
+                    The project earned a Certificate of Honor from NorCal Ambulance. It taught me how to think about manufacturing at scale.
+                </p>
             </div>
-            <div class="note-block">
-                What can I change to increase throughput? 
+
+            <div id="projectNotes">
+                <div class="note-block">
+                    Where can I improve the design to be more comfortable?
+                </div>
+                <div class="note-block">
+                    What can I change to increase throughput? 
+                </div>
             </div>
         </div>
 
-        <!-- Right Column: Hero Image -->
-        <div class="grid-item" id="projectHero">
+        <figure id="projectHero">
             <img src="/assets/images/projects/faceShields.jpeg" alt="COVID-19 face shields production">
-        </div>
+        </figure>
+
     </main>
 
     <!-- JavaScript -->

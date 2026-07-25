@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Eagle Scout Bicycle Repair Station project by Christopher Lam">
+    <meta name="author" content="Christopher Lam">
     <title>Eagle Scout Bicycle Repair Station - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
@@ -20,11 +21,18 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../css/project-details.css">
 </head>
-<body>
+<body class="project-page">
+    <!-- Mobile Redirect Script -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = '/index_mobile.html';
+        }
+    </script>
+
     <!-- Navigation Bar -->
     <nav id="bar" role="navigation" aria-label="Main navigation">
         <a href="/photos.html">photos</a>
-        <a href="/projects.html">projects</a>
+        <a href="/projects.html" aria-current="page">projects</a>
         <a href="/resume.html">resume</a>
     </nav>
 
@@ -48,44 +56,44 @@
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
     </header>
 
-    <!-- Project Title -->
-    <div id="projectTitle">
-        EAGLE SCOUT BICYCLE REPAIR STATION
-    </div>
+    <!-- Main Content -->
+    <main id="projectGrid" class="project--full">
+        <h1 id="projectTitle">EAGLE SCOUT BICYCLE REPAIR STATION</h1>
 
-    <main id="projectGrid">
-        <!-- Left Column: Metadata Box -->
-        <div class="grid-item" id="projectLabel">
-            <div>Eagle Scout Bicycle Repair Station</div>
-            <span>Year: 2024</span>
-            <span>Medium: Treated wood, concrete, community coordination</span>
-            <span>Role: Project Lead</span>
-        </div>
+        <div id="projectInfo">
+            <dl id="projectLabel">
+                <div class="spec-name">Eagle Scout Bicycle Repair Station</div>
+                <dt>Date</dt>
+                <dd>2024</dd>
+                <dt>Medium</dt>
+                <dd>Treated wood, concrete, community coordination</dd>
+                <dt>Role</dt>
+                <dd>Project Lead</dd>
+            </dl>
 
-        <!-- Left Column: Summary Text -->
-        <div class="grid-item" id="projectSummary">
-            <p>
-                For my Eagle Scout project, I designed and built a public bicycle repair station. I secured donations of tools and materials, led a team of 15+ volunteers through construction, and organized student workshops on basic bike maintenance. The project was entrusted to Foothill's CTE department to maintain with the project's excess funds.
-            </p>
-            <p>
-                This project was important to me, as one of my first assigned engineering projects was to fix a old Eagle Scout project. With my younger self in mind, my project was made to stand the test of time and to inspire a future maker.
-            </p>
-        </div>
-
-        <!-- Left Column: Design Questions/Notes -->
-        <div class="grid-item" id="projectNotes">
-            <div class="note-block">
-                How do you secure tools in a public space while keeping them accessible?
+            <div id="projectSummary">
+                <p>
+                    For my Eagle Scout project, I designed and built a public bicycle repair station. I secured donations of tools and materials, led a team of 15+ volunteers through construction, and organized student workshops on basic bike maintenance. The project was entrusted to Foothill's CTE department to maintain with the project's excess funds.
+                </p>
+                <p>
+                    This project was important to me, as one of my first assigned engineering projects was to fix a old Eagle Scout project. With my younger self in mind, my project was made to stand the test of time and to inspire a future maker.
+                </p>
             </div>
-            <div class="note-block">
-                How can I make something outlast my influence?
+
+            <div id="projectNotes">
+                <div class="note-block">
+                    How do you secure tools in a public space while keeping them accessible?
+                </div>
+                <div class="note-block">
+                    How can I make something outlast my influence?
+                </div>
             </div>
         </div>
 
-        <!-- Right Column: Hero Image -->
-        <div class="grid-item" id="projectHero">
+        <figure id="projectHero">
             <img src="/assets/images/projects/bikeRepairStand.jpeg" alt="Eagle Scout bicycle repair station">
-        </div>
+        </figure>
+
     </main>
 
     <!-- JavaScript -->

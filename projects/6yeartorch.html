@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Six Year Torch project by Christopher Lam">
+    <meta name="author" content="Christopher Lam">
     <title>Six Year Torch - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
@@ -20,11 +21,18 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../css/project-details.css">
 </head>
-<body>
+<body class="project-page">
+    <!-- Mobile Redirect Script -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = '/index_mobile.html';
+        }
+    </script>
+
     <!-- Navigation Bar -->
     <nav id="bar" role="navigation" aria-label="Main navigation">
         <a href="/photos.html">photos</a>
-        <a href="/projects.html">projects</a>
+        <a href="/projects.html" aria-current="page">projects</a>
         <a href="/resume.html">resume</a>
     </nav>
 
@@ -48,23 +56,28 @@
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
     </header>
 
-    <!-- Project Title -->
-    <div id="projectTitle">
-        Six Year Torch
-    </div>
-
     <!-- Main Content -->
-    <main id="projectGrid">
-        <div id="projectLabel">
-            <div>Six Year Torch</div>
-            <span>Date: December 2024</span>
+    <main id="projectGrid" class="project--brief">
+        <h1 id="projectTitle">Six Year Torch</h1>
+
+        <div id="projectInfo">
+            <dl id="projectLabel">
+                <div class="spec-name">Six Year Torch</div>
+                <dt>Date</dt>
+                <dd>December 2024</dd>
+                <dt>Medium</dt>
+                <dd>LED, coin cell, resistor</dd>
+            </dl>
+
+            <div id="projectSummary">
+                <p>A device that, once pulled, will shine a single LED for six years. As a gift to a friend, it is meant to represent our continued friendship.</p>
+            </div>
         </div>
-        <div id="projectSummary">
-            <p>A device that, once pulled, will shine a single LED for six years. As a gift to a friend, it is meant to represent our continued friendship.</p>
-        </div>
-        <div id="projectHero">
-            <img class="flip" src="/assets/images/projects/sixyeartorchdark.jpeg" alt="Six year torch glowing" data-image_list="/assets/images/projects/sixyeartorchdark.jpeg">
-        </div>
+
+        <figure id="projectHero">
+            <img src="/assets/images/projects/sixyeartorchdark.jpeg" alt="Six year torch glowing">
+        </figure>
+
     </main>
 
     <!-- JavaScript -->

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Interactive Lock Storyboard project by Christopher Lam">
+    <meta name="author" content="Christopher Lam">
     <title>Interactive Lock Storyboard - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
@@ -20,11 +21,18 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../css/project-details.css">
 </head>
-<body>
+<body class="project-page">
+    <!-- Mobile Redirect Script -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = '/index_mobile.html';
+        }
+    </script>
+
     <!-- Navigation Bar -->
     <nav id="bar" role="navigation" aria-label="Main navigation">
         <a href="/photos.html">photos</a>
-        <a href="/projects.html">projects</a>
+        <a href="/projects.html" aria-current="page">projects</a>
         <a href="/resume.html">resume</a>
     </nav>
 
@@ -48,24 +56,31 @@
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
     </header>
 
-    <!-- Project Title -->
-    <div id="projectTitle">
-        Interactive Lock Storyboard
-    </div>
-
     <!-- Main Content -->
-    <main id="projectGrid">
-        <div id="projectLabel">
-            <div>Interactive Lock Storyboard</div>
-            <span>Date: December 2021</span>
+    <main id="projectGrid" class="project--brief">
+        <h1 id="projectTitle">Interactive Lock Storyboard</h1>
+
+        <div id="projectInfo">
+            <dl id="projectLabel">
+                <div class="spec-name">Interactive Lock Storyboard</div>
+                <dt>Date</dt>
+                <dd>December 2021</dd>
+                <dt>Class</dt>
+                <dd>Intro to Engineering Design</dd>
+                <dt>Role</dt>
+                <dd>Technical design, manufacturing, marketing</dd>
+            </dl>
+
+            <div id="projectSummary">
+                <p>For a library interactive display, my team and I designed a mechanical combination lock that integrated storytelling with functionality. I contributed to the technical design, manufacturing, and marketing of the project.</p>
+                <p>The final design used wafer disks and constraint pins, creating a unique interactive experience.</p>
+            </div>
         </div>
-        <div id="projectSummary">
-            <p>For a library interactive display, my team and I designed a mechanical combination lock that integrated storytelling with functionality. I contributed to the technical design, manufacturing, and marketing of the project.</p>
-            <p>The final design used wafer disks and constraint pins, creating a unique interactive experience.</p>
-        </div>
-        <div id="projectHero">
+
+        <figure id="projectHero">
             <img src="/assets/images/projects/lock.jpeg" alt="Interactive lock storyboard display">
-        </div>
+        </figure>
+
     </main>
 
     <!-- JavaScript -->

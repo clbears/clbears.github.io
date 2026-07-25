@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="APSC 101 Mining Feasibility Assessment project by Christopher Lam">
+    <meta name="author" content="Christopher Lam">
     <title>APSC 101 Mining Feasibility Assessment - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
@@ -20,11 +21,18 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../css/project-details.css">
 </head>
-<body>
+<body class="project-page">
+    <!-- Mobile Redirect Script -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = '/index_mobile.html';
+        }
+    </script>
+
     <!-- Navigation Bar -->
     <nav id="bar" role="navigation" aria-label="Main navigation">
         <a href="/photos.html">photos</a>
-        <a href="/projects.html">projects</a>
+        <a href="/projects.html" aria-current="page">projects</a>
         <a href="/resume.html">resume</a>
     </nav>
 
@@ -48,34 +56,39 @@
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
     </header>
 
-    <!-- Project Title -->
-    <div id="projectTitle">
-        MINING FEASIBILITY ASSESSMENT
-    </div>
+    <!-- Main Content -->
+    <main id="projectGrid" class="project--full">
+        <h1 id="projectTitle">MINING FEASIBILITY ASSESSMENT</h1>
 
-    <main id="projectGrid">
-        <!-- Metadata Box -->
-        <div id="projectLabel">
-            <div>APSC 101 Mining Feasibility Assessment</div>
-            <span>Year: 2026</span>
-            <span>Medium: Technical report, spreadsheet simulation, e-poster</span>
-            <span>Role: Team Member (Constant-ine Consultants)</span>
+        <div id="projectInfo">
+            <dl id="projectLabel">
+                <div class="spec-name">APSC 101 Mining Feasibility Assessment</div>
+                <dt>Date</dt>
+                <dd>2026</dd>
+                <dt>Class</dt>
+                <dd>APSC 101</dd>
+                <dt>Medium</dt>
+                <dd>Technical report, spreadsheet simulation, e-poster</dd>
+                <dt>Role</dt>
+                <dd>Team Member (Constant-ine Consultants)</dd>
+            </dl>
+
+            <div id="projectSummary">
+                <p>
+                    A group feasibility assessment for APSC 101 evaluating the viability of Copper-nicus Mining Ltd.'s proposed operation. Our team (Constant-ine Consultants) assessed three differnt mine sites, used a block model to model differnt mine types, and presented findings via an e-poster and technical report. I was honored to write the introduction of our report.
+                </p>
+                <p>
+                    This project tought be about systems thinking, life cycle analysis, and stakeholder engagement.
+                </p>
+            </div>
         </div>
 
-        <!-- Summary Text -->
-        <div id="projectSummary">
-            <p>
-                A group feasibility assessment for APSC 101 evaluating the viability of Copper-nicus Mining Ltd.'s proposed operation. Our team (Constant-ine Consultants) assessed three differnt mine sites, used a block model to model differnt mine types, and presented findings via an e-poster and technical report. I was honored to write the introduction of our report.
-            </p>
-            <p>
-                This project tought be about systems thinking, life cycle analysis, and stakeholder engagement.
-            </p>
+        <div class="project-doc">
+            <div class="doc-meta">Technical report &middot; PDF</div>
+            <iframe src="/assets/pdf/Constant-ine%20Consultants%20Company%20LLC%20Copper-nicus%20Mining%20Ltd.%20Feasibility%20Assessment.pdf" title="Feasibility assessment report" loading="lazy"></iframe>
+            <a href="/assets/pdf/Constant-ine%20Consultants%20Company%20LLC%20Copper-nicus%20Mining%20Ltd.%20Feasibility%20Assessment.pdf" target="_blank" rel="noopener noreferrer">Open PDF &#8599;</a>
         </div>
 
-        <!-- Hero Image -->
-        <div id="projectHero">
-            <iframe src="/assets/pdf/Constant-ine Consultants Company LLC Copper-nicus Mining Ltd. Feasibility Assessment.pdf" title="Written Report" loading="lazy"></iframe>
-        </div>
     </main>
 
     <!-- JavaScript -->

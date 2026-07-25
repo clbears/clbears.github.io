@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Steal a Car Circuit project by Christopher Lam">
+    <meta name="author" content="Christopher Lam">
     <title>Steal a Car Circuit - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
@@ -20,11 +21,18 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../css/project-details.css">
 </head>
-<body>
+<body class="project-page">
+    <!-- Mobile Redirect Script -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = '/index_mobile.html';
+        }
+    </script>
+
     <!-- Navigation Bar -->
     <nav id="bar" role="navigation" aria-label="Main navigation">
         <a href="/photos.html">photos</a>
-        <a href="/projects.html">projects</a>
+        <a href="/projects.html" aria-current="page">projects</a>
         <a href="/resume.html">resume</a>
     </nav>
 
@@ -48,24 +56,31 @@
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
     </header>
 
-    <!-- Project Title -->
-    <div id="projectTitle">
-        Steal a Car Circuit
-    </div>
-
     <!-- Main Content -->
-    <main id="projectGrid">
-        <div id="projectLabel">
-            <div>Steal a Car Circuit</div>
-            <span>Date: September 2023</span>
+    <main id="projectGrid" class="project--brief">
+        <h1 id="projectTitle">Steal a Car Circuit</h1>
+
+        <div id="projectInfo">
+            <dl id="projectLabel">
+                <div class="spec-name">Steal a Car Circuit</div>
+                <dt>Date</dt>
+                <dd>September 2023</dd>
+                <dt>Class</dt>
+                <dd>Digital Electronics</dd>
+                <dt>Medium</dt>
+                <dd>Multisim, breadboard, 4-bit input</dd>
+            </dl>
+
+            <div id="projectSummary">
+                <p>This project involved creating a circuit where an LED lit up for a single unique 4-bit binary input combination. I contributed to designing the truth table, simulating the circuit in Multisim, and assembling it on a breadboard.</p>
+                <p>This project part of a class competition to "steal" each other's "cars"</p>
+            </div>
         </div>
-        <div id="projectSummary">
-            <p>This project involved creating a circuit where an LED lit up for a single unique 4-bit binary input combination. I contributed to designing the truth table, simulating the circuit in Multisim, and assembling it on a breadboard.</p>
-            <p>This project part of a class competition to "steal" each other's "cars"</p>
-        </div>
-        <div id="projectHero">
+
+        <figure id="projectHero">
             <img src="/assets/images/projects/stealACar.jpeg" alt="Breadboard circuit with switches and LED">
-        </div>
+        </figure>
+
     </main>
 
     <!-- JavaScript -->

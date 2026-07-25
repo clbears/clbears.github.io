@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Nize project by Christopher Lam">
+    <meta name="author" content="Christopher Lam">
     <title>Nize - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
@@ -20,11 +21,18 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../css/project-details.css">
 </head>
-<body>
+<body class="project-page">
+    <!-- Mobile Redirect Script -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = '/index_mobile.html';
+        }
+    </script>
+
     <!-- Navigation Bar -->
     <nav id="bar" role="navigation" aria-label="Main navigation">
         <a href="/photos.html">photos</a>
-        <a href="/projects.html">projects</a>
+        <a href="/projects.html" aria-current="page">projects</a>
         <a href="/resume.html">resume</a>
     </nav>
 
@@ -48,30 +56,28 @@
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
     </header>
 
-    <!-- Project Title -->
-    <div id="projectTitle">
-        NIZE
-    </div>
+    <!-- Main Content -->
+    <main id="projectGrid" class="project--brief">
+        <h1 id="projectTitle">NIZE</h1>
 
-    <main id="projectGrid">
-        <!-- Metadata Box -->
-        <div id="projectLabel">
-            <div>Nize</div>
-            <span>Year: 2024</span>
-            <span>Medium: UI/UX design, graphic design</span>
-            <span>Role: Design Contributor</span>
+        <div id="projectInfo">
+            <dl id="projectLabel">
+                <div class="spec-name">Nize</div>
+                <dt>Date</dt>
+                <dd>2024</dd>
+                <dt>Medium</dt>
+                <dd>UI/UX design, graphic design</dd>
+                <dt>Role</dt>
+                <dd>Design Contributor</dd>
+            </dl>
+
+            <div id="projectSummary">
+                <p>
+                    Nize is a school operations platform built by a small team—covering attendance (Nize Presence), flex scheduling (Nize Flex), and visitor check-in (Nize Visitation). My contributions focused on graphic design, designing the POS-style student interface for card scanning, and troubleshooting technical issues with the Flex scheduling system.
+                </p>
+            </div>
         </div>
 
-        <!-- Summary Text -->
-        <div id="projectSummary">
-            <p>
-                Nize is a school operations platform built by a small team—covering attendance (Nize Presence), flex scheduling (Nize Flex), and visitor check-in (Nize Visitation). My contributions focused on graphic design, designing the POS-style student interface for card scanning, and troubleshooting technical issues with the Flex scheduling system.
-            </p>
-        </div>
-
-        <!-- Hero Image -->
-        <div id="projectHero">
-        </div>
     </main>
 
     <!-- JavaScript -->

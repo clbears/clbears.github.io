@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Reverse Engineering of a Toy project by Christopher Lam">
+    <meta name="author" content="Christopher Lam">
     <title>Reverse Engineering of a Toy - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
@@ -20,11 +21,18 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../css/project-details.css">
 </head>
-<body>
+<body class="project-page">
+    <!-- Mobile Redirect Script -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = '/index_mobile.html';
+        }
+    </script>
+
     <!-- Navigation Bar -->
     <nav id="bar" role="navigation" aria-label="Main navigation">
         <a href="/photos.html">photos</a>
-        <a href="/projects.html">projects</a>
+        <a href="/projects.html" aria-current="page">projects</a>
         <a href="/resume.html">resume</a>
     </nav>
 
@@ -48,24 +56,31 @@
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
     </header>
 
-    <!-- Project Title -->
-    <div id="projectTitle">
-        Reverse Engineering of a Toy
-    </div>
-
     <!-- Main Content -->
-    <main id="projectGrid">
-        <div id="projectLabel">
-            <div>Reverse Engineering of a Toy</div>
-            <span>Date: March 2021</span>
+    <main id="projectGrid" class="project--brief">
+        <h1 id="projectTitle">Reverse Engineering of a Toy</h1>
+
+        <div id="projectInfo">
+            <dl id="projectLabel">
+                <div class="spec-name">Reverse Engineering of a Toy</div>
+                <dt>Date</dt>
+                <dd>March 2021</dd>
+                <dt>Class</dt>
+                <dd>Intro to Engineering Design</dd>
+                <dt>Medium</dt>
+                <dd>CAD, teardown analysis</dd>
+            </dl>
+
+            <div id="projectSummary">
+                <p>I reverse-engineered a wind-up monkey toy to understand its internal mechanisms and recreate its parts using CAD software. This project involved disassembling the toy, analyzing its design, and modeling components such as gears and ratchets.</p>
+                <p>It enhanced my knowledge of mechanical design and prototyping.</p>
+            </div>
         </div>
-        <div id="projectSummary">
-            <p>I reverse-engineered a wind-up monkey toy to understand its internal mechanisms and recreate its parts using CAD software. This project involved disassembling the toy, analyzing its design, and modeling components such as gears and ratchets.</p>
-            <p>It enhanced my knowledge of mechanical design and prototyping.</p>
-        </div>
-        <div id="projectHero">
+
+        <figure id="projectHero">
             <img src="/assets/images/projects/toy.jpeg" alt="Wind-up monkey toy disassembled on table">
-        </div>
+        </figure>
+
     </main>
 
     <!-- JavaScript -->

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Compound Machines Project by Christopher Lam">
+    <meta name="author" content="Christopher Lam">
     <title>Compound Machines Project - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
@@ -20,11 +21,18 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../css/project-details.css">
 </head>
-<body>
+<body class="project-page">
+    <!-- Mobile Redirect Script -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = '/index_mobile.html';
+        }
+    </script>
+
     <!-- Navigation Bar -->
     <nav id="bar" role="navigation" aria-label="Main navigation">
         <a href="/photos.html">photos</a>
-        <a href="/projects.html">projects</a>
+        <a href="/projects.html" aria-current="page">projects</a>
         <a href="/resume.html">resume</a>
     </nav>
 
@@ -48,24 +56,31 @@
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
     </header>
 
-    <!-- Project Title -->
-    <div id="projectTitle">
-        Compound Machines Project
-    </div>
-
     <!-- Main Content -->
-    <main id="projectGrid">
-        <div id="projectLabel">
-            <div>Compound Machines Project</div>
-            <span>Date: September 2022</span>
+    <main id="projectGrid" class="project--brief">
+        <h1 id="projectTitle">Compound Machines Project</h1>
+
+        <div id="projectInfo">
+            <dl id="projectLabel">
+                <div class="spec-name">Compound Machines Project</div>
+                <dt>Date</dt>
+                <dd>September 2022</dd>
+                <dt>Class</dt>
+                <dd>Principles of Engineering Design</dd>
+                <dt>Role</dt>
+                <dd>Designer (escapement mechanism)</dd>
+            </dl>
+
+            <div id="projectSummary">
+                <p>In this project, I designed and built a creative machine utilizing compound mechanisms. We drew inspiration from traditional timekeeping devices and engineered a Graham escapement mechanism to create a functional timer.</p>
+                <p>While the project faced challenges, such as precision limitations with materials, I designed the escapement system and contributed to troubleshooting issues with energy transfer. This experience deepened my understanding of mechanical advantage and problem-solving under resource constraints.</p>
+            </div>
         </div>
-        <div id="projectSummary">
-            <p>In this project, I designed and built a creative machine utilizing compound mechanisms. We drew inspiration from traditional timekeeping devices and engineered a Graham escapement mechanism to create a functional timer.</p>
-            <p>While the project faced challenges, such as precision limitations with materials, I designed the escapement system and contributed to troubleshooting issues with energy transfer. This experience deepened my understanding of mechanical advantage and problem-solving under resource constraints.</p>
-        </div>
-        <div id="projectHero">
+
+        <figure id="projectHero">
             <img src="/assets/images/projects/escapement.jpeg" alt="Escapement prototype resting on the test stand">
-        </div>
+        </figure>
+
     </main>
 
     <!-- JavaScript -->

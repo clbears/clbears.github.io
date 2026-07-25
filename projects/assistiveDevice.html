@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Assistive Toothpaste Device project by Christopher Lam">
+    <meta name="author" content="Christopher Lam">
     <title>Assistive Toothpaste Device - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
@@ -20,11 +21,18 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../css/project-details.css">
 </head>
-<body>
+<body class="project-page">
+    <!-- Mobile Redirect Script -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = '/index_mobile.html';
+        }
+    </script>
+
     <!-- Navigation Bar -->
     <nav id="bar" role="navigation" aria-label="Main navigation">
         <a href="/photos.html">photos</a>
-        <a href="/projects.html">projects</a>
+        <a href="/projects.html" aria-current="page">projects</a>
         <a href="/resume.html">resume</a>
     </nav>
 
@@ -48,51 +56,59 @@
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
     </header>
 
-    <!-- Project Title -->
-    <div id="projectTitle">
-        Assistive Toothpaste Device
-    </div>
-
     <!-- Main Content -->
-    <main id="projectGrid">
-        <div class="grid-item" id="projectHero">
+    <main id="projectGrid" class="project--full">
+        <h1 id="projectTitle">Assistive Toothpaste Device</h1>
+
+        <div id="projectInfo">
+            <dl id="projectLabel">
+                <div class="spec-name">Assistive Device</div>
+                <dt>Date</dt>
+                <dd>2025</dd>
+                <dt>Class</dt>
+                <dd>APSC 100</dd>
+                <dt>Medium</dt>
+                <dd>CAD renders</dd>
+                <dt>Role</dt>
+                <dd>Product Designer</dd>
+            </dl>
+
+            <div id="projectSummary">
+                <p>
+                    I developed this concept in APSC 100 for a client with limited range of motion. Brushing teeth is a daily ritual, yet fine motor control is required to uncap and squeeze toothpaste. The device had to let someone with reduced grip strength independently prepare their toothbrush.
+                </p>
+                <p>
+                    A top aperture nests around the toothpaste cap for leverage, while the sliding wedge and lever channel pressure evenly through the tube so paste dispenses cleanly onto the bristles. The form factor stays stable on a countertop, restoring a routine that supports dignity and autonomy.
+                </p>
+            </div>
+
+            <div id="projectNotes">
+                <div class="note-block">
+                    What are all of the ways to remove toothpaste from a tube?
+                </div>
+                <div class="note-block">
+                    How can I adjust the form to fit a compact vanity footprint?
+                </div>
+            </div>
+        </div>
+
+        <figure id="projectHero">
             <img src="/assets/images/projects/assistiveDevice/hero.jpeg" alt="Assistive device for toothpaste">
-        </div>
-        <div class="grid-item" id="projectLabel">
-            <div>Assistive Device</div>
-            <span>Year: 2025</span>
-            <span>Medium: CAD renders</span>
-            <span>Role: Product Designer</span>
-        </div>
-        <div class="grid-item" id="projectSummary">
-            <p>
-                I developed this concept in APSC 100 for a client with limited range of motion. Brushing teeth is a daily ritual, yet fine motor control is required to uncap and squeeze toothpaste. The device had to let someone with reduced grip strength independently prepare their toothbrush.
-            </p>
-            <p>
-                A top aperture nests around the toothpaste cap for leverage, while the sliding wedge and lever channel pressure evenly through the tube so paste dispenses cleanly onto the bristles. The form factor stays stable on a countertop, restoring a routine that supports dignity and autonomy.
-            </p>
-        </div>
-        <div class="grid-item" id="projectNotes">
-            <div class="note-block">
-                What are all of the ways to remove toothpaste from a tube?
-            </div>
-            <div class="note-block">
-                How can I adjust the form to fit a compact vanity footprint?
-            </div>
-        </div>
-        <div class="grid-item" id="projectGallery">
-            <div class="gallery-card">
+        </figure>
+
+        <div id="projectGallery">
+            <figure class="gallery-card">
                 <img src="/assets/images/projects/assistiveDevice/sideMotion.jpeg" alt="Render showing motion from the side">
-                <span>Side view of operation</span>
-            </div>
-            <div class="gallery-card">
+                <figcaption>Side view of operation</figcaption>
+            </figure>
+            <figure class="gallery-card">
                 <img src="/assets/images/projects/assistiveDevice/toothpasteCapGrip.jpeg" alt="Close up at the toothpaste cap grip">
-                <span>Toothpaste cap grip</span>
-            </div>
-            <div class="gallery-card">
+                <figcaption>Toothpaste cap grip</figcaption>
+            </figure>
+            <figure class="gallery-card">
                 <img src="/assets/images/projects/assistiveDevice/fullMotion.jpeg" alt="Full motion from an angle">
-                <span>Full view of operation</span>
-            </div>
+                <figcaption>Full view of operation</figcaption>
+            </figure>
         </div>
     </main>
 
