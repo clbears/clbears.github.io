@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tally by Christopher Lam">
+    <meta name="author" content="Christopher Lam">
+    <title>Tally - Christopher Lam</title>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/project-details.css">
+</head>
+<body class="project-page">
+    <!-- Mobile Redirect Script -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = '/index_mobile.html';
+        }
+    </script>
+
+    <!-- Navigation Bar -->
+    <nav id="bar" role="navigation" aria-label="Main navigation">
+        <a href="/photos.html">photos</a>
+        <a href="/projects.html" aria-current="page">projects</a>
+        <a href="/resume.html">resume</a>
+    </nav>
+
+    <!-- Header/Letterhead -->
+    <header id="letterhead">
+        <a style="font-weight: 800" href="/index.html" aria-label="Home"> Christopher Lam </a>
+        <br>
+        <a href="https://www.google.com/maps/place/San+Francisco,+CA/@37.757807,-122.5200005,12z/data=!3m1!4b1!4m6!3m5!1s0x80859a6d00690021:0x4a501367f076adff!8m2!3d37.7749295!4d-122.4194155!16zL20vMGQ2bHA?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D"
+           target="_blank"
+           rel="noopener noreferrer">San Francisco California</a>
+        <br>
+        <a href="https://www.instagram.com/topher_lam/"
+           target="_blank"
+           rel="noopener noreferrer">@topher_lam</a>
+        <a href="https://youtu.be/tH63sBOTIeQ"
+           id="time"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Current time"></a>
+        <br>
+        <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
+    </header>
+
+    <main id="projectGrid" class="project--log">
+        <h1 id="projectTitle">Tally</h1>
+
+        <div id="projectMeta">In progress &mdash; started June 2026</div>
+
+        <article id="projectLogEntries">Loading&hellip;</article>
+    </main>
+
+    <!-- Markdown renderer -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        (function () {
+            const entries = document.getElementById("projectLogEntries");
+            fetch("/projects/logs/tally.md")
+                .then(res => {
+                    if (!res.ok) throw new Error("missing");
+                    return res.text();
+                })
+                .then(md => {
+                    entries.innerHTML = marked.parse(md);
+                })
+                .catch(() => {
+                    entries.textContent = "Log not found.";
+                });
+        })();
+    </script>
+</body>
+</html>

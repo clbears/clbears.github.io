@@ -1,7 +1,7 @@
 /* ===================================
    Project Detail Pages — Shared Styles
 
-   Two layout variants, set on #projectGrid:
+   Three layout variants, set on #projectGrid:
 
      .project--brief   One figure, centered column, compact spec line.
                        Looks finished with a single image and one paragraph.
@@ -9,7 +9,12 @@
      .project--full    Hero + spec block + notes in a side column,
                        figure gallery beneath.
 
-   Both share one visual language: IBM Plex Mono, ink on paper,
+     .project--log     For work still in progress. No spec box, no gallery —
+                       a dated running log (see #projectLogEntries) fed from
+                       a markdown file, the same mechanism as /log/post.html.
+                       Deliberately looks unfinished next to the other two.
+
+   All three share one visual language: IBM Plex Mono, ink on paper,
    hairline rules, uppercase tracked labels.
    =================================== */
 
@@ -38,8 +43,10 @@
 /* ===================================
    Shared page furniture
    =================================== */
+/* Left/right margins match #image_grid in styles.css so project pages sit
+   on the same outer edges as the rest of the site. */
 #projectGrid {
-    margin: 0 var(--pp-margin) calc(var(--pp-margin) * 1.4);
+    margin: 0 calc(var(--spacing-md) + 9.9px) calc(var(--pp-margin) * 1.4) var(--spacing-md);
 }
 
 #projectTitle {
@@ -332,11 +339,84 @@
 }
 
 /* ===================================
+   VARIANT: .project--log
+   In-progress work: title + one meta line + a dated running log rendered
+   from markdown (see projects/projectLogTemplate.html). No spec box, no
+   gallery — deliberately lighter-weight than the other two variants.
+   =================================== */
+#projectGrid.project--log {
+    max-width: var(--pp-measure);
+    margin-inline: auto;
+}
+
+#projectMeta {
+    margin: calc(var(--pp-gutter) * -0.6) 0 calc(var(--pp-gutter) * 0.9);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: var(--pp-label);
+    color: var(--color-secondary);
+}
+
+#projectLogEntries {
+    border-top: var(--pp-rule-soft);
+    padding-top: calc(var(--pp-gutter) * 0.9);
+}
+
+/* Each dated entry is an <h2> in the source markdown. */
+#projectLogEntries h2 {
+    margin: 0 0 0.6em;
+    font-size: var(--pp-label);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--color-secondary);
+}
+
+/* Every entry after the first gets a rule above it to mark the break. */
+#projectLogEntries h2 ~ h2 {
+    margin-top: calc(var(--pp-gutter) * 1.3);
+    padding-top: calc(var(--pp-gutter) * 0.9);
+    border-top: var(--pp-rule-soft);
+}
+
+#projectLogEntries p,
+#projectLogEntries ul,
+#projectLogEntries ol,
+#projectLogEntries blockquote {
+    font-size: var(--pp-body);
+    line-height: 1.75;
+    margin: 0 0 1em;
+}
+
+#projectLogEntries a {
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
+}
+
+#projectLogEntries img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 70vh;
+    object-fit: contain;
+    margin: 1em 0;
+    border: var(--pp-rule);
+}
+
+#projectLogEntries blockquote {
+    border-left: 2px solid var(--color-accent);
+    padding-left: 0.9em;
+    font-style: italic;
+    color: #3a3a3a;
+}
+
+/* ===================================
    Narrow screens
    =================================== */
 @media (max-width: 900px) {
     #projectGrid {
-        margin: 0 var(--pp-margin) calc(var(--pp-margin) * 1.6);
+        margin: 0 calc(var(--spacing-md) + 9.9px) calc(var(--pp-margin) * 1.6) var(--spacing-md);
     }
 
     #projectTitle {

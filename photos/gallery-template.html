@@ -16,14 +16,10 @@
     <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/styles.css">
     <style>
-        :root {
-            --gallery-gap: clamp(24px, 3.5vw, 48px);
-        }
-
         .gallery-shell {
-            padding: clamp(40px, 7vw, 96px) clamp(40px, 7vw, 120px) clamp(72px, 8vw, 120px);
+            padding: var(--spacing-md);
             display: grid;
-            gap: clamp(32px, 5vw, 64px);
+            gap: var(--spacing-lg);
         }
 
         .gallery-header {
@@ -33,12 +29,12 @@
             text-transform: uppercase;
             letter-spacing: 0.2vw;
             padding-bottom: clamp(16px, 2vw, 28px);
-            border-bottom: 1.5px solid #000;
+            border-bottom: var(--gallery-border);
         }
 
         .gallery-header h1 {
-            font-size: clamp(22px, 3vw, 36px);
-            font-weight: 700;
+            font-size: clamp(14px, 0.45rem + 0.7vw, 21px);
+            font-weight: var(--font-weight-normal);
             margin: 0;
         }
 
@@ -68,20 +64,6 @@
             break-inside: avoid;
             margin: 0 0 var(--gallery-gap);
             cursor: zoom-in;
-            background: #fff;
-            padding: clamp(10px, 1.5vw, 18px);
-            padding-bottom: clamp(18px, 2.5vw, 32px);
-            box-shadow:
-                0 1px 3px rgba(0, 0, 0, 0.08),
-                0 4px 18px rgba(0, 0, 0, 0.07);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .photo-card:hover {
-            transform: translateY(-6px);
-            box-shadow:
-                0 2px 6px rgba(0, 0, 0, 0.09),
-                0 14px 36px rgba(0, 0, 0, 0.13);
         }
 
         .photo-card img {
@@ -90,6 +72,7 @@
             display: block;
             object-fit: cover;
             background: #f8f8f8;
+            border: var(--gallery-border);
         }
 
         .lightbox {
@@ -114,7 +97,6 @@
             width: auto;
             height: auto;
             background: #fff;
-            box-shadow: 0 8px 64px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>

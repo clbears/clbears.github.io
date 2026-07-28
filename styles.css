@@ -417,7 +417,7 @@ a:focus {
 }
 
 .gallery-title {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-normal);
     text-transform: uppercase;
     letter-spacing: 0.2vw;
 }
