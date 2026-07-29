@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="[working title: objects] by Christopher Lam">
+    <meta name="description" content="Standard Objects by Christopher Lam">
     <meta name="author" content="Christopher Lam">
-    <title>[working title: objects] - Christopher Lam</title>
+    <title>Standard Objects - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,7 +57,7 @@
     </header>
 
     <main id="projectGrid" class="project--log">
-        <h1 id="projectTitle">[working title: objects]</h1>
+        <h1 id="projectTitle">Standard Objects</h1>
 
         <div id="projectMeta">In progress &mdash; started July 2026</div>
 
@@ -70,7 +70,7 @@
     <script>
         (function () {
             const entries = document.getElementById("projectLogEntries");
-            fetch("/projects/logs/workingTitleObjects.md")
+            fetch("/projects/logs/standardObjects.md")
                 .then(res => {
                     if (!res.ok) throw new Error("missing");
                     return res.text();

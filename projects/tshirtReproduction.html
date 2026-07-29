@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="APSC 101 Mining Feasibility Assessment project by Christopher Lam">
+    <meta name="description" content="T-Shirt Reproduction by Christopher Lam">
     <meta name="author" content="Christopher Lam">
-    <title>APSC 101 Mining Feasibility Assessment - Christopher Lam</title>
+    <title>T-Shirt Reproduction - Christopher Lam</title>
 
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,42 +56,32 @@
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
     </header>
 
-    <!-- Main Content -->
-    <main id="projectGrid" class="project--full">
-        <h1 id="projectTitle">MINING FEASIBILITY ASSESSMENT</h1>
+    <main id="projectGrid" class="project--log">
+        <h1 id="projectTitle">T-Shirt Reproduction</h1>
 
-        <div id="projectInfo">
-            <dl id="projectLabel">
-                <div class="spec-name">APSC 101 Mining Feasibility Assessment</div>
-                <dt>Date</dt>
-                <dd>2026</dd>
-                <dt>Class</dt>
-                <dd>APSC 101</dd>
-                <dt>Medium</dt>
-                <dd>Technical report, spreadsheet simulation, e-poster</dd>
-                <dt>Role</dt>
-                <dd>Team Member (Constant-ine Consultants)</dd>
-            </dl>
+        <div id="projectMeta">In progress &mdash; started July 2026</div>
 
-            <div id="projectSummary">
-                <p>
-                    A group feasibility assessment for APSC 101 evaluating the viability of Copper-nicus Mining Ltd.'s proposed operation. Our team (Constant-ine Consultants) assessed three different mine sites, used a block model to model different mine types, and presented findings via an e-poster and technical report. I was honored to write the introduction of our report.
-                </p>
-                <p>
-                    This project taught me about systems thinking, life cycle analysis, and stakeholder engagement.
-                </p>
-            </div>
-        </div>
-
-        <div class="project-doc">
-            <div class="doc-meta">Technical report &middot; PDF</div>
-            <iframe src="/assets/pdf/Constant-ine%20Consultants%20Company%20LLC%20Copper-nicus%20Mining%20Ltd.%20Feasibility%20Assessment.pdf" title="Feasibility assessment report" loading="lazy"></iframe>
-            <a href="/assets/pdf/Constant-ine%20Consultants%20Company%20LLC%20Copper-nicus%20Mining%20Ltd.%20Feasibility%20Assessment.pdf" target="_blank" rel="noopener noreferrer">Open PDF &#8599;</a>
-        </div>
-
+        <article id="projectLogEntries">Loading&hellip;</article>
     </main>
 
-    <!-- JavaScript -->
+    <!-- Markdown renderer -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
     <script src="/js/main.js"></script>
+    <script>
+        (function () {
+            const entries = document.getElementById("projectLogEntries");
+            fetch("/projects/logs/tshirtReproduction.md")
+                .then(res => {
+                    if (!res.ok) throw new Error("missing");
+                    return res.text();
+                })
+                .then(md => {
+                    entries.innerHTML = marked.parse(md);
+                })
+                .catch(() => {
+                    entries.textContent = "Log not found.";
+                });
+        })();
+    </script>
 </body>
 </html>
