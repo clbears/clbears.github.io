@@ -109,8 +109,7 @@ function initializeProjectPreview() {
     // "Currently" block drive the preview image on hover.
     grid.addEventListener("mouseover", function(event) {
         const link = event.target.closest("a[data-preview]");
-        if (!link) return;
-        previewImg.setAttribute("src", link.getAttribute("data-preview"));
+        previewImg.setAttribute("src", link ? link.getAttribute("data-preview") : defaultSrc);
     });
 
     grid.addEventListener("mouseleave", function() {
