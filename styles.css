@@ -305,10 +305,14 @@ a:focus {
     text-align: left;
     padding: 0;
     margin: 0;
+    perspective: 700px;
 }
 
 #projectList a {
     transition: opacity var(--transition-medium), transform var(--transition-medium);
+    transform-origin: 50% 50%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 #projectList a.filtered-out {
@@ -318,6 +322,18 @@ a:focus {
     overflow: hidden;
     margin: 0;
     pointer-events: none;
+}
+
+@keyframes flap-in {
+    0%   { opacity: 0; transform: rotateX(-90deg); }
+    45%  { opacity: 1; }
+    70%  { transform: rotateX(6deg); }
+    100% { opacity: 1; transform: rotateX(0deg); }
+}
+
+#projectList a.flap-in {
+    animation: flap-in var(--transition-medium) both;
+    will-change: transform, opacity;
 }
 
 #writings {
