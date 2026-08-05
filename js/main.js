@@ -105,6 +105,12 @@ function initializeProjectPreview() {
     // Remember the default image so we can restore it on mouse-out
     const defaultSrc = previewImg.getAttribute("src");
 
+    // Preload every preview image so swapping on hover is instant
+    // instead of waiting on a network fetch the first time each is shown.
+    grid.querySelectorAll("a[data-preview]").forEach(function(link) {
+        new Image().src = link.getAttribute("data-preview");
+    });
+
     // Delegated on the whole grid so both the archive list and the
     // "Currently" block drive the preview image on hover.
     grid.addEventListener("mouseover", function(event) {

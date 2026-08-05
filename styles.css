@@ -189,12 +189,12 @@ a:focus {
     margin-left: var(--spacing-md);
 }
 
-#airFrance {
+#montagna {
     grid-column: 2 / span 5;
     grid-row: 1;
 }
 
-#airFrance:hover {
+#montagna:hover {
     z-index: var(--z-overlay);
 }
 
@@ -531,7 +531,7 @@ footer {
         grid-row: auto;
     }
 
-    #airFrance {
+    #montagna {
         grid-column: 1 / -1;
         grid-row: auto;
     }
@@ -597,7 +597,7 @@ footer {
         grid-row: auto;
     }
 
-    #airFrance {
+    #montagna {
         grid-column: 3 / -1;
         grid-row: auto;
     }
