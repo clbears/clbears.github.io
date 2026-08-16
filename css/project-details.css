@@ -394,7 +394,8 @@
     text-underline-offset: 0.22em;
 }
 
-#projectLogEntries img {
+#projectLogEntries img,
+#projectLogEntries video {
     display: block;
     width: 100%;
     height: auto;
