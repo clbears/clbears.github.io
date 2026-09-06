@@ -1,3 +1,30 @@
+## Aug 25, 2026
+Assembled everything and delivered it to my friend.
+
+<video src="/assets/images/projects/tally/click.mp4" controls playsinline muted loop></video>
+
+<video src="/assets/images/projects/tally/place.mp4" controls playsinline muted loop></video>
+
+## Aug 24, 2026
+Printed the final print.
+
+## Aug 23, 2026
+I originally wanted to do this in white, and I only have white PETG, so I made it in the PETG, but I couldn't get the surface finish to be as nice as the PLA, and the red has grown on me (and my mom).
+![whiteGraveyard](/assets/images/projects/tally/whiteGraveyard.jpeg)
+
+## Aug 22, 2026
+Fixed the wiring, adjusted the form to be a little more light, while keeping the center of balance flat during a frontal slap. It's just about done now. I have three days until I leave.
+![bullet](/assets/images/projects/tally/bullet.jpeg)
+
+## Aug 20, 2026
+First dock prototype. The components didn't fit properly and the cable wiring is not my proudest design. I also don't like how it looks like a pig's foot. I will probably throw it out and redo the wiring.
+![pig's foot](/assets/images/projects/tally/pigsFoot.jpeg)
+
+## Aug 19, 2026
+Moved the charger to the rear, thickened sides, but tried to reduce visual bulkiness with a fillet.
+![rearCharger](/assets/images/projects/tally/rearCharger.jpeg)
+
+
 ## Aug 15, 2026
 This next iteration included magnets within the print and top support for the screen. I am approaching perfection with the switch feeling. 
 
@@ -19,13 +46,13 @@ For some reason I thought that it was better to print a finger that would press 
 I found with the last prototype that if the fulcrum was placed in the middle, it would ruin the slapping feel you get when slapping the switch from the screen side. So I moved the fulcrum back towards the screen, ergo enabling frontal slap and the new limit switch placement.
 
 ![Two Pieces and a new limit switch location](/assets/images/projects/tally/twoPiece.jpeg)
-The two pieces come together with two screws and two meshing parts. One of the parts are not properly supported and break off. This will be fixed later. 
+The two pieces come together with two screws and two meshing parts. One of the parts is not properly supported and breaks off. This will be fixed later. 
 
 ![Two Pieces V1](/assets/images/projects/tally/twoPieceLid.jpeg)
 The lid/switch and the top bezel is too thin and the body is generally flimsy.
 
 V2 12:42:
-The second iteration increases the lid/switch width, adds support to reduce flimsiness (also reducing the need for a one of the screw tabs).
+The second iteration increases the lid/switch width, adds support to reduce flimsiness (also reducing the need for one of the screw tabs).
 
 ![Two Pieces V2](/assets/images/projects/tally/twoPieceV2.jpeg)
 When fully assembled, the limit switch is always pressed and needs to be lowered.
@@ -52,15 +79,15 @@ I was folding some paper and realized that I could slide in the components witho
 ![Physical Prototype: Casing](/assets/images/projects/tally/physicalPrototypeComponentCase.jpeg)
 
 ## July 4, 2026
-I went on a run and realised how a Wii remote also felt nice and had a good form factor. It doesn't feel right. I think that it will be hard/complicated to make the count satisfying and to assemble.
+I went on a run and realized how a Wii remote also felt nice and had a good form factor. It doesn't feel right. I think that it will be hard/complicated to make the count satisfying and to assemble.
 ![Physical Prototype: Wii Remote](/assets/images/projects/tally/physicalPrototypeWiiStyle.jpeg)
 
 ## June 28, 2026
-Trying to see how to make a paddle shifter style click. I like how paddle shifters feel and want to replicate the sensation
+Trying to see how to make a paddle shifter style click. I like how paddle shifters feel and want to replicate the sensation.
 ![Physical Prototype: Paddle Shifter](/assets/images/projects/tally/physicalPrototypePaddleShifter.jpeg)
 
 
 ## June 22, 2026
 
-Parts arrived. Got all the code working. All through the one button: count, lock, reset. The font is Atkinson Hyperlegible by the Braille Institute
+Parts arrived. Got all the code working. All through the one button: count, lock, reset. The font is Atkinson Hyperlegible by the Braille Institute.
 ![Tally with RP2040 and e-ink display](/assets/images/projects/tally/helloTally.jpeg)
