@@ -1,5 +1,5 @@
 ## Aug 23, 2026
-The project is "done." I hope to work on it and make it better when I return, but I'm happy I could make an MVP for my friend before I leave.
+The project is "done." I hope to work on it and make it better when I return, but I'm happy I could make an MVP for my friend before I left.
 
 <video src="/assets/images/projects/daisyPedal/demo.mp4" controls playsinline loop></video>
 
