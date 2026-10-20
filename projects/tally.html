@@ -56,32 +56,102 @@
         <a href="mailto:cjlbears@gmail.com">cjlbears@gmail.com</a>
     </header>
 
-    <main id="projectGrid" class="project--log">
+    <main id="projectGrid" class="project--full">
         <h1 id="projectTitle">Tally</h1>
 
-        <div id="projectMeta">In progress &mdash; started June 2026</div>
+        <div id="projectInfo">
+            <dl id="projectLabel">
+                <div class="spec-name">Tally</div>
+                <dt>Date</dt>
+                <dd>June &ndash; August 2026</dd>
+                <dt>Medium</dt>
+                <dd>PLA, Adafruit ThinkInk Feather RP2040, e-ink display, limit switch, magnets</dd>
+                <dt>Role</dt>
+                <dd>Designer, Engineer, Fabricator</dd>
+                <dt>For</dt>
+                <dd>A friend</dd>
+                <dt>Code</dt>
+                <dd><a href="https://github.com/clbears/Tally" target="_blank" rel="noopener noreferrer">github.com/clbears/Tally &#8599;</a></dd>
+                <dt>Log</dt>
+                <dd><a href="/projects/tallyLog.html">Build log, June 22 &ndash; August 25</a></dd>
+            </dl>
 
-        <article id="projectLogEntries">Loading&hellip;</article>
+            <div id="projectSummary">
+                <p>
+                    Tally means a great deal to me, and I know I'll look back on it as my best work to date. It was made for one person, and I tried to account for every experience they might have with it, then shape each one.
+                </p>
+                <p>
+                    Most of the time went into the click: how it sits in the palm, how it takes a slap on a desk. The weight, the lever, the thickness, all of it decided. I hope that years from now, stripped of all emotional significance, it stands on its own. A lone soldier, dutifully following orders from another time.
+                </p>
+            </div>
+
+            <div id="projectNotes">
+                <div class="note-block">
+                    What makes a click worth repeating?
+                </div>
+                <div class="note-block">
+                    How do you make something that outlasts the reason it was made?
+                </div>
+            </div>
+        </div>
+
+        <figure id="projectHero">
+            <video src="/assets/images/projects/tally/click.mp4"
+                   poster="/assets/images/projects/tally/tallyHero.jpeg"
+                   autoplay muted loop playsinline
+                   aria-label="Tally on its dock, counting up as the top is slapped"></video>
+        </figure>
+
+        <div id="projectGallery" class="gallery--even">
+            <figure class="gallery-card">
+                <img src="/assets/images/projects/tally/helloTally.jpeg" alt="RP2040 board wired to an e-ink display reading 90 days since fire alarm" loading="lazy">
+                <figcaption>June 22 &mdash; Parts arrived. Count, lock, and reset, all through one button.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+                <img class="flip"
+                     src="/assets/images/projects/tally/physicalPrototypePaddleShifter.jpeg"
+                     alt="Early printed prototypes"
+                     data-image_list="/assets/images/projects/tally/physicalPrototypePaddleShifter.jpeg, /assets/images/projects/tally/physicalPrototypeWiiStyle.jpeg, /assets/images/projects/tally/physicalPrototypeComponentCase.jpeg"
+                     loading="lazy">
+                <figcaption>June&ndash;July &mdash; Paddle shifter, Wii remote, slide-in case. Looking for the click. Click to cycle.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+                <img class="flip"
+                     src="/assets/images/projects/tally/twoPiece.jpeg"
+                     alt="Two-piece housing iterations"
+                     data-image_list="/assets/images/projects/tally/twoPiece.jpeg, /assets/images/projects/tally/twoPieceLid.jpeg, /assets/images/projects/tally/twoPieceV2.jpeg, /assets/images/projects/tally/twoPieceV4.jpeg, /assets/images/projects/tally/twoPieceV4Detail.jpeg, /assets/images/projects/tally/TwoPieceV4Side.jpeg"
+                     loading="lazy">
+                <figcaption>Aug 14 &mdash; Split the housing in two and moved the switch. Four versions in one day. Click to cycle.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+                <video src="/assets/images/projects/tally/magnet.mp4" poster="/assets/images/projects/tally/magnetPoster.jpeg" controls muted loop playsinline preload="none"></video>
+                <figcaption>Aug 15 &mdash; Magnets for the return. One on one side, three on the other.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+                <img src="/assets/images/projects/tally/rearCharger.jpeg" alt="Red housing with the charger moved to the rear" loading="lazy">
+                <figcaption>Aug 19 &mdash; Charger moved to the rear, sides thickened.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+                <img class="flip"
+                     src="/assets/images/projects/tally/pigsFoot.jpeg"
+                     alt="Two dock prototypes"
+                     data-image_list="/assets/images/projects/tally/pigsFoot.jpeg, /assets/images/projects/tally/bullet.jpeg"
+                     loading="lazy">
+                <figcaption>Aug 20&ndash;22 &mdash; Two docks. The first looked like a pig&rsquo;s foot. Click to cycle.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+                <img src="/assets/images/projects/tally/whiteGraveyard.jpeg" alt="Pile of white PETG housings and docks" loading="lazy">
+                <figcaption>Aug 23 &mdash; The white PETG graveyard. Red won.</figcaption>
+            </figure>
+            <figure class="gallery-card">
+                <video src="/assets/images/projects/tally/place.mp4" poster="/assets/images/projects/tally/placePoster.jpeg" controls muted loop playsinline preload="none"></video>
+                <figcaption>Aug 25 &mdash; Delivered.</figcaption>
+            </figure>
+        </div>
+
     </main>
 
-    <!-- Markdown renderer -->
-    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+    <!-- JavaScript -->
     <script src="/js/main.js"></script>
-    <script>
-        (function () {
-            const entries = document.getElementById("projectLogEntries");
-            fetch("/projects/logs/tally.md")
-                .then(res => {
-                    if (!res.ok) throw new Error("missing");
-                    return res.text();
-                })
-                .then(md => {
-                    entries.innerHTML = marked.parse(md);
-                })
-                .catch(() => {
-                    entries.textContent = "Log not found.";
-                });
-        })();
-    </script>
 </body>
 </html>

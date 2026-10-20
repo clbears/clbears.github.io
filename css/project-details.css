@@ -110,6 +110,12 @@
     font-weight: var(--font-weight-medium);
 }
 
+#projectLabel a {
+    font-size: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
+}
+
 /* ---- Body copy ---- */
 #projectSummary {
     display: flex;
@@ -153,7 +159,8 @@
     margin: 0;
 }
 
-#projectHero img {
+#projectHero img,
+#projectHero video {
     display: block;
     width: auto;
     height: auto;
@@ -235,7 +242,9 @@
 }
 
 .gallery-card img,
-#projectGallery img {
+.gallery-card video,
+#projectGallery img,
+#projectGallery video {
     display: block;
     width: 100%;
     height: auto;
@@ -256,6 +265,18 @@
     color: var(--color-secondary);
     text-align: left;
     letter-spacing: 0.04em;
+}
+
+/* Opt-in: an even grid of four, every image and video in the same 4:3
+   frame, so a portrait shot doesn't stretch its row taller than the rest. */
+#projectGallery.gallery--even {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+#projectGallery.gallery--even img,
+#projectGallery.gallery--even video {
+    aspect-ratio: 4 / 3;
+    max-height: none;
 }
 
 /* `.flip` images cycle on click — advertise that. */
@@ -358,6 +379,12 @@
     color: var(--color-secondary);
 }
 
+#projectMeta a {
+    font-size: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
+}
+
 #projectLogEntries {
     border-top: var(--pp-rule-soft);
     padding-top: calc(var(--pp-gutter) * 0.9);
@@ -439,11 +466,13 @@
         order: -1;
     }
 
-    #projectHero img {
+    #projectHero img,
+    #projectHero video {
         max-height: 62vh;
     }
 
-    #projectGallery {
+    #projectGallery,
+    #projectGallery.gallery--even {
         grid-template-columns: 1fr;
     }
 
