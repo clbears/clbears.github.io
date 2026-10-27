@@ -85,6 +85,35 @@ function initializeFlipImages() {
     }
 }
 
+// Homepage only: fade photos in as they finish loading. The whole grid item
+// fades, so a caption doesn't show at the top of an empty box and then jump
+// down when its image arrives. Already-loaded (cached) images are left alone
+// so nothing visible blinks out.
+function initializeImageFadeIn() {
+    if (!document.getElementById("timeline")) return; // the homepage marker
+
+    document.querySelectorAll("#image_grid .grid-item img").forEach(img => {
+        if (img.complete) return;
+        const item = img.closest(".grid-item");
+        item.classList.add("fade-in");
+        const reveal = () => item.classList.add("is-loaded");
+        img.addEventListener("load", reveal, { once: true });
+        img.addEventListener("error", reveal, { once: true });
+    });
+}
+
+// Homepage timeline: hidden behind a sideways label until clicked
+function initializeTimelineToggle() {
+    const timeline = document.getElementById("timeline");
+    const toggle = timeline && timeline.querySelector(".timeline-toggle");
+    if (!toggle) return;
+
+    toggle.addEventListener("click", function() {
+        const open = timeline.classList.toggle("is-open");
+        this.setAttribute("aria-expanded", open);
+    });
+}
+
 // On phones, point "home" links at the mobile homepage so the blog
 // (the only desktop-chrome pages reachable on mobile) navigates natively.
 function initializeMobileHome() {
@@ -455,8 +484,10 @@ function initializeProjectFilters(flapSound) {
 
 // Initialize all functionality when DOM is ready
 document.addEventListener("DOMContentLoaded", function() {
+    initializeImageFadeIn();
     initializeMobileHome();
     initializeTimer();
+    initializeTimelineToggle();
     initializeFlipImages();
     initializeProjectPreview();
     initializeProjectSorting();

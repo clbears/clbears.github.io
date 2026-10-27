@@ -15,7 +15,9 @@
                        Deliberately looks unfinished next to the other two.
 
    All three share one visual language: IBM Plex Mono, ink on paper,
-   hairline rules, uppercase tracked labels.
+   hairline rules, uppercase tracked labels. Serif only where it speaks to
+   the artistic / humanities side (see the serif rule in styles.css): the
+   title in DM Serif Display, the questions in DM Serif Text.
    =================================== */
 
 :root {
@@ -50,15 +52,12 @@
 }
 
 #projectTitle {
-    margin: clamp(24px, 3.2vw, 56px) 0 clamp(18px, 2.4vw, 40px);
-    font-size: var(--pp-title);
-    font-weight: var(--font-weight-bold);
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.28em;
-    /* Tracking adds trailing space on the last letter; nudge back to centre. */
-    text-indent: 0.28em;
-    line-height: 1.4;
+    margin: clamp(48px, 6vw, 104px) 0 clamp(10px, 1.2vw, 20px);
+    font-family: var(--font-display);
+    font-size: calc(var(--pp-title) * 2.5);
+    font-weight: var(--font-weight-normal);
+    text-align: left;
+    line-height: 1.1;
     text-wrap: balance;
 }
 
@@ -74,24 +73,12 @@
     font-size: var(--pp-label);
 }
 
-#projectLabel .spec-name {
-    display: block;
-    margin-bottom: 0.9em;
-}
-
 #projectLabel dt {
     margin-top: 0.8em;
 }
 
 #projectLabel dt:first-of-type {
     margin-top: 0;
-}
-
-#projectLabel .spec-name {
-    font-weight: var(--font-weight-bold);
-    font-size: var(--pp-label);
-    letter-spacing: 0.16em;
-    line-height: 1.5;
 }
 
 #projectLabel dt,
@@ -135,20 +122,30 @@
     text-underline-offset: 0.22em;
 }
 
-/* ---- Notes: open marginalia, not boxed-in ---- */
+/* ---- Notes: a ruled list of questions, echoing the spec block ----
+   The label comes from CSS so the markup stays a plain run of .note-blocks. */
 #projectNotes {
     display: flex;
     flex-direction: column;
-    gap: 0.9em;
+}
+
+#projectNotes::before {
+    content: "Questions";
+    padding-bottom: 0.8em;
+    border-bottom: var(--pp-rule);
+    font-size: var(--pp-label);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-secondary);
 }
 
 .note-block {
-    padding-left: 0.9em;
-    border-left: 2px solid var(--color-accent);
-    font-size: var(--pp-body);
+    padding: 0.55em 0;
+    border-bottom: var(--pp-rule-soft);
+    font-family: var(--font-text);
     font-style: italic;
-    line-height: 1.65;
-    color: #3a3a3a;
+    font-size: calc(var(--pp-body) * 1.4);
+    line-height: 1.25;
 }
 
 /* ---- Hero: capped so tall images never swallow the page ---- */
@@ -303,6 +300,12 @@
     grid-column: 1 / -1;
 }
 
+/* Pull back most of the grid's row-gap so the title sits as close to its
+   content as on the brief pages. */
+.project--full > #projectTitle {
+    margin-bottom: calc(var(--pp-gutter) * -0.8);
+}
+
 .project--full #projectInfo {
     display: flex;
     flex-direction: column;
@@ -320,6 +323,12 @@
     margin-inline: auto;
 }
 
+/* Keep the title on the left edge of that centred column (see brief). */
+.project--full:not(:has(#projectHero)) > #projectTitle {
+    max-width: calc(68 * 0.6rem);
+    margin-inline: auto;
+}
+
 /* ===================================
    VARIANT: .project--brief
    One figure, centred measure, spec as a single ruled line.
@@ -334,6 +343,14 @@
 
 .project--brief #projectInfo {
     max-width: var(--pp-measure);
+    margin-inline: auto;
+}
+
+/* Title sits on the same left edge as the spec/summary column. `ch` would
+   resolve against the title's own (larger, serif) font, so the measure is
+   restated in rem: 68ch of 12px Plex Mono = 68 × 0.6rem. */
+.project--brief #projectTitle {
+    max-width: calc(68 * 0.6rem);
     margin-inline: auto;
 }
 
@@ -371,8 +388,8 @@
 }
 
 #projectMeta {
-    margin: calc(var(--pp-gutter) * -0.6) 0 calc(var(--pp-gutter) * 0.9);
-    text-align: center;
+    margin: 0 0 calc(var(--pp-gutter) * 0.9);
+    text-align: left;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     font-size: var(--pp-label);
@@ -447,11 +464,6 @@
         margin: 0 calc(var(--spacing-md) + 9.9px) calc(var(--pp-margin) * 1.6) var(--spacing-md);
     }
 
-    #projectTitle {
-        letter-spacing: 0.2em;
-        text-indent: 0.2em;
-    }
-
     /* Single column, ordered title -> hero -> reading matter, so the heading
        stays attached to the work it names. */
     .project--full {
@@ -506,6 +518,6 @@
     }
 
     .note-block {
-        border-left: 2px solid black;
+        border-bottom-color: black;
     }
 }

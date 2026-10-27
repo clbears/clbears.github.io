@@ -12,30 +12,41 @@
     <title><!-- Updated by script --></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="icon" href="/assets/images/fav.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/styles.css">
     <style>
+        /* Edges and gutters match #image_grid in styles.css, so the masonry
+           columns land on the site's 6-column grid (each spans two). */
         .gallery-shell {
-            padding: var(--spacing-md);
+            padding: var(--spacing-md) calc(var(--spacing-md) + 9.9px) var(--spacing-md) var(--spacing-md);
             display: grid;
-            gap: var(--spacing-lg);
+            gap: clamp(10px, 1.2vw, 20px);
         }
 
         .gallery-header {
+            margin-top: clamp(24px, 3vw, 52px);
             max-width: 46ch;
             display: grid;
             gap: clamp(8px, 1.5vw, 18px);
             text-transform: uppercase;
             letter-spacing: 0.2vw;
-            padding-bottom: clamp(16px, 2vw, 28px);
+            padding-bottom: clamp(8px, 0.8vw, 14px);
             border-bottom: var(--gallery-border);
         }
 
         .gallery-header h1 {
-            font-size: clamp(14px, 0.45rem + 0.7vw, 21px);
+            font-family: var(--font-display);
+            font-size: calc(clamp(14px, 0.45rem + 0.7vw, 21px) * 1.6);
             font-weight: var(--font-weight-normal);
+            line-height: 1.1;
+            text-transform: none;
+            letter-spacing: normal;
             margin: 0;
+        }
+
+        .gallery-header p:empty {
+            display: none;
         }
 
         .gallery-header p {
@@ -45,10 +56,13 @@
             letter-spacing: normal;
         }
 
-        .gallery-grid {
+        /* Raised to beat the #galleryGrid card-grid rule in styles.css, which
+           otherwise adds its own margin and a 3-column grid over the masonry. */
+        #galleryGrid.gallery-grid {
             display: flex;
             align-items: flex-start;
-            gap: var(--gallery-gap);
+            gap: var(--grid-gap);
+            margin: 0;
         }
 
         .masonry-col {
@@ -56,13 +70,13 @@
             min-width: 0;
             display: flex;
             flex-direction: column;
-            gap: var(--gallery-gap);
+            gap: var(--grid-gap);
         }
 
         .photo-card {
             display: block;
             break-inside: avoid;
-            margin: 0 0 var(--gallery-gap);
+            margin: 0;
             cursor: zoom-in;
         }
 
@@ -107,7 +121,7 @@
         <a href="/resume.html">resume</a>
     </div>
     <div id="letterhead">
-        <a style="font-weight: 800" href="/index.html"> Christopher Lam </a>
+        <a class="letterhead-name" href="/index.html"> Christopher Lam </a>
         <br>
         <a href="https://www.google.com/maps/place/San+Francisco,+CA/">San Francisco California</a>
         <br>
